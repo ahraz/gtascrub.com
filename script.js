@@ -1,62 +1,20 @@
-// Mobile nav toggle
-document.addEventListener('DOMContentLoaded', function() {
-  var toggle = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', function() {
-      links.classList.toggle('open');
-    });
-  }
-
-  // Animate QC zone bars on load
-  var zones = [
-    {fill:'z1', val:100},
-    {fill:'z2', val:98},
-    {fill:'z3', val:94},
-    {fill:'z4', val:88},
-  ];
-  setTimeout(function() {
-    zones.forEach(function(z, i) {
-      setTimeout(function() {
-        var el = document.getElementById(z.fill);
-        if (el) el.style.width = z.val + '%';
-      }, i * 180);
-    });
-  }, 400);
-
-  // Animate score counter
-  var start = 0, end = 96, duration = 1200;
-  var step = end / (duration / 16);
-  var el = document.getElementById('heroScore');
-  if (el) {
-    var interval = setInterval(function() {
-      start = Math.min(start + step, end);
-      el.textContent = Math.round(start) + '%';
-      if (start >= end) clearInterval(interval);
-    }, 16);
-  }
-
-  // Quote form submission
-  var form = document.querySelector('.quote-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = form.querySelector('.form-submit');
-      if (btn) {
-        btn.textContent = '✓ Sent! We\'ll be in touch within 2 hours.';
-        btn.style.background = '#148049';
-      }
-    });
-  }
-
-  // Enter key submits form in inputs (not textarea)
-  form && form.querySelectorAll('input, select').forEach(function(el) {
-    el.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        var btn = form.querySelector('.form-submit');
-        if (btn) btn.click();
-      }
-    });
-  });
-});
+(function(){'use strict';
+// Nav toggle
+document.querySelector('.nav-toggle')?.addEventListener('click',function(){document.querySelector('.nav-links')?.classList.toggle('open')});
+// Close nav on link click
+document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.nav-links')?.classList.remove('open')})});
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var a=this.nextElementSibling;var expanded=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q').forEach(function(o){o.setAttribute('aria-expanded','false')});document.querySelectorAll('.faq-a').forEach(function(p){p.classList.remove('open')});if(!expanded){this.setAttribute('aria-expanded','true');a.classList.add('open')}})});
+// QC Score animation
+function animateQC(){var fill=document.querySelector('.qc-score-fill');if(fill&&!fill.classList.contains('animated')){fill.classList.add('animated')}}
+var qcObserver=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){animateQC();qcObserver.unobserve(e.target)}})});
+var qcEl=document.querySelector('.qc-score');if(qcEl)qcObserver.observe(qcEl);
+// Testimonials carousel
+(function(){var track=document.querySelector('.testi-track');if(!track)return;var cards=track.querySelectorAll('.testi-card');var idx=0;var total=cards.length;var visible=window.innerWidth>1024?3:window.innerWidth>768?2:1;setInterval(function(){idx++;if(idx>total-visible)idx=0;track.style.transform='translateX(-'+(idx*(100/visible))+'%)'},4000)})();
+// Exit intent popup
+(function(){var popup=document.querySelector('.exit-popup');if(!popup)return;var shown=localStorage.getItem('gtascrub_exit_shown');if(shown&&Date.now()-parseInt(shown)<604800000)return;document.addEventListener('mouseleave',function(e){if(e.clientY>0)return;popup.classList.add('active');localStorage.setItem('gtascrub_exit_shown',String(Date.now()))});popup.querySelector('.exit-popup-close')?.addEventListener('click',function(){popup.classList.remove('active')});popup.addEventListener('click',function(e){if(e.target===popup)popup.classList.remove('active')});document.addEventListener('keydown',function(e){if(e.key==='Escape')popup.classList.remove('active')})})();
+// Form AJAX handler
+document.querySelectorAll('.quote-form').forEach(function(form){form.addEventListener('submit',function(e){e.preventDefault();var btn=form.querySelector('button[type="submit"]');var orig=btn.textContent;btn.disabled=true;btn.textContent='Sending...';var data=new FormData(form);var params=new URLSearchParams();data.forEach(function(v,k){params.append(k,v)});fetch(form.action||'https://formspree.io/f/contact@gtascrub.com',{method:'POST',body:params,headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){form.querySelector('.form-confirm').style.display='block';form.querySelector('.form-fields').style.display='none'}else{btn.disabled=false;btn.textContent=orig}}).catch(function(){btn.disabled=false;btn.textContent=orig})})});
+// Scroll animations
+(function(){var els=document.querySelectorAll('.fade-up,.fade-up-d1,.fade-up-d2,.fade-up-d3');var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}})},{threshold:.1});els.forEach(function(el){obs.observe(el)})})();
+})();

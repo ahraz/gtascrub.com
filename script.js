@@ -1,4 +1,6 @@
 (function(){'use strict';
+// Nav active state based on pathname
+(function(){var path=window.location.pathname;var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');links.forEach(function(a){a.classList.remove('active')});if(path==='/'||path===''){var home=document.querySelector('.nav-links a[href="/"]');if(home)home.classList.add('active')}else if(path.startsWith('/commercial-cleaning-')||path.startsWith('/service-areas')){var sa=document.querySelector('.nav-links a[href="/service-areas.html"]');var svc=document.querySelector('.nav-links a[href="/services.html"]');if(sa)sa.classList.add('active');else if(svc)svc.classList.add('active')}else if(path.startsWith('/blog')){var bl=document.querySelector('.nav-links a[href="/blog/"]');var bl2=document.querySelector('.nav-links a[href="/blog/index.html"]');if(bl)bl.classList.add('active');else if(bl2)bl2.classList.add('active')}else if(path.startsWith('/case-studies')){var cs=document.querySelector('.nav-links a[href="/case-studies/"]');if(cs)cs.classList.add('active')}else{links.forEach(function(a){if(a.getAttribute('href')===path||a.getAttribute('href')===path.replace('.html',''))a.classList.add('active')})}})();
 // Nav toggle
 document.querySelector('.nav-toggle')?.addEventListener('click',function(){document.querySelector('.nav-links')?.classList.toggle('open')});
 // Close nav on link click

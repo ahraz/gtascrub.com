@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#e8f4ee"/>
+  <rect x="60" y="40" width="480" height="220" rx="8" fill="#d0e8dc"/>
+  <rect x="80" y="60" width="200" height="30" rx="4" fill="#a8d4ba"/>
+  <rect x="80" y="100" width="440" height="80" rx="4" fill="#a8d4ba"/>
+  <rect x="80" y="190" width="140" height="12" rx="2" fill="#bfe0ce"/>
+  <rect x="230" y="190" width="120" height="12" rx="2" fill="#bfe0ce"/>
+  <rect x="80" y="210" width="160" height="12" rx="2" fill="#bfe0ce"/>
+  <rect x="60" y="280" width="480" height="130" rx="8" fill="#d0e8dc"/>
+  <rect x="200" y="410" width="200" height="30" rx="15" fill="#1a9e5b"/>
+  <text x="300" y="430" text-anchor="middle" font-size="12" fill="white" font-family="sans-serif">GTA Scrub commercial cleaning</text>
+</svg>

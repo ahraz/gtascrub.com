@@ -1,5 +1,4 @@
 /* GTA Scrub nav #0f1e2e + green #1a9e5b */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 :root{--navy:#0f1e2e;--navy-mid:#1a3148;--green:#1a9e5b;--green-dark:#148049;--green-light:#e8f8ef;--white:#fff;--off:#f7f9fb;--text:#1a2530;--muted:#5a6a78;--border:#dde4ea;--gold:#f59e0b;--radius:12px;--shadow:0 4px 24px rgba(15,30,46,.08);--shadow-lg:0 12px 48px rgba(15,30,46,.12);--font-head:'DM Sans',sans-serif;--font-body:'Inter',sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}

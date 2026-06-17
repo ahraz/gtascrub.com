@@ -16,6 +16,8 @@ a:hover{color:var(--green-dark)}
 .nav-links{display:flex;align-items:center;gap:8px;list-style:none}
 .nav-links a{padding:8px 16px;border-radius:8px;font-size:.9rem;font-weight:500;color:var(--text)}.nav-links a:hover,.nav-links a.active{background:var(--green-light);color:var(--green)}
 .nav-cta{padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600}
+.nav-login{font-size:.8rem;font-weight:500;color:var(--muted);padding:8px 8px 8px 16px;border-left:1px solid var(--border);margin-left:4px}
+.nav-login:hover{color:var(--green)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
 .nav-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:var(--white);padding:80px 0;position:relative;overflow:hidden}
@@ -146,7 +148,7 @@ a:hover{color:var(--green-dark)}
 .footer-grid{grid-template-columns:1fr 1fr;gap:32px}.testi-card{min-width:calc(50% - 12px)}}
 @media(max-width:768px){
 .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:16px;flex-direction:column;gap:4px;box-shadow:var(--shadow)}
-.nav-links.open{display:flex}.nav-toggle{display:flex}.nav-cta{display:none}
+.nav-links.open{display:flex}.nav-toggle{display:flex}.nav-cta{display:none}.nav-login{border-left:none;padding-left:16px;margin-left:0}
 .hero{padding:48px 0}.hero h1{font-size:1.85rem}
 .section{padding:48px 0}.section-header h2{font-size:1.75rem}
 .services-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:24px}

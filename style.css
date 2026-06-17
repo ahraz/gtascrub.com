@@ -45,6 +45,7 @@ a:hover{color:var(--green-dark)}
 .qc-score-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
 .qc-score-number{font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--navy);line-height:1}
 .qc-score-label{font-size:.75rem;color:var(--muted)}
+.qc-score-label-top{font-size:.65rem;color:var(--muted);margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px}
 .qc-checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left;margin-top:20px}
 .qc-check{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--text);padding:8px 12px;background:var(--off);border-radius:8px}
 .section{padding:80px 0}

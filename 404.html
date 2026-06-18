@@ -25,14 +25,12 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-<script>
 // Core Web Vitals
 if("performance" in window){window.addEventListener("load",function(){setTimeout(function(){try{
 new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","LCP",{value:Math.round(e[0].startTime),non_interaction:true})}).observe({type:"largest-contentful-paint",buffered:true});
 new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","FID",{value:Math.round(e[0].processingStart-e[0].startTime),non_interaction:true})}).observe({type:"first-input",buffered:true});
 new PerformanceObserver(function(l){var c=0;for(var e of l.getEntries()){if(!e.hadRecentInput)c+=e.value}gtag("event","CLS",{value:c,non_interaction:true})}).observe({type:"layout-shift",buffered:true})
 }catch(e){}},2000)})}
-</script>
 gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
 </script>
 

@@ -77,43 +77,43 @@ a{color:var(--primary);transition:color var(--fast)}a:focus-visible{outline:2px 
 .hero-card-item svg{width:16px;height:16px;color:var(--hero-accent);flex-shrink:0;margin-top:2px}
 .hero-card-item-text{font-size:.8125rem;color:var(--hero-text);line-height:1.4}.hero-card-item-text small{display:block;font-size:.6875rem;color:var(--hero-muted)}
 .section{padding:6rem 0}@media(max-width:768px){.section{padding:4rem 0}}.section-alt{background:var(--bg-alt)}.section-header{margin-bottom:4rem}.section-header.text-center{text-align:center}
-.eyebrow{display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .75rem;background:var(--accent-light);border-radius:9999px;font-family:var(--ff-sans);font-size:.6875rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .75rem;background:var(--primary-light);border-radius:9999px;font-family:var(--ff-sans);font-size:.6875rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem}
 .section-subtitle{font-size:1.125rem;color:var(--text-secondary);max-width:560px;line-height:1.65}.text-center .section-subtitle{margin:.75rem auto 0}
 .marquee-wrap{overflow:hidden;width:100%;position:relative;padding:1.5rem 0;background:var(--bg-alt)}
 .marquee-inner{display:flex;gap:2rem;width:max-content;animation:marquee 28s linear infinite}@media(prefers-reduced-motion:reduce){.marquee-inner{animation:none}}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .marquee-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:9999px;font-size:.8125rem;font-weight:500;color:var(--text-secondary);white-space:nowrap}.marquee-pill svg{width:14px;height:14px;color:var(--primary);flex-shrink:0}
 .trust-bar{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;padding:1.25rem 0}
-.trust-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:9999px;font-size:.8125rem;font-weight:500;color:var(--text-secondary);transition:all var(--fast)}@media(hover:hover)and(pointer:fine){.trust-pill:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}}
-.trust-pill svg{width:14px;height:14px;color:var(--accent);flex-shrink:0;transition:transform var(--fast)}@media(hover:hover)and(pointer:fine){.trust-pill:hover svg{transform:scale(1.15)}}
+.trust-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:9999px;font-size:.8125rem;font-weight:500;color:var(--text-secondary);transition:all var(--fast)}@media(hover:hover)and(pointer:fine){.trust-pill:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-light)}}
+.trust-pill svg{width:14px;height:14px;color:var(--primary);flex-shrink:0;transition:transform var(--fast)}@media(hover:hover)and(pointer:fine){.trust-pill:hover svg{transform:scale(1.15)}}
 .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .feature-card{background:var(--surface);padding:2.5rem;transition:background var(--base)}@media(hover:hover)and(pointer:fine){.feature-card:hover{background:var(--bg-alt)}}
-.feature-card svg{width:28px;height:28px;color:var(--accent);margin-bottom:1.25rem;display:block}
+.feature-card svg{width:28px;height:28px;color:var(--primary);margin-bottom:1.25rem;display:block}
 .feature-card h3{font-family:var(--ff-sans);font-size:1rem;font-weight:700;margin-bottom:.375rem;letter-spacing:0;color:var(--text)}
 .feature-card p{font-size:.875rem;color:var(--text-secondary);line-height:1.6;max-width:360px}
 .feature-card.feature-wide{grid-column:span 2}@media(max-width:768px){.features-grid{grid-template-columns:1fr}.feature-card.feature-wide{grid-column:span 1;display:block}.feature-card.feature-wide>div:first-child{margin-bottom:1rem}}
 .scores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}@media(max-width:900px){.scores-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.scores-grid{grid-template-columns:1fr}}
 .score-card{background:var(--surface);border-radius:16px;padding:2rem;border:1px solid var(--border);text-align:center;transition:all var(--base);position:relative;overflow:hidden}.score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform var(--base)}@media(hover:hover)and(pointer:fine){.score-card:hover{border-color:var(--primary);box-shadow:0 0 0 1px rgba(10,126,140,.08),0 8px 24px rgba(0,0,0,.04)}.score-card:hover::before{transform:scaleX(1)}}
 .score-card-icon{width:40px;height:40px;margin:0 auto 1rem;border-radius:10px;display:flex;align-items:center;justify-content:center}.score-card-icon svg{width:20px;height:20px}
-.score-card-score{font-family:var(--ff-sans);font-size:2.25rem;font-weight:700;color:var(--accent);line-height:1}
+.score-card-score{font-family:var(--ff-sans);font-size:2.25rem;font-weight:700;color:var(--primary);line-height:1}
 .score-card-score{font-family:var(--ff-sans);font-size:2.25rem;font-weight:700;color:var(--primary);line-height:1;animation:pulseScore 3s ease-in-out infinite}
 @keyframes pulseScore{0%,100%{opacity:1}50%{opacity:.65}}
 .score-card-label{font-size:.6875rem;color:var(--text-muted);margin-top:.5rem;text-transform:uppercase;letter-spacing:.05em}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.services-grid{grid-template-columns:1fr}}
-.service-card{display:flex;flex-direction:column;justify-content:space-between;padding:1.25rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:all var(--fast);min-height:90px}@media(hover:hover)and(pointer:fine){.service-card:hover{border-color:var(--accent);background:var(--accent-light)}}
+.service-card{display:flex;flex-direction:column;justify-content:space-between;padding:1.25rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:all var(--fast);min-height:90px}@media(hover:hover)and(pointer:fine){.service-card:hover{border-color:var(--primary);background:var(--primary-light)}}
 .service-card h4{font-family:var(--ff-sans);font-size:.8125rem;font-weight:600;color:var(--text);letter-spacing:0;margin-bottom:.25rem}
 .service-card p{font-size:.75rem;color:var(--text-secondary);margin:0}
-.service-card .arrow{font-size:1rem;color:var(--text-muted);align-self:flex-end;transition:transform var(--fast)}@media(hover:hover)and(pointer:fine){.service-card:hover .arrow{transform:translateX(3px);color:var(--accent)}}
+.service-card .arrow{font-size:1rem;color:var(--text-muted);align-self:flex-end;transition:transform var(--fast)}@media(hover:hover)and(pointer:fine){.service-card:hover .arrow{transform:translateX(4px) scale(1.1);color:var(--primary)}}
 .areas-grid{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
-.area-pill{display:inline-flex;align-items:center;gap:.375rem;padding:.375rem .875rem;border-radius:9999px;background:var(--surface);border:1px solid var(--border);font-size:.8125rem;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:all var(--fast)}@media(hover:hover)and(pointer:fine){.area-pill:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}}
-.area-pill svg{width:12px;height:12px;color:var(--text-muted);flex-shrink:0;transition:color var(--fast)}@media(hover:hover)and(pointer:fine){.area-pill:hover svg{color:var(--accent)}}
+.area-pill{display:inline-flex;align-items:center;gap:.375rem;padding:.375rem .875rem;border-radius:9999px;background:var(--surface);border:1px solid var(--border);font-size:.8125rem;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:all var(--fast)}@media(hover:hover)and(pointer:fine){.area-pill:hover{background:var(--primary-light);border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}}
+.area-pill svg{width:12px;height:12px;color:var(--text-muted);flex-shrink:0;transition:color var(--fast)}@media(hover:hover)and(pointer:fine){.area-pill:hover svg{color:var(--primary)}}
 .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}@media(max-width:768px){.testimonials-grid{grid-template-columns:1fr}}
 .testi-card{background:var(--surface);padding:2rem;transition:background var(--base)}@media(hover:hover)and(pointer:fine){.testi-card:hover{background:var(--bg-alt)}}
 .testi-stars{display:flex;gap:2px;margin-bottom:1rem}.testi-stars svg{width:14px;height:14px;color:var(--amber)}
 .testi-text{font-size:.9375rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1.5rem;font-style:italic}
-.testi-text .inq{width:18px;height:18px;color:var(--accent);opacity:.3;margin-right:.5rem;vertical-align:middle}
+.testi-text .inq{width:18px;height:18px;color:var(--primary);opacity:.3;margin-right:.5rem;vertical-align:middle}
 .testi-author{display:flex;align-items:center;gap:.75rem}
-.testi-avatar{width:36px;height:36px;border-radius:9999px;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.testi-avatar{width:36px;height:36px;border-radius:9999px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
 .testi-name{font-family:var(--ff-sans);font-size:.8125rem;font-weight:600;color:var(--text)}.testi-role{font-weight:400;color:var(--text-muted)}
 .cta-section{background:var(--hero-bg);color:#fff;text-align:center;padding:5rem 0;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(45,107,79,.1) 0%,transparent 60%);pointer-events:none}
@@ -148,7 +148,7 @@ a{color:var(--primary);transition:color var(--fast)}a:focus-visible{outline:2px 
 
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <a href="/" class="nav-logo" aria-label="GTA Scrub home">
-    <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L88 22 L88 50 C88 72 72 88 50 96 C28 88 12 72 12 50 L12 22 Z" fill="var(--accent)" stroke="var(--accent-hover)" stroke-width="2"/><circle cx="50" cy="50" r="20" fill="white"/><text x="50" y="56" text-anchor="middle" fill="var(--accent)" font-size="15" font-weight="900" font-family="system-ui,sans-serif">GTA</text></svg>
+    <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L88 22 L88 50 C88 72 72 88 50 96 C28 88 12 72 12 50 L12 22 Z" fill="var(--primary)" stroke="var(--primary-hover)" stroke-width="2"/><circle cx="50" cy="50" r="20" fill="white"/><text x="50" y="56" text-anchor="middle" fill="var(--primary)" font-size="15" font-weight="900" font-family="system-ui,sans-serif">GTA</text></svg>
     <span>GTA Scrub</span>
   </a>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" data-toggle="nav-links"><span></span><span></span><span></span></button>
@@ -166,7 +166,7 @@ a{color:var(--primary);transition:color var(--fast)}a:focus-visible{outline:2px 
         <h1 id="hero-title" class="hero-entrance delay-1">Commercial Cleaning That <em>Proves Itself</em> With Every Visit</h1>
         <p class="hero-entrance delay-2">Photo-verified CleanCheck reports. Free demo clean. No long-term contracts. Serving Brampton, Mississauga, Toronto and the entire GTA.</p>
         <div class="hero-actions hero-entrance delay-3">
-          <a href="/contact.html" class="btn btn-accent btn-lg">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
+          <a href="/contact.html" class="btn btn-primary btn-lg">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
           <a href="/services.html" class="btn btn-ghost btn-lg">View Services</a>
         </div>
         <div class="hero-stats hero-entrance delay-4">
@@ -227,11 +227,11 @@ a{color:var(--primary);transition:color var(--fast)}a:focus-visible{outline:2px 
       <div class="feature-card feature-wide animate-stagger" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center">
         <div><h3>Trusted Across the GTA</h3><p>From Mississauga to Markham, from office towers to medical clinics. We serve 14 cities with a 4.9-star average across 87 verified reviews.</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem">
-          <span class="area-pill" style="background:var(--accent-light);border-color:var(--accent);color:var(--accent)">Brampton</span>
-          <span class="area-pill" style="background:var(--accent-light);border-color:var(--accent);color:var(--accent)">Mississauga</span>
-          <span class="area-pill" style="background:var(--accent-light);border-color:var(--accent);color:var(--accent)">Toronto</span>
-          <span class="area-pill" style="background:var(--accent-light);border-color:var(--accent);color:var(--accent)">Vaughan</span>
-          <span class="area-pill" style="background:var(--accent-light);border-color:var(--accent);color:var(--accent)">Markham</span>
+          <span class="area-pill" style="background:var(--primary-light);border-color:var(--primary);color:var(--primary)">Brampton</span>
+          <span class="area-pill" style="background:var(--primary-light);border-color:var(--primary);color:var(--primary)">Mississauga</span>
+          <span class="area-pill" style="background:var(--primary-light);border-color:var(--primary);color:var(--primary)">Toronto</span>
+          <span class="area-pill" style="background:var(--primary-light);border-color:var(--primary);color:var(--primary)">Vaughan</span>
+          <span class="area-pill" style="background:var(--primary-light);border-color:var(--primary);color:var(--primary)">Markham</span>
           <span class="area-pill">+ 9 more cities</span>
         </div>
       </div>
@@ -247,9 +247,9 @@ a{color:var(--primary);transition:color var(--fast)}a:focus-visible{outline:2px 
       <p class="section-subtitle">Every clean is photo-verified and scored out of 100. See the proof.</p>
     </div>
     <div class="scores-grid animate-stagger reveal">
-      <div class="score-card"><div class="score-card-icon" style="background:var(--accent-light)"><svg fill="var(--accent)" aria-hidden="true"><use href="#building"/></svg></div><div class="score-card-score">92</div><div class="score-card-label">Office Tower &middot; Toronto</div></div>
+      <div class="score-card"><div class="score-card-icon" style="background:var(--primary-light)"><svg fill="var(--primary)" aria-hidden="true"><use href="#building"/></svg></div><div class="score-card-score">92</div><div class="score-card-label">Office Tower &middot; Toronto</div></div>
       <div class="score-card"><div class="score-card-icon" style="background:#E8F0FE"><svg fill="#1A6BBF" aria-hidden="true"><use href="#building"/></svg></div><div class="score-card-score" style="color:#1A6BBF">96</div><div class="score-card-label">Dental Clinic &middot; North York</div></div>
-      <div class="score-card"><div class="score-card-icon" style="background:var(--accent-light)"><svg fill="var(--accent)" aria-hidden="true"><use href="#building"/></svg></div><div class="score-card-score">91</div><div class="score-card-label">Retail &middot; Mississauga</div></div>
+      <div class="score-card"><div class="score-card-icon" style="background:var(--primary-light)"><svg fill="var(--primary)" aria-hidden="true"><use href="#building"/></svg></div><div class="score-card-score">91</div><div class="score-card-label">Retail &middot; Mississauga</div></div>
       <div class="score-card"><div class="score-card-icon" style="background:#FEF3C7"><svg fill="#D97706" aria-hidden="true"><use href="#building"/></svg></div><div class="score-card-score" style="color:#D97706">89</div><div class="score-card-label">Warehouse &middot; Brampton</div></div>
     </div>
     <div class="text-center mt-2 reveal"><a href="/case-studies/" class="btn btn-primary">View All Case Studies <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a></div>
@@ -272,7 +272,7 @@ a{color:var(--primary);transition:color var(--fast)}a:focus-visible{outline:2px 
       <a href="/floor-care-stripping-gta/" class="service-card"><div><h4>Floor Care and Stripping</h4><p>Strip, wax, buff, and seal</p></div><span class="arrow">&rarr;</span></a>
       <a href="/carpet-cleaning-gta/" class="service-card"><div><h4>Carpet Cleaning</h4><p>Hot water extraction</p></div><span class="arrow">&rarr;</span></a>
       <a href="/janitorial-services-gta/" class="service-card"><div><h4>Janitorial Services</h4><p>Recurring maintenance</p></div><span class="arrow">&rarr;</span></a>
-      <a href="/services.html" class="service-card" style="border-color:var(--accent);background:var(--accent-light)"><div><h4 style="color:var(--accent)">View All Services</h4><p style="color:var(--accent-muted,var(--accent))">See our full list</p></div><span class="arrow" style="color:var(--accent)">&rarr;</span></a>
+      <a href="/services.html" class="service-card" style="border-color:var(--primary);background:var(--primary-light)"><div><h4 style="color:var(--primary)">View All Services</h4><p style="color:var(--primary)">See our full list</p></div><span class="arrow" style="color:var(--primary)">&rarr;</span></a>
     </div>
   </div>
 </section>

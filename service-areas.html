@@ -22,30 +22,17 @@
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0">
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGTZW5RE50"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-// Core Web Vitals
-if("performance" in window){window.addEventListener("load",function(){setTimeout(function(){try{
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","LCP",{value:Math.round(e[0].startTime),non_interaction:true})}).observe({type:"largest-contentful-paint",buffered:true});
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","FID",{value:Math.round(e[0].processingStart-e[0].startTime),non_interaction:true})}).observe({type:"first-input",buffered:true});
-new PerformanceObserver(function(l){var c=0;for(var e of l.getEntries()){if(!e.hadRecentInput)c+=e.value}gtag("event","CLS",{value:c,non_interaction:true})}).observe({type:"layout-shift",buffered:true})
-}catch(e){}},2000)})}
-gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
-</script>
+<script src="/analytics.js" defer></script>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/style.css?v=9">
-<script src="/script.js?v=9" defer></script>
+<link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.min.css">
+<script src="/script.min.js" defer></script>
 </head>
 <body>
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
+<style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
+
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
   <a href="/" class="nav-logo" aria-label="GTA Scrub home">
@@ -65,6 +52,8 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
   </div>
 
 </nav>
+<main id="main-content">
+
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <span>Service Areas</span></nav>
 <h1>Commercial Cleaning Service Areas in the GTA</h1>
@@ -102,6 +91,8 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
 <p>We likely serve it. Contact us to check availability in your area.</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Contact Us <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
 </div></section>
+
+</main>
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">

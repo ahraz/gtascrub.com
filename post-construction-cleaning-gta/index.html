@@ -23,33 +23,20 @@
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0">
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGTZW5RE50"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-// Core Web Vitals
-if("performance" in window){window.addEventListener("load",function(){setTimeout(function(){try{
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","LCP",{value:Math.round(e[0].startTime),non_interaction:true})}).observe({type:"largest-contentful-paint",buffered:true});
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","FID",{value:Math.round(e[0].processingStart-e[0].startTime),non_interaction:true})}).observe({type:"first-input",buffered:true});
-new PerformanceObserver(function(l){var c=0;for(var e of l.getEntries()){if(!e.hadRecentInput)c+=e.value}gtag("event","CLS",{value:c,non_interaction:true})}).observe({type:"layout-shift",buffered:true})
-}catch(e){}},2000)})}
-gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
-</script>
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="/analytics.js" defer></script>
 
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Post-Construction Cleaning GTA","description":"Post-construction cleaning and debris removal for commercial spaces across the GTA.","provider":{"@type":"LocalBusiness","name":"GTA Scrub"},"areaServed":["Toronto","Mississauga","Brampton","Vaughan","Markham","Scarborough","Etobicoke","North York","Richmond Hill","Oakville","Burlington","Ajax","Whitby","Pickering"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the phases of post-construction cleaning?","acceptedAnswer":{"@type":"Answer","text":"Post-construction cleaning has 5 phases: 1) Heavy debris removal, 2) HEPA vacuuming and dust control on all surfaces, 3) Window and glass cleaning, 4) Kitchen and washroom deep cleaning, 5) Floor care and final polish."}},{"@type":"Question","name":"How much does post-construction cleaning cost in the GTA?","acceptedAnswer":{"@type":"Answer","text":"Post-construction cleaning is priced per project, typically $0.20 to $0.50 per square foot depending on debris level, dust, and finish requirements. We provide free on-site estimates for GTA commercial projects."}},{"@type":"Question","name":"When should post-construction cleaning be scheduled?","acceptedAnswer":{"@type":"Answer","text":"Schedule post-construction cleaning after all trades have finished but before occupancy. The space should be free of large debris. We work with property managers to coordinate timing between contractor completion and move-in."}},{"@type":"Question","name":"Do you remove construction debris?","acceptedAnswer":{"@type":"Answer","text":"Yes. Phase 1 includes removing drywall scraps, lumber offcuts, packaging materials, and general construction waste. We haul away debris so your space is ready for detailed cleaning."}},{"@type":"Question","name":"Can you clean construction dust from HVAC vents?","acceptedAnswer":{"@type":"Answer","text":"Yes. HEPA vacuuming of HVAC vents, registers, and duct openings is a critical part of our dust control phase. This prevents construction dust from circulating through your building\'s ventilation system."}}]}</script>
 
-<link rel="stylesheet" href="/style.css?v=9">
-<script src="/script.js?v=9" defer></script>
+<link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.min.css">
+<script src="/script.min.js" defer></script>
 </head>
 <body>
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
+<style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
+
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
   <a href="/" class="nav-logo" aria-label="GTA Scrub home">
@@ -69,6 +56,8 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
   </div>
 
 </nav>
+<main id="main-content">
+
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/services.html">Services</a> / <span>Post-Construction Cleaning</span></nav>
 <h1>Post-Construction Cleaning in the GTA</h1>
@@ -230,6 +219,8 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
 <p>Get your free quote within 2 hours. Most replies within 30 minutes.</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
 </div></section>
+
+</main>
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">

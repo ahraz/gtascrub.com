@@ -13,29 +13,16 @@
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0">
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGTZW5RE50"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-// Core Web Vitals
-if("performance" in window){window.addEventListener("load",function(){setTimeout(function(){try{
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","LCP",{value:Math.round(e[0].startTime),non_interaction:true})}).observe({type:"largest-contentful-paint",buffered:true});
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","FID",{value:Math.round(e[0].processingStart-e[0].startTime),non_interaction:true})}).observe({type:"first-input",buffered:true});
-new PerformanceObserver(function(l){var c=0;for(var e of l.getEntries()){if(!e.hadRecentInput)c+=e.value}gtag("event","CLS",{value:c,non_interaction:true})}).observe({type:"layout-shift",buffered:true})
-}catch(e){}},2000)})}
-gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
-</script>
+<script src="/analytics.js" defer></script>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/style.css?v=9">
-<script src="/script.js?v=9" defer></script>
-</head><body><nav class="nav" role="navigation" aria-label="Main navigation">
+<link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.min.css">
+<script src="/script.min.js" defer></script>
+</head><body>
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
+<style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
+<nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
   <a href="/" class="nav-logo" aria-label="GTA Scrub home">
     <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#2DD4BF"/></linearGradient></defs><path d="M50 4 L88 22 L88 50 C88 72 72 88 50 96 C28 88 12 72 12 50 L12 22 Z" fill="url(#logoGrad)" stroke="var(--primary-hover)" stroke-width="2"/><circle cx="50" cy="50" r="20" fill="white"/><text x="50" y="56" text-anchor="middle" fill="url(#logoGrad)" font-size="15" font-weight="900" font-family="system-ui,sans-serif">GTA</text></svg>
@@ -43,7 +30,7 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
   </a>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" data-toggle="nav-links"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/" >Home</a></li>
     <li><a href="/services.html" >Services</a></li>
     <li><a href="/about.html" >About</a></li>
     <li><a href="/faq.html" >FAQ</a></li>
@@ -53,7 +40,9 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
   </ul>
   </div>
 
-</nav><section class="page-header"><div class="container">
+</nav>
+<main id="main-content">
+<section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <span>Post-Construction Cleaning Checklist for GTA Prope...</span></nav>
 <h1>Post-Construction Cleaning Checklist for GTA Property Managers</h1><p>June 1, 2025 &middot; By GTA Scrub Team</p></div></section>
 <section class="section"><div class="container content-page">
@@ -80,6 +69,8 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
 <a href="/warehouse-cleaning-gta/" class="btn btn-primary" style="font-size:.85rem;padding:10px 20px">Warehouse Cleaning</a>
 <a href="/contact.html" class="btn btn-accent" style="font-size:.85rem;padding:10px 20px">Get a Free Quote →</a>
 </div></div></section>
+
+</main>
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">

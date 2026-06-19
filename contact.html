@@ -23,31 +23,19 @@
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0">
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGTZW5RE50"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-// Core Web Vitals
-if("performance" in window){window.addEventListener("load",function(){setTimeout(function(){try{
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","LCP",{value:Math.round(e[0].startTime),non_interaction:true})}).observe({type:"largest-contentful-paint",buffered:true});
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","FID",{value:Math.round(e[0].processingStart-e[0].startTime),non_interaction:true})}).observe({type:"first-input",buffered:true});
-new PerformanceObserver(function(l){var c=0;for(var e of l.getEntries()){if(!e.hadRecentInput)c+=e.value}gtag("event","CLS",{value:c,non_interaction:true})}).observe({type:"layout-shift",buffered:true})
-}catch(e){}},2000)})}
-gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
-</script>
+<script src="/analytics.js" defer></script>
 
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GTA Scrub","url":"https://gtascrub.com","logo":"https://gtascrub.com/og-image.svg","sameAs":["https://www.google.com/maps/place/GTA+Scrub/data=!4m2!3m1!1s0x0:0xfdd53a0790dc6b22?sa=X&ved=1t:2428&hl=en-US&ictx=111"],"foundingDate":"2024","description":"Commercial cleaning services across the Greater Toronto Area with photo-verified CleanCheck reports.","slogan":"Cleaning That Proves Itself","numberOfEmployees":"12","telephone":"+1 (289) 277-0213","address":{"@type":"PostalAddress","streetAddress":"20 Glenfield Cres","addressLocality":"Brampton","addressRegion":"ON","postalCode":"L6S1W2","addressCountry":"CA"}}</script>
 
-<link rel="stylesheet" href="/style.css?v=9">
-<script src="/script.js?v=9" defer></script>
+<link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.min.css">
+<script src="/script.min.js" defer></script>
 </head>
-<body><nav class="nav" role="navigation" aria-label="Main navigation">
+<body>
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
+<style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
+<nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
   <a href="/" class="nav-logo" aria-label="GTA Scrub home">
     <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#2DD4BF"/></linearGradient></defs><path d="M50 4 L88 22 L88 50 C88 72 72 88 50 96 C28 88 12 72 12 50 L12 22 Z" fill="url(#logoGrad)" stroke="var(--primary-hover)" stroke-width="2"/><circle cx="50" cy="50" r="20" fill="white"/><text x="50" y="56" text-anchor="middle" fill="url(#logoGrad)" font-size="15" font-weight="900" font-family="system-ui,sans-serif">GTA</text></svg>
@@ -65,18 +53,13 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
   </ul>
   </div>
 
-</nav><section class="page-header"><div class="container">
+</nav>
+<main id="main-content">
+<section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <span>Contact</span></nav>
 <h1>Get Your Free Quote</h1>
 <p style="color:var(--muted);margin-bottom:12px">Ready for a cleaner, healthier workplace? Fill out the form below and we'll get back to you within 2 hours — most replies within 30 minutes.</p>
 <p style="color:var(--muted);margin-bottom:12px"><strong>What to expect:</strong> We'll discuss your facility size, cleaning needs, frequency preferences, and provide a transparent flat-rate quote. No hidden fees, no pressure.</p>
-<p style="color:var(--muted);margin-bottom:20px"><strong>Service areas:</strong> Brampton, Mississauga, Toronto, Vaughan, Markham, Scarborough, Etobicoke, North York, Richmond Hill, Oakville, Burlington, Ajax, Whitby, Pickering.</p>
-<p style="color:var(--muted);margin-top:12px"><strong>Response times:</strong> Most quotes within 30 minutes (2 hours max). Emergency cleaning available within 24 hours.</p>
-<p style="color:var(--muted);margin-top:12px"><strong>Phone hours:</strong> Mon-Fri 7am-8pm, Sat 8am-5pm. After-hours inquiries answered by email within 2 hours.</p>
-<p style="color:var(--muted);margin-top:12px"><strong>Trust & safety:</strong> All GTA Scrub cleaners are insured, bonded, WSIB-covered, and undergo criminal background checks. We carry $2M liability insurance.</p>
-<h2 style="font-size:1.5rem;color:var(--navy);margin-bottom:16px">Get Your Free Commercial Cleaning Quote</h2>
-
-<p>Fill out the form and we'll get back to you within 2 hours</p>
 </div></section>
 <section class="section"><div class="container">
 <div class="two-col">
@@ -104,12 +87,33 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
 <div style="margin-bottom:24px"><h3 style="font-family:var(--font-head);font-weight:700;color:var(--navy);margin-bottom:4px">Address</h3><p style="color:var(--muted)">20 Glenfield Cres<br>Brampton, ON L6S1W2</p></div>
 <div style="margin-bottom:24px"><h3 style="font-family:var(--font-head);font-weight:700;color:var(--navy);margin-bottom:4px">Hours</h3><p style="color:var(--muted)">Mon-Fri: 7am-8pm<br>Sat: 8am-5pm<br>Sun: Closed</p></div>
 <div class="trust-bar" style="justify-content:flex-start"><span class="trust-item">&#x2713; Free quotes</span><span class="trust-item">&#x2713; No obligation</span><span class="trust-item">&#x2713; Response in 2h</span></div>
-</div></div></section>
+
+<section class="faq-section" style="margin-top:3rem"><div class="container">
+<div class="faq-item">
+<button class="faq-q" aria-expanded="false" onclick="this.nextElementSibling.classList.toggle('open');this.setAttribute('aria-expanded',this.attr('aria-expanded')==='true'?'false':'true')">Service Areas <span style="color:var(--primary)">+</span></button>
+<div class="faq-a"><p>Brampton, Mississauga, Toronto, Vaughan, Markham, Scarborough, Etobicoke, North York, Richmond Hill, Oakville, Burlington, Ajax, Whitby, Pickering.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" aria-expanded="false" onclick="this.nextElementSibling.classList.toggle('open');this.setAttribute('aria-expanded',this.attr('aria-expanded')==='true'?'false':'true')">Response Times <span style="color:var(--primary)">+</span></button>
+<div class="faq-a"><p>Most quotes within 30 minutes (2 hours max). Emergency cleaning available within 24 hours.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" aria-expanded="false" onclick="this.nextElementSibling.classList.toggle('open');this.setAttribute('aria-expanded',this.attr('aria-expanded')==='true'?'false':'true')">Phone Hours <span style="color:var(--primary)">+</span></button>
+<div class="faq-a"><p>Mon-Fri 7am-8pm, Sat 8am-5pm. After-hours inquiries answered by email within 2 hours.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" aria-expanded="false" onclick="this.nextElementSibling.classList.toggle('open');this.setAttribute('aria-expanded',this.attr('aria-expanded')==='true'?'false':'true')">Trust &amp; Safety <span style="color:var(--primary)">+</span></button>
+<div class="faq-a"><p>All GTA Scrub cleaners are insured, bonded, WSIB-covered, and undergo criminal background checks. We carry $2M liability insurance.</p></div>
+</div>
+</div></section>
+
 <section style="background:var(--off);padding:40px 0"><div class="container">
 <div style="border-radius:var(--radius);overflow:hidden;height:300px;background:var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted)">
 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
 <span style="margin-left:12px">20 Glenfield Cres, Brampton, ON L6S1W2</span>
-</div></div></section><footer class="footer" role="contentinfo">
+</div></div></section>
+</main>
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">

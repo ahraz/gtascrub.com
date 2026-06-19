@@ -23,32 +23,20 @@
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0">
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGTZW5RE50"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-// Core Web Vitals
-if("performance" in window){window.addEventListener("load",function(){setTimeout(function(){try{
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","LCP",{value:Math.round(e[0].startTime),non_interaction:true})}).observe({type:"largest-contentful-paint",buffered:true});
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","FID",{value:Math.round(e[0].processingStart-e[0].startTime),non_interaction:true})}).observe({type:"first-input",buffered:true});
-new PerformanceObserver(function(l){var c=0;for(var e of l.getEntries()){if(!e.hadRecentInput)c+=e.value}gtag("event","CLS",{value:c,non_interaction:true})}).observe({type:"layout-shift",buffered:true})
-}catch(e){}},2000)})}
-gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
-</script>
+<script src="/analytics.js" defer></script>
 
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GTA Scrub","url":"https://gtascrub.com","logo":"https://gtascrub.com/og-image.svg","sameAs":["https://www.google.com/maps/place/GTA+Scrub/data=!4m2!3m1!1s0x0:0xfdd53a0790dc6b22?sa=X&ved=1t:2428&hl=en-US&ictx=111"],"foundingDate":"2024","description":"Commercial cleaning services across the Greater Toronto Area with photo-verified CleanCheck reports.","slogan":"Cleaning That Proves Itself","numberOfEmployees":"12","telephone":"+1 (289) 277-0213","address":{"@type":"PostalAddress","streetAddress":"20 Glenfield Cres","addressLocality":"Brampton","addressRegion":"ON","postalCode":"L6S1W2","addressCountry":"CA"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What commercial cleaning services do you offer in Ajax?","acceptedAnswer":{"@type":"Answer","text":"We offer comprehensive commercial cleaning in Ajax: office cleaning, medical office cleaning, post-construction cleaning, warehouse cleaning, window cleaning, floor care, carpet cleaning, and janitorial services. All services include CleanCheck photo-verified reports."}},{"@type":"Question","name":"How much does commercial cleaning cost in Ajax?","acceptedAnswer":{"@type":"Answer","text":"Commercial cleaning in Ajax ranges from $0.08 to $0.25 per square foot depending on service type and frequency. We provide free, no-obligation quotes with transparent flat-rate pricing — no hidden fees."}},{"@type":"Question","name":"Are your cleaners serving Ajax insured and background checked?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every GTA Scrub cleaner serving Ajax undergoes a criminal background check. We carry comprehensive liability insurance, bonding, and WSIB coverage for complete peace of mind."}},{"@type":"Question","name":"How quickly can you start commercial cleaning in Ajax?","acceptedAnswer":{"@type":"Answer","text":"Most clients in Ajax are up and running within 3-5 business days. We conduct a walkthrough, create a custom cleaning plan, and schedule your first clean. Evening and weekend cleaning is available."}},{"@type":"Question","name":"Do you serve all of Ajax for commercial cleaning?","acceptedAnswer":{"@type":"Answer","text":"Yes, we serve all areas of Ajax for commercial cleaning. Whether you\'re downtown, in the industrial areas, or suburban commercial zones, our teams can provide service."}}]}</script>
 
-<link rel="stylesheet" href="/style.css?v=9">
-<script src="/script.js?v=9" defer></script>
+<link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.min.css">
+<script src="/script.min.js" defer></script>
 </head>
 <body>
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
+<style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
+
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
   <a href="/" class="nav-logo" aria-label="GTA Scrub home">
@@ -68,6 +56,8 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
   </div>
 
 </nav>
+<main id="main-content">
+
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/service-areas.html">Service Areas</a> / <span>Ajax</span></nav>
 <h1>Commercial Cleaning Services in Ajax, Ontario</h1>
@@ -189,7 +179,9 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
 <h2>Ready for a Cleaner Ajax Workplace?</h2>
 <p>Get your free quote within 2 hours. Most replies within 30 minutes.</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
-</div></section><footer class="footer" role="contentinfo">
+</div></section>
+</main>
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">

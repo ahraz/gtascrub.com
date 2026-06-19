@@ -11,32 +11,20 @@
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0">
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGTZW5RE50"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-// Core Web Vitals
-if("performance" in window){window.addEventListener("load",function(){setTimeout(function(){try{
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","LCP",{value:Math.round(e[0].startTime),non_interaction:true})}).observe({type:"largest-contentful-paint",buffered:true});
-new PerformanceObserver(function(l){var e=l.getEntries();if(e.length>0)gtag("event","FID",{value:Math.round(e[0].processingStart-e[0].startTime),non_interaction:true})}).observe({type:"first-input",buffered:true});
-new PerformanceObserver(function(l){var c=0;for(var e of l.getEntries()){if(!e.hadRecentInput)c+=e.value}gtag("event","CLS",{value:c,non_interaction:true})}).observe({type:"layout-shift",buffered:true})
-}catch(e){}},2000)})}
-gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
-</script>
+<script src="/analytics.js" defer></script>
 
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GTA Scrub","url":"https://gtascrub.com","logo":"https://gtascrub.com/og-image.svg","sameAs":["https://www.google.com/maps/place/GTA+Scrub/data=!4m2!3m1!1s0x0:0xfdd53a0790dc6b22?sa=X&ved=1t:2428&hl=en-US&ictx=111"],"foundingDate":"2024","description":"Commercial cleaning services across the Greater Toronto Area with photo-verified CleanCheck reports.","slogan":"Cleaning That Proves Itself","numberOfEmployees":"12","telephone":"+1 (289) 277-0213","address":{"@type":"PostalAddress","streetAddress":"20 Glenfield Cres","addressLocality":"Brampton","addressRegion":"ON","postalCode":"L6S1W2","addressCountry":"CA"}}</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"50,000 sq ft Office Tower Nightly Cleaning - Toronto","description":"Nightly janitorial services for a 50,000 sq ft Toronto office tower. Achieved CleanCheck score of 94/100, 100% on-time delivery, and 50% fewer complaints.","review":[{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"4.9","bestRating":"5"},"author":{"@type":"Organization","name":"GTA Scrub"}}]}</script>
 
-<link rel="stylesheet" href="/style.css?v=9">
-<script src="/script.js?v=9" defer></script>
-</head><body><nav class="nav" role="navigation" aria-label="Main navigation">
+<link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.min.css">
+<script src="/script.min.js" defer></script>
+</head><body>
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
+<style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
+<nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
   <a href="/" class="nav-logo" aria-label="GTA Scrub home">
     <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#2DD4BF"/></linearGradient></defs><path d="M50 4 L88 22 L88 50 C88 72 72 88 50 96 C28 88 12 72 12 50 L12 22 Z" fill="url(#logoGrad)" stroke="var(--primary-hover)" stroke-width="2"/><circle cx="50" cy="50" r="20" fill="white"/><text x="50" y="56" text-anchor="middle" fill="url(#logoGrad)" font-size="15" font-weight="900" font-family="system-ui,sans-serif">GTA</text></svg>
@@ -54,7 +42,9 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
   </ul>
   </div>
 
-</nav><section class="page-header"><div class="container">
+</nav>
+<main id="main-content">
+<section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/case-studies/">Case Studies</a> / <span>50,000 sq ft Office Tower - Downtown Toronto...</span></nav>
 <h1>50,000 sq ft Office Tower - Downtown Toronto</h1></div></section>
 <section class="section"><div class="container content-page">
@@ -73,7 +63,9 @@ gtag('config', 'G-BGTZW5RE50', { 'send_page_view': true });
 <p style="color:var(--muted);margin-top:16px"><strong>Client quote:</strong> "GTA Scrub exceeded our expectations. The CleanCheck reports give us confidence that every corner of our facility is truly clean."</p>
 </div></section>
 
-<div class="sticky-cta"><a href="/contact.html" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#phone"/></svg>Call +1 (289) 277-0213</a></div><footer class="footer" role="contentinfo">
+<div class="sticky-cta"><a href="/contact.html" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#phone"/></svg>Call +1 (289) 277-0213</a></div>
+</main>
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">

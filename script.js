@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded',function(){
 /* ── Nav toggle ── */
 var t=document.querySelector('[data-toggle="nav-links"]');var n=document.getElementById('nav-links');
-if(t&&n){t.addEventListener('click',function(){n.classList.toggle('open');t.setAttribute('aria-expanded',n.classList.contains('open'));})}
+if(t&&n){t.addEventListener('click',function(){n.classList.toggle('open');t.setAttribute('aria-expanded',n.classList.contains('open'))});n.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false')})})}
 
 /* ── Scroll Observer for .reveal ── */
 var r=document.querySelectorAll('.reveal,.reveal-stagger-children,.counter-row,.marquee-wrap');

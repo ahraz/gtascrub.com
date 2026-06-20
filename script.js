@@ -62,4 +62,39 @@ var nav=document.querySelector('.nav');if(nav){
 var mw=document.querySelector('.marquee-wrap');
 if(mw){mw.addEventListener('mouseenter',function(){this.classList.add('paused')});
 mw.addEventListener('mouseleave',function(){this.classList.remove('paused')})}
+
+/* ── Showcase section scroll animation ── */
+var showcaseEls=document.querySelectorAll('#anim-top, #anim-img, #anim-caption, #anim-notes, #anim-btn');
+var scrubSection=document.getElementById('scrub-section');
+
+function setShowcaseAnim(el,visible,delay,y,duration){
+  if(!el)return;
+  el.style.opacity=visible?'1':'0';
+  el.style.transform=visible?'translate(0,0)':'translateY('+y+'px)';
+  el.style.transition='opacity '+duration+'ms cubic-bezier(0.22,1,0.36,1) '+delay+'ms, transform '+duration+'ms cubic-bezier(0.22,1,0.36,1) '+delay+'ms';
+}
+
+var showcaseAnims=[
+  {id:'anim-top',delay:0,y:12,dur:1400},
+  {id:'anim-img',delay:300,y:40,dur:1800},
+  {id:'anim-caption',delay:600,y:10,dur:1400},
+  {id:'anim-notes',delay:900,y:16,dur:1400},
+  {id:'anim-btn',delay:1150,y:16,dur:1400},
+];
+
+showcaseAnims.forEach(function(a){setShowcaseAnim(document.getElementById(a.id),false,0,a.y,a.dur)});
+
+function triggerShowcase(){
+  showcaseAnims.forEach(function(a){setShowcaseAnim(document.getElementById(a.id),true,a.delay,a.y,a.dur)});
+}
+
+if(scrubSection&&'IntersectionObserver' in window){
+  var so=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){triggerShowcase();so.unobserve(scrubSection)}
+    })
+  },{threshold:0.15});
+  so.observe(scrubSection);
+  setTimeout(triggerShowcase,400);
+}
 });

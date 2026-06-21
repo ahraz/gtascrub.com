@@ -49,8 +49,8 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 
 /* ── Hero ── */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--grad-hero)}
-.hero-bg-anim{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(27,108,168,0.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(52,199,138,0.04) 0%,transparent 50%);animation:heroShift 12s ease-in-out infinite alternate;pointer-events:none}
-@keyframes heroShift{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.hero-bg-anim{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(27,108,168,0.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(52,199,138,0.04) 0%,transparent 50%);animation:pulseOrb 12s ease-in-out infinite alternate;pointer-events:none}
+@keyframes pulseOrb{0%{transform:scale(1)}100%{transform:scale(1.08)}}
 .hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center;width:100%}
 @media(max-width:768px){.hero .container{grid-template-columns:1fr;gap:var(--space-8);text-align:center}}
 .hero-content{max-width:560px}@media(max-width:768px){.hero-content{max-width:100%}}
@@ -105,7 +105,7 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 .service-card:hover .card-link svg{transform:translateX(3px)}
 
 /* ── Pricing Calculator ── */
-.calc-card{border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-12);background:var(--grad-card);position:relative;overflow:hidden};max-width:720px;margin:0 auto}
+.calc-card{border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-12);background:var(--grad-card);position:relative;overflow:hidden;max-width:720px;margin:0 auto}
 @media(max-width:640px){.calc-card{padding:var(--space-6)}}
 .calc-price{text-align:center;margin-bottom:var(--space-8)}
 .calc-price-amount{font-family:var(--font-heading);font-size:var(--text-5xl);font-weight:800;background:var(--grad-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:inline-block}
@@ -169,7 +169,7 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 
 /* ── Final CTA Banner ── */
 .cta-banner{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));padding:var(--space-16) 0;position:relative;overflow:hidden}
-.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,0.06) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(52,199,138,0.08) 0%,transparent 50%);animation:heroShift 15s ease-in-out infinite alternate;pointer-events:none}
+.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,0.06) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(52,199,138,0.08) 0%,transparent 50%);animation:pulseOrb 15s ease-in-out infinite alternate;pointer-events:none}
 .cta-banner .container{position:relative;z-index:1;text-align:center}
 .cta-banner h2{font-family:var(--font-heading);font-size:var(--text-4xl);font-weight:800;color:#fff;margin-bottom:var(--space-3)}
 .cta-banner p{font-size:var(--text-lg);color:rgba(255,255,255,0.8);margin-bottom:var(--space-8);max-width:480px;margin-left:auto;margin-right:auto}
@@ -247,7 +247,7 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 
 /* ── About page extras ── */
 .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6)}@media(max-width:768px){.values-grid{grid-template-columns:1fr}}
-.value-card{text-align:center;padding:var(--space-8);border-radius:var(--radius-lg);background:var(--grad-card);transition:transform .3s,box-shadow .3s}.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)};border:1px solid var(--color-border)}
+.value-card{text-align:center;padding:var(--space-8);border-radius:var(--radius-lg);background:var(--grad-card);transition:transform .3s,box-shadow .3s}.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border:1px solid var(--color-border)}
 .value-card-icon{width:56px;height:56px;border-radius:50%;background:var(--grad-accent);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4)}
 .value-card-icon svg{width:28px;height:28px;color:#0A1628}
 .value-card h3{font-family:var(--font-heading);font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-2)}
@@ -262,7 +262,8 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 .page-intro{padding:var(--space-8) 0 var(--space-16)}
 .page-intro p{font-size:var(--text-lg);color:var(--color-text-muted);line-height:var(--leading-normal);max-width:640px}
 .trust-badges{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;padding:var(--space-8) 0}
-.trust-badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-4);background:var(--grad-card);transition:transform .2s}.trust-badge:hover{transform:translateY(-2px)};border:1px solid var(--color-border);border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600}
+.trust-badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-4);background:var(--grad-card);transition:transform .2s}.trust-badge:hover{transform:translateY(-2px)};border:1px solid var(--color-border);border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600
+
 .trust-badge svg{width:20px;height:20px;color:var(--color-primary)}
 
 /* ── Blog ── */

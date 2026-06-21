@@ -12,7 +12,7 @@ var hero=document.querySelector('.hero');if(hero){for(var i=0;i<15;i++){var dot=
 var style=document.createElement('style');style.textContent='@keyframes float-particle{0%,100%{transform:translateY(0px) translateX(0px);opacity:0.4}33%{transform:translateY(-20px) translateX(10px);opacity:0.8}66%{transform:translateY(10px) translateX(-8px);opacity:0.5}}';document.head.appendChild(style);
 
 /* ── Word-reveal headline ── */
-var h1=document.querySelector('.hero h1');if(h1){var html=h1.innerHTML.replace(/<em[^>]*>(.*?)<\/em>/g,'<span class="hl">$1</span>');var pts=html.split(/(<[^>]+>)/);var out='';var idx=0;for(var pi=0;pi<pts.length;pi++){var p=pts[pi];if(p[0]=='<'){out+=p}else{var ws=p.split(' ');for(var wi=0;wi<ws.length;wi++){if(ws[wi].trim()){out+='<span class="word-reveal" style="animation-delay:"+((idx++)*0.08+0.3)+"s">"+ws[wi]+"</span> "}else{out+=' '}}}}h1.innerHTML=out.trim()}
+var h1=document.querySelector('.hero h1');if(h1){var html=h1.innerHTML.replace(/<em[^>]*>(.*?)<\/em>/g,'<span class="hl">$1</span>');var pts=html.split(/(<[^>]+>)/);var out='';var idx=0;for(var pi=0;pi<pts.length;pi++){var p=pts[pi];if(p[0]=='<'){out+=p}else{var ws=p.split(' ');for(var wi=0;wi<ws.length;wi++){if(ws[wi].trim()){out+='<span class="word-reveal" style="animation-delay:"'+((idx++)*0.08+0.3)+'s">'+ws[wi]+'</span> '}else{out+=' '}}}}h1.innerHTML=out.trim()}
 
 /* ── Cursor glow (desktop only) ── */
 if(window.matchMedia('(pointer: fine)').matches){var glow=document.createElement('div');glow.className='cursor-glow';document.body.appendChild(glow);document.addEventListener('mousemove',function(e){requestAnimationFrame(function(){glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'})})}

@@ -63,3 +63,23 @@
   --max-width: 1200px;
   --content-padding: clamp(1rem, 5vw, 3rem);
 }
+
+  /* ── v2 Premium Visual Upgrade ── */
+
+  /* Rich gradients */
+  --grad-primary:   linear-gradient(135deg, #0F3460 0%, #1B6CA8 50%, #16A085 100%);
+  --grad-hero:      linear-gradient(160deg, #0A1628 0%, #0F3460 40%, #1a4f7a 100%);
+  --grad-accent:    linear-gradient(90deg, #00C9A7, #34C78A);
+  --grad-card:      linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(240,248,255,0.6) 100%);
+  --grad-dark:      linear-gradient(160deg, #0A1628 0%, #0D2137 100%);
+  --grad-trust:      linear-gradient(90deg, #00A884, #34C78A, #00C9A7);
+
+  /* Glassmorphism */
+  --glass-bg:       rgba(255, 255, 255, 0.08);
+  --glass-border:   rgba(255, 255, 255, 0.15);
+  --glass-blur:     blur(20px);
+
+  /* Glow effects */
+  --glow-blue:      0 0 40px rgba(27, 108, 168, 0.35);
+  --glow-green:     0 0 30px rgba(52, 199, 138, 0.30);
+  --glow-white:     0 0 60px rgba(255, 255, 255, 0.08);

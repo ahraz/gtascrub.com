@@ -77,6 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => tl.play(), 200);
   });
 
+  // ─── 1b. HERO VISUAL — fade + scale up on load ──────────────────────────
+  const heroVisual = document.querySelector('[data-animate-hero]');
+  if (heroVisual) {
+    gsap.set(heroVisual, { opacity: 0, scale: 0.92, y: 20 });
+    gsap.to(heroVisual, {
+      opacity:   1,
+      scale:     1,
+      y:         0,
+      duration:  0.8,
+      delay:     0.3,
+      ease:      'power3.out',
+    });
+  }
+
   // ─── 2. SECTION HEADINGS — word-by-word slide up ───────────────────────
   const sectionHeadings = document.querySelectorAll('[data-split="heading"]');
 

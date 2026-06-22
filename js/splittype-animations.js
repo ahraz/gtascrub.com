@@ -28,7 +28,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroHeadlines = document.querySelectorAll('[data-split="hero"]');
 
   heroHeadlines.forEach(el => {
+    // Save text-highlight content before SplitType replaces innerHTML
+    const highlights = [];
+    el.querySelectorAll('.text-highlight').forEach(hl => {
+      highlights.push(hl.textContent.trim().toLowerCase());
+    });
+
     const split = new SplitType(el, { types: 'words,chars' });
+
+    // Remove whitespace text nodes between .char spans to prevent gaps
+    if (split.chars) {
+      split.chars.forEach(ch => {
+        const parent = ch.parentNode;
+        if (parent) {
+          const siblings = parent.childNodes;
+          for (let i = siblings.length - 1; i >= 0; i--) {
+            if (siblings[i].nodeType === 3 && siblings[i].textContent.trim() === '') {
+              siblings[i].remove();
+            }
+          }
+        }
+      });
+    }
+
+    // Re-apply .text-highlight to word spans that match the saved content
+    if (highlights.length && split.words) {
+      split.words.forEach(word => {
+        const text = word.textContent.trim().toLowerCase();
+        if (highlights.includes(text)) {
+          word.classList.add('text-highlight');
+        }
+      });
+    }
 
     gsap.set(split.chars, { opacity: 0, y: 60, rotateX: -40 });
 

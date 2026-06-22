@@ -32,8 +32,38 @@
 <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.min.css?v=17">
 <script src="/script.min.js?v=17" defer></script>
+    <!-- ============================================
+         ANIMATION LIBRARY STACK — DO NOT REORDER
+         ============================================ -->
+
+    <!-- Lenis smooth scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+    <!-- GSAP core + ScrollTrigger + SplitText (now free) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js" defer></script>
+
+    <!-- SplitType (free, open-source SplitText alternative) -->
+    <script src="https://unpkg.com/split-type" defer></script>
+
+    <!-- Swiper.js (testimonials carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- CountUp.js (animated stat counters) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js" defer></script>
+
+    <!-- Barba.js (smooth page transitions) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/2.9.7/barba.umd.min.js" defer></script>
+
+    <!-- vanilla-tilt.js (3D card hover effect) -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+
+    <!-- Lenis (loaded last in head so it is available immediately) -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
 </head>
-<body>
+<body data-barba="wrapper" data-barba="wrapper">
 <a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
 <style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
 
@@ -56,12 +86,12 @@
   </div>
 
 </nav>
-<main id="main-content">
+<main data-barba="container" data-barba-namespace="location" id="main-content">
 
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/service-areas.html">Service Areas</a> / <span>Markham</span></nav>
-<h1>Commercial Cleaning Services in Markham, Ontario</h1>
-<p>Photo-verified cleaning for offices, clinics, and commercial spaces in Markham &amp; York Region</p>
+<h1 data-split="hero">Commercial Cleaning Services in Markham, Ontario</h1>
+<p data-split="lines">Photo-verified cleaning for offices, clinics, and commercial spaces in Markham &amp; York Region</p>
 </div></section>
 <section class="section"><div class="container">
 <div class="two-col">
@@ -81,7 +111,7 @@
 </ul>
 <a href="/contact.html" class="btn btn-primary" style="margin-top:20px;display:inline-flex">Get a Free Quote in Markham &rarr;</a>
 </div>
-<div class="qc-widget"><h2>CleanCheck&trade; Verified</h2>
+<div class="qc-widget"><h2 data-split="heading">CleanCheck&trade; Verified</h2>
 <div class="qc-score"><svg width="160" height="160" viewBox="0 0 160 160"><circle class="qc-score-bg" cx="80" cy="80" r="70"/><circle class="qc-score-fill" cx="80" cy="80" r="70"/></svg>
 <div class="qc-score-text"><div class="qc-score-number">90</div><div class="qc-score-label">/ 100</div></div></div>
 <p style="font-size:.85rem;margin-top:16px">Every clean in Markham is photo-verified and scored. See the proof before you pay.</p>
@@ -100,30 +130,30 @@
 </div></section>
 
 
-<section class="section" style="background:var(--off)"><div class="container"><div class="section-header"><h2>Our <span style="color:var(--green)">Services</span> in Markham</h2><p>Full range of commercial cleaning services available in Markham</p></div><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><a href="/office-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Office Cleaning</a><a href="/medical-office-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Medical Office Cleaning</a><a href="/post-construction-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Post-Construction Cleaning</a><a href="/warehouse-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Warehouse Cleaning</a><a href="/window-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Window Cleaning</a><a href="/floor-care-stripping-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Floor Care &amp; Stripping</a><a href="/carpet-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Carpet Cleaning</a><a href="/janitorial-services-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Janitorial Services</a></div></div></section>
+<section class="section" style="background:var(--off)"><div class="container"><div class="section-header"><h2>Our <span style="color:var(--green)">Services</span> in Markham</h2><p data-split="lines">Full range of commercial cleaning services available in Markham</p></div><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><a href="/office-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Office Cleaning</a><a href="/medical-office-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Medical Office Cleaning</a><a href="/post-construction-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Post-Construction Cleaning</a><a href="/warehouse-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Warehouse Cleaning</a><a href="/window-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Window Cleaning</a><a href="/floor-care-stripping-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Floor Care &amp; Stripping</a><a href="/carpet-cleaning-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Carpet Cleaning</a><a href="/janitorial-services-gta/" style="display:inline-flex;padding:10px 20px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Janitorial Services</a></div></div></section>
 
 <section class="section" style="background:var(--off)" id="faq"><div class="container">
 <div class="section-header"><h2>Commercial Cleaning in Markham <span style="color:var(--green)">FAQ</span></h2></div>
 
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">What commercial cleaning services do you offer in Markham?</button>
-<div class="faq-a"><p>We offer comprehensive commercial cleaning in Markham: office cleaning, medical office cleaning, post-construction cleaning, warehouse cleaning, window cleaning, floor care, carpet cleaning, and janitorial services. All services include CleanCheck photo-verified reports.</p></div>
+<div class="faq-a"><p data-split="lines">We offer comprehensive commercial cleaning in Markham: office cleaning, medical office cleaning, post-construction cleaning, warehouse cleaning, window cleaning, floor care, carpet cleaning, and janitorial services. All services include CleanCheck photo-verified reports.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">How much does commercial cleaning cost in Markham?</button>
-<div class="faq-a"><p>Commercial cleaning in Markham ranges from $0.08 to $0.25 per square foot depending on service type and frequency. We provide free, no-obligation quotes with transparent flat-rate pricing — no hidden fees.</p></div>
+<div class="faq-a"><p data-split="lines">Commercial cleaning in Markham ranges from $0.08 to $0.25 per square foot depending on service type and frequency. We provide free, no-obligation quotes with transparent flat-rate pricing — no hidden fees.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">Are your cleaners serving Markham insured and background checked?</button>
-<div class="faq-a"><p>Yes. Every GTA Scrub cleaner serving Markham undergoes a criminal background check. We carry comprehensive liability insurance, bonding, and WSIB coverage for complete peace of mind.</p></div>
+<div class="faq-a"><p data-split="lines">Yes. Every GTA Scrub cleaner serving Markham undergoes a criminal background check. We carry comprehensive liability insurance, bonding, and WSIB coverage for complete peace of mind.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">How quickly can you start commercial cleaning in Markham?</button>
-<div class="faq-a"><p>Most clients in Markham are up and running within 3-5 business days. We conduct a walkthrough, create a custom cleaning plan, and schedule your first clean. Evening and weekend cleaning is available.</p></div>
+<div class="faq-a"><p data-split="lines">Most clients in Markham are up and running within 3-5 business days. We conduct a walkthrough, create a custom cleaning plan, and schedule your first clean. Evening and weekend cleaning is available.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">Do you serve all of Markham for commercial cleaning?</button>
-<div class="faq-a"><p>Yes, we serve all areas of Markham for commercial cleaning. Whether you're downtown, in the industrial areas, or suburban commercial zones, our teams can provide service.</p></div>
+<div class="faq-a"><p data-split="lines">Yes, we serve all areas of Markham for commercial cleaning. Whether you're downtown, in the industrial areas, or suburban commercial zones, our teams can provide service.</p></div>
 </div>
 </div></section>
 <section class="stats-bar"><div class="container"><div class="stats-grid">
@@ -154,7 +184,7 @@
 </div>
 </div></section>
 <section class="section" style="background:var(--off)"><div class="container">
-<div class="section-header"><h2>Service Areas in Markham</h2></div>
+<div class="section-header"><h2 data-split="heading">Service Areas in Markham</h2></div>
 <div class="areas-grid">
 <a href="/commercial-cleaning-brampton/" class="area-pill">Brampton</a>
 <a href="/commercial-cleaning-mississauga/" class="area-pill">Mississauga</a>
@@ -172,8 +202,8 @@
 <a href="/commercial-cleaning-pickering/" class="area-pill">Pickering</a>
 </div></div></section>
 <section class="cta-section"><div class="container">
-<h2>Ready for a Cleaner Markham Workplace?</h2>
-<p>Get your free quote within 2 hours. Most replies within 30 minutes.</p>
+<h2 data-split="heading">Ready for a Cleaner Markham Workplace?</h2>
+<p data-split="lines">Get your free quote within 2 hours. Most replies within 30 minutes.</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
 </div></section>
 </main>
@@ -182,7 +212,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>GTA Scrub</h3>
-        <p>Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
+        <p data-split="lines">Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
         <div style="display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap">
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#shield"/></svg>Insured and Bonded</span>
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#star"/></svg>4.9 Stars</span>
@@ -193,7 +223,7 @@
       <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/blog/">Blog</a></li><li><a href="/case-studies/">Case Studies</a></li></ul></div>
       <div><h4>Links</h4><ul><li><a href="/vs-jan-pro/">vs Jan-Pro</a></li><li><a href="/sitemap.xml">Sitemap</a></li><li><a href="https://login.gtascrub.com">Client Portal</a></li><li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Reviews</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
+    <div class="footer-bottom"><p data-split="lines">&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
   </div>
 </footer>
 <div class="sticky-cta"><a href="/contact.html" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#phone"/></svg>Call +1 (289) 277-0213</a></div>
@@ -212,4 +242,10 @@
     <symbol id="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.564 6.068 6 8.789 6 11h4v10H0z"/></symbol>
   </defs>
 </svg>
+    <!-- ============================================
+         SITE ANIMATION SCRIPTS — ORDER MATTERS
+         ============================================ -->
+    <script src="/js/lib-init.js"></script>
+    <script src="/js/splittype-animations.js"></script>
+    <script src="/js/animations.js"></script>
 </body></html>

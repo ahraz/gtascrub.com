@@ -216,9 +216,10 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 .faq-q .faq-icon{display:inline-block;font-size:var(--text-xl);font-weight:300;color:var(--color-text-muted);transition:transform .3s;line-height:1}
 .faq-q[aria-expanded="true"] .faq-icon{transform:rotate(45deg);color:var(--color-primary)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 var(--space-6)}
-.faq-body{padding:0 var(--space-6);font-size:var(--text-sm);color:var(--color-text-muted);line-height:var(--leading-normal);padding-bottom:var(--space-4)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 var(--space-6);font-size:var(--text-sm);color:var(--color-text-muted);line-height:var(--leading-normal)}
 .faq-a-inner{padding:0 0 var(--space-6);font-size:var(--text-sm);color:var(--color-text-muted);line-height:var(--leading-normal)}
 .faq-item.open .faq-a{max-height:300px}
+.faq-item.open .faq-body{max-height:300px}
 
 /* ── Final CTA Banner ── */
 .cta-banner{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));padding:var(--space-16) 0;position:relative;overflow:hidden}

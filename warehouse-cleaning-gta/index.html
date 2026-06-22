@@ -32,8 +32,38 @@
 <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.min.css?v=17">
 <script src="/script.min.js?v=17" defer></script>
+    <!-- ============================================
+         ANIMATION LIBRARY STACK — DO NOT REORDER
+         ============================================ -->
+
+    <!-- Lenis smooth scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+    <!-- GSAP core + ScrollTrigger + SplitText (now free) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js" defer></script>
+
+    <!-- SplitType (free, open-source SplitText alternative) -->
+    <script src="https://unpkg.com/split-type" defer></script>
+
+    <!-- Swiper.js (testimonials carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- CountUp.js (animated stat counters) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js" defer></script>
+
+    <!-- Barba.js (smooth page transitions) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/2.9.7/barba.umd.min.js" defer></script>
+
+    <!-- vanilla-tilt.js (3D card hover effect) -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+
+    <!-- Lenis (loaded last in head so it is available immediately) -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
 </head>
-<body>
+<body data-barba="wrapper" data-barba="wrapper">
 <a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
 <style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
 
@@ -56,12 +86,12 @@
   </div>
 
 </nav>
-<main id="main-content">
+<main data-barba="container" data-barba-namespace="service" id="main-content">
 
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/services.html">Services</a> / <span>Warehouse Cleaning</span></nav>
-<h1>Warehouse & Industrial Cleaning in the GTA</h1>
-<p>Large-space cleaning for warehouses, distribution centres, and industrial facilities across the GTA</p>
+<h1 data-split="hero">Warehouse & Industrial Cleaning in the GTA</h1>
+<p data-split="lines">Large-space cleaning for warehouses, distribution centres, and industrial facilities across the GTA</p>
 </div></section><section class="section"><div class="container">
 <div class="two-col">
 <div>
@@ -69,7 +99,7 @@
 <p style="color:var(--muted);margin-bottom:16px">Our industrial cleaning teams use high-capacity equipment designed for large spaces, including ride-on sweepers and scrubbers, HEPA-filtered vacuums, and industrial-grade cleaning solutions. Every clean is documented with CleanCheck™ photo verification.</p>
 <p style="color:var(--muted)"><strong>Warehouse cleaning includes:</strong> floor sweeping and scrubbing, dock area cleaning, dust control on racking and shelving, trash and waste removal, washroom and break room sanitation, and mezzanine cleaning. All teams are insured, bonded, and WSIB-covered.</p>
 <a href="/contact.html" class="btn btn-accent cta-pulse" style="margin-top:20px">Get Your Warehouse Cleaning Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a></div>
-<div class="qc-widget"><h2>CleanCheck™ Verified</h2>
+<div class="qc-widget"><h2 data-split="heading">CleanCheck™ Verified</h2>
 <div class="qc-score"><svg width="160" height="160" viewBox="0 0 160 160"><circle class="qc-score-bg" cx="80" cy="80" r="70"/><circle class="qc-score-fill" cx="80" cy="80" r="70"/></svg>
 <div class="qc-score-text"><div class="qc-score-number">90</div><div class="qc-score-label">/ 100</div></div></div>
 <p style="font-size:.85rem;margin-top:16px">Every warehouse clean is photo-verified and scored.</p>
@@ -105,9 +135,9 @@
 <section class="section" style="background:var(--off)"><div class="container">
 <div class="section-header"><h2>Industrial Cleaning <span style="color:var(--green)">Services</span></h2></div>
 <div class="services-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
-<div class="service-card"><h3>Warehouse Floor Cleaning</h3><p>Ride-on scrubbers and sweepers for large concrete floors. Removes dirt, oil stains, and dust buildup. Improves safety and extends floor life. Weekly or monthly schedules available.</p></div>
-<div class="service-card"><h3>Distribution Centre Cleaning</h3><p>Comprehensive cleaning for high-traffic logistics facilities including dock areas, racking systems, pick zones, packing stations, and break rooms. Minimal disruption to operations.</p></div>
-<div class="service-card"><h3>Industrial Facility Cleaning</h3><p>For manufacturing plants, workshops, and industrial spaces. Includes heavy dust control, machinery cleaning, and compliance with workplace safety standards.</p></div>
+<div class="service-card"><h3>Warehouse Floor Cleaning</h3><p data-split="lines">Ride-on scrubbers and sweepers for large concrete floors. Removes dirt, oil stains, and dust buildup. Improves safety and extends floor life. Weekly or monthly schedules available.</p></div>
+<div class="service-card"><h3>Distribution Centre Cleaning</h3><p data-split="lines">Comprehensive cleaning for high-traffic logistics facilities including dock areas, racking systems, pick zones, packing stations, and break rooms. Minimal disruption to operations.</p></div>
+<div class="service-card"><h3>Industrial Facility Cleaning</h3><p data-split="lines">For manufacturing plants, workshops, and industrial spaces. Includes heavy dust control, machinery cleaning, and compliance with workplace safety standards.</p></div>
 </div></div></section>
 <section class="section"><div class="container">
 <div class="two-col">
@@ -138,23 +168,23 @@
 
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">How much does warehouse cleaning cost?</button>
-<div class="faq-a"><p>Warehouse cleaning typically costs $0.06 to $0.10 per square foot. A 30,000 sq ft facility in Brampton would cost approximately $1,800-$3,000 per month for weekly service.</p></div>
+<div class="faq-a"><p data-split="lines">Warehouse cleaning typically costs $0.06 to $0.10 per square foot. A 30,000 sq ft facility in Brampton would cost approximately $1,800-$3,000 per month for weekly service.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">What equipment do you use for warehouse cleaning?</button>
-<div class="faq-a"><p>We use industrial-grade ride-on scrubbers, sweepers, HEPA backpack vacuums, and pressure washers for large-scale warehouse and industrial facility cleaning.</p></div>
+<div class="faq-a"><p data-split="lines">We use industrial-grade ride-on scrubbers, sweepers, HEPA backpack vacuums, and pressure washers for large-scale warehouse and industrial facility cleaning.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">Can you work around our operating hours?</button>
-<div class="faq-a"><p>Absolutely. We clean warehouses during off-hours, overnight shifts, and weekends to avoid disrupting your operations, shipping schedules, and staff.</p></div>
+<div class="faq-a"><p data-split="lines">Absolutely. We clean warehouses during off-hours, overnight shifts, and weekends to avoid disrupting your operations, shipping schedules, and staff.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">Do you clean warehouse offices and break rooms too?</button>
-<div class="faq-a"><p>Yes. Our warehouse cleaning includes office areas, break rooms, washrooms, and lunch facilities within the facility. We customize the scope based on your layout.</p></div>
+<div class="faq-a"><p data-split="lines">Yes. Our warehouse cleaning includes office areas, break rooms, washrooms, and lunch facilities within the facility. We customize the scope based on your layout.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">Is warehouse cleaning different from office cleaning?</button>
-<div class="faq-a"><p>Yes. Warehouse cleaning requires heavy-duty equipment for large floor areas, industrial dust control, rack and shelving cleaning, dock area maintenance, and specialized floor care for concrete surfaces.</p></div>
+<div class="faq-a"><p data-split="lines">Yes. Warehouse cleaning requires heavy-duty equipment for large floor areas, industrial dust control, rack and shelving cleaning, dock area maintenance, and specialized floor care for concrete surfaces.</p></div>
 </div>
 </div></section>
 <section class="stats-bar"><div class="container"><div class="stats-grid">
@@ -191,7 +221,7 @@
 <p style="text-align:center;margin-top:24px;color:var(--muted);max-width:700px;margin-left:auto;margin-right:auto">We work around your operational schedule — nights, weekends, or during off-hours. All cleaning staff are WSIB-covered and trained in industrial safety protocols.</p>
 </div></section>
 <section class="section" style="background:var(--off)"><div class="container">
-<div class="section-header"><h2>Service Areas</h2><p>We provide warehouse cleaning across the GTA</p></div>
+<div class="section-header"><h2 data-split="heading">Service Areas</h2><p data-split="lines">We provide warehouse cleaning across the GTA</p></div>
 <div class="areas-grid">
 <a href="/commercial-cleaning-brampton/" class="area-pill">Brampton</a>
 <a href="/commercial-cleaning-mississauga/" class="area-pill">Mississauga</a>
@@ -209,12 +239,12 @@
 <a href="/commercial-cleaning-pickering/" class="area-pill">Pickering</a>
 </div></div></section>
 
-<section class="section" style="background:var(--off)"><div class="container"><div class="section-header"><h2>Related <span style="color:var(--green)">Services</span></h2><p>Explore our full range of commercial cleaning services in the GTA</p></div><ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;list-style:none;padding:0;text-align:center"><li style="margin-bottom:6px"><a href="/office-cleaning-gta/">Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/medical-office-cleaning-gta/">Medical Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/post-construction-cleaning-gta/">Post-Construction Cleaning</a></li><li style="margin-bottom:6px"><a href="/window-cleaning-gta/">Window Cleaning</a></li><li style="margin-bottom:6px"><a href="/floor-care-stripping-gta/">Floor Care &amp; Stripping</a></li><li style="margin-bottom:6px"><a href="/carpet-cleaning-gta/">Carpet Cleaning</a></li><li style="margin-bottom:6px"><a href="/janitorial-services-gta/">Janitorial Services</a></li></ul><p style="text-align:center;margin-top:20px"><a href="/services.html" class="btn btn-primary">View All 8 Services &rarr;</a></p></div></section>
+<section class="section" style="background:var(--off)"><div class="container"><div class="section-header"><h2>Related <span style="color:var(--green)">Services</span></h2><p data-split="lines">Explore our full range of commercial cleaning services in the GTA</p></div><ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;list-style:none;padding:0;text-align:center"><li style="margin-bottom:6px"><a href="/office-cleaning-gta/">Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/medical-office-cleaning-gta/">Medical Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/post-construction-cleaning-gta/">Post-Construction Cleaning</a></li><li style="margin-bottom:6px"><a href="/window-cleaning-gta/">Window Cleaning</a></li><li style="margin-bottom:6px"><a href="/floor-care-stripping-gta/">Floor Care &amp; Stripping</a></li><li style="margin-bottom:6px"><a href="/carpet-cleaning-gta/">Carpet Cleaning</a></li><li style="margin-bottom:6px"><a href="/janitorial-services-gta/">Janitorial Services</a></li></ul><p style="text-align:center;margin-top:20px"><a href="/services.html" class="btn btn-primary">View All 8 Services &rarr;</a></p></div></section>
 
-<section class="section" style="background:var(--white)"><div class="container"><div class="section-header"><h2>Also <span style="color:var(--green)">Serving</span></h2><p>We provide this service across all major GTA cities</p></div><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><a href="/commercial-cleaning-brampton/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Brampton</a><a href="/commercial-cleaning-mississauga/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Mississauga</a><a href="/commercial-cleaning-toronto/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Toronto</a><a href="/commercial-cleaning-vaughan/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Vaughan</a><a href="/commercial-cleaning-markham/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Markham</a><a href="/commercial-cleaning-scarborough/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Scarborough</a><a href="/commercial-cleaning-etobicoke/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Etobicoke</a><a href="/commercial-cleaning-north-york/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">North York</a><a href="/commercial-cleaning-richmond-hill/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Richmond Hill</a><a href="/commercial-cleaning-oakville/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Oakville</a><a href="/commercial-cleaning-burlington/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Burlington</a><a href="/commercial-cleaning-ajax/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Ajax</a><a href="/commercial-cleaning-whitby/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Whitby</a><a href="/commercial-cleaning-pickering/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Pickering</a></div></div></section>
+<section class="section" style="background:var(--white)"><div class="container"><div class="section-header"><h2>Also <span style="color:var(--green)">Serving</span></h2><p data-split="lines">We provide this service across all major GTA cities</p></div><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><a href="/commercial-cleaning-brampton/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Brampton</a><a href="/commercial-cleaning-mississauga/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Mississauga</a><a href="/commercial-cleaning-toronto/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Toronto</a><a href="/commercial-cleaning-vaughan/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Vaughan</a><a href="/commercial-cleaning-markham/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Markham</a><a href="/commercial-cleaning-scarborough/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Scarborough</a><a href="/commercial-cleaning-etobicoke/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Etobicoke</a><a href="/commercial-cleaning-north-york/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">North York</a><a href="/commercial-cleaning-richmond-hill/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Richmond Hill</a><a href="/commercial-cleaning-oakville/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Oakville</a><a href="/commercial-cleaning-burlington/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Burlington</a><a href="/commercial-cleaning-ajax/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Ajax</a><a href="/commercial-cleaning-whitby/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Whitby</a><a href="/commercial-cleaning-pickering/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Pickering</a></div></div></section>
 <section class="cta-section"><div class="container">
-<h2>Need Warehouse Cleaning?</h2>
-<p>Get your free quote within 2 hours. Most replies within 30 minutes.</p>
+<h2 data-split="heading">Need Warehouse Cleaning?</h2>
+<p data-split="lines">Get your free quote within 2 hours. Most replies within 30 minutes.</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
 </div></section>
 
@@ -224,7 +254,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>GTA Scrub</h3>
-        <p>Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
+        <p data-split="lines">Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
         <div style="display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap">
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#shield"/></svg>Insured and Bonded</span>
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#star"/></svg>4.9 Stars</span>
@@ -235,7 +265,7 @@
       <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/blog/">Blog</a></li><li><a href="/case-studies/">Case Studies</a></li></ul></div>
       <div><h4>Links</h4><ul><li><a href="/vs-jan-pro/">vs Jan-Pro</a></li><li><a href="/sitemap.xml">Sitemap</a></li><li><a href="https://login.gtascrub.com">Client Portal</a></li><li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Reviews</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
+    <div class="footer-bottom"><p data-split="lines">&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
   </div>
 </footer>
 <div class="sticky-cta"><a href="/contact.html" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#phone"/></svg>Call +1 (289) 277-0213</a></div>
@@ -254,4 +284,10 @@
     <symbol id="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.564 6.068 6 8.789 6 11h4v10H0z"/></symbol>
   </defs>
 </svg>
+    <!-- ============================================
+         SITE ANIMATION SCRIPTS — ORDER MATTERS
+         ============================================ -->
+    <script src="/js/lib-init.js"></script>
+    <script src="/js/splittype-animations.js"></script>
+    <script src="/js/animations.js"></script>
 </body></html>

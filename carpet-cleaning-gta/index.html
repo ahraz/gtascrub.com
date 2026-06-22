@@ -32,8 +32,38 @@
 <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.min.css?v=17">
 <script src="/script.min.js?v=17" defer></script>
+    <!-- ============================================
+         ANIMATION LIBRARY STACK — DO NOT REORDER
+         ============================================ -->
+
+    <!-- Lenis smooth scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+    <!-- GSAP core + ScrollTrigger + SplitText (now free) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js" defer></script>
+
+    <!-- SplitType (free, open-source SplitText alternative) -->
+    <script src="https://unpkg.com/split-type" defer></script>
+
+    <!-- Swiper.js (testimonials carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- CountUp.js (animated stat counters) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js" defer></script>
+
+    <!-- Barba.js (smooth page transitions) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/2.9.7/barba.umd.min.js" defer></script>
+
+    <!-- vanilla-tilt.js (3D card hover effect) -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+
+    <!-- Lenis (loaded last in head so it is available immediately) -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
 </head>
-<body>
+<body data-barba="wrapper" data-barba="wrapper">
 <a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
 <style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
 
@@ -56,12 +86,12 @@
   </div>
 
 </nav>
-<main id="main-content">
+<main data-barba="container" data-barba-namespace="service" id="main-content">
 
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/services.html">Services</a> / <span>Carpet Cleaning</span></nav>
-<h1>Commercial Carpet Cleaning in the GTA</h1>
-<p>Professional carpet cleaning — hot water extraction, spot treatment, and deodorizing for businesses across the GTA</p>
+<h1 data-split="hero">Commercial Carpet Cleaning in the GTA</h1>
+<p data-split="lines">Professional carpet cleaning — hot water extraction, spot treatment, and deodorizing for businesses across the GTA</p>
 </div></section><section class="section"><div class="container">
 <div class="two-col">
 <div>
@@ -69,7 +99,7 @@
 <p style="color:var(--muted);margin-bottom:16px">We use hot water extraction (steam cleaning) combined with commercial-grade cleaning solutions to remove embedded dirt, stains, and odors. Our truck-mounted or portable units deliver professional results every time, documented with CleanCheck™ photo verification.</p>
 <p style="color:var(--muted)"><strong>Carpet cleaning includes:</strong> pre-inspection and spot treatment, hot water extraction, deodorizing, and rapid drying. All work is insured, bonded, and WSIB-covered.</p>
 <a href="/contact.html" class="btn btn-accent cta-pulse" style="margin-top:20px">Get Your Carpet Cleaning Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a></div>
-<div class="qc-widget"><h2>CleanCheck™ Verified</h2>
+<div class="qc-widget"><h2 data-split="heading">CleanCheck™ Verified</h2>
 <div class="qc-score"><svg width="160" height="160" viewBox="0 0 160 160"><circle class="qc-score-bg" cx="80" cy="80" r="70"/><circle class="qc-score-fill" cx="80" cy="80" r="70"/></svg>
 <div class="qc-score-text"><div class="qc-score-number">90</div><div class="qc-score-label">/ 100</div></div></div>
 <p style="font-size:.85rem;margin-top:16px">Every carpet cleaning is photo-verified before sign-off.</p>
@@ -105,9 +135,9 @@
 <section class="section" style="background:var(--off)"><div class="container">
 <div class="section-header"><h2>Carpet Cleaning <span style="color:var(--green)">Services</span></h2></div>
 <div class="services-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
-<div class="service-card"><h3>Hot Water Extraction</h3><p>Deep cleaning using hot water and cleaning solution injected under pressure, then extracted with a powerful vacuum. Removes embedded dirt, allergens, and bacteria. The industry standard for commercial carpet cleaning.</p></div>
-<div class="service-card"><h3>Spot &amp; Stain Treatment</h3><p>Pre-treatment of high-traffic areas and visible stains before full carpet cleaning. Specialized solutions for coffee, ink, food, and traffic patterns.</p></div>
-<div class="service-card"><h3>Deodorizing &amp; Sanitizing</h3><p>Eliminates odors and sanitizes carpets using commercial-grade deodorizers and disinfectants. Ideal for offices, medical clinics, and customer-facing spaces.</p></div>
+<div class="service-card"><h3>Hot Water Extraction</h3><p data-split="lines">Deep cleaning using hot water and cleaning solution injected under pressure, then extracted with a powerful vacuum. Removes embedded dirt, allergens, and bacteria. The industry standard for commercial carpet cleaning.</p></div>
+<div class="service-card"><h3>Spot &amp; Stain Treatment</h3><p data-split="lines">Pre-treatment of high-traffic areas and visible stains before full carpet cleaning. Specialized solutions for coffee, ink, food, and traffic patterns.</p></div>
+<div class="service-card"><h3>Deodorizing &amp; Sanitizing</h3><p data-split="lines">Eliminates odors and sanitizes carpets using commercial-grade deodorizers and disinfectants. Ideal for offices, medical clinics, and customer-facing spaces.</p></div>
 </div></div></section>
 <section class="section"><div class="container">
 <div class="two-col">
@@ -138,23 +168,23 @@
 
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">How often should commercial carpets be professionally cleaned?</button>
-<div class="faq-a"><p>Industry standards recommend professional carpet cleaning every 6-12 months. High-traffic areas may need quarterly cleaning. Regular cleaning extends carpet life by 3-5 years and improves indoor air quality.</p></div>
+<div class="faq-a"><p data-split="lines">Industry standards recommend professional carpet cleaning every 6-12 months. High-traffic areas may need quarterly cleaning. Regular cleaning extends carpet life by 3-5 years and improves indoor air quality.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">What method do you use for carpet cleaning?</button>
-<div class="faq-a"><p>We use hot water extraction (steam cleaning) with truck-mounted or portable units. This method removes deep dirt, allergens, and bacteria while using eco-friendly cleaning solutions.</p></div>
+<div class="faq-a"><p data-split="lines">We use hot water extraction (steam cleaning) with truck-mounted or portable units. This method removes deep dirt, allergens, and bacteria while using eco-friendly cleaning solutions.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">How long does carpet take to dry after cleaning?</button>
-<div class="faq-a"><p>Carpets typically dry within 4-6 hours with our truck-mounted extraction system. We use low-moisture techniques and high-velocity air movers to speed drying time, minimizing business disruption.</p></div>
+<div class="faq-a"><p data-split="lines">Carpets typically dry within 4-6 hours with our truck-mounted extraction system. We use low-moisture techniques and high-velocity air movers to speed drying time, minimizing business disruption.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">Do you treat stains and high-traffic areas?</button>
-<div class="faq-a"><p>Yes. We pre-treat all visible stains and high-traffic soiled areas before the full cleaning. Spot treatments address coffee, ink, food, and other common office stains.</p></div>
+<div class="faq-a"><p data-split="lines">Yes. We pre-treat all visible stains and high-traffic soiled areas before the full cleaning. Spot treatments address coffee, ink, food, and other common office stains.</p></div>
 </div>
 <div class="faq-item">
 <button class="faq-q" aria-expanded="false">Do you offer carpet deodorizing?</button>
-<div class="faq-a"><p>Yes. We include deodorizing treatments as part of our carpet cleaning service. We also offer pet odor treatment, smoke odor removal, and sanitizing treatments for medical facilities.</p></div>
+<div class="faq-a"><p data-split="lines">Yes. We include deodorizing treatments as part of our carpet cleaning service. We also offer pet odor treatment, smoke odor removal, and sanitizing treatments for medical facilities.</p></div>
 </div>
 </div></section>
 <section class="stats-bar"><div class="container"><div class="stats-grid">
@@ -191,7 +221,7 @@
 <p style="text-align:center;margin-top:24px;color:var(--muted);max-width:700px;margin-left:auto;margin-right:auto">We clean all commercial carpet types including broadloom, carpet tile, runner mats, and area rugs. CleanCheck photo reports included with every service.</p>
 </div></section>
 <section class="section" style="background:var(--off)"><div class="container">
-<div class="section-header"><h2>Service Areas</h2><p>We provide carpet cleaning across the GTA</p></div>
+<div class="section-header"><h2 data-split="heading">Service Areas</h2><p data-split="lines">We provide carpet cleaning across the GTA</p></div>
 <div class="areas-grid">
 <a href="/commercial-cleaning-brampton/" class="area-pill">Brampton</a>
 <a href="/commercial-cleaning-mississauga/" class="area-pill">Mississauga</a>
@@ -209,12 +239,12 @@
 <a href="/commercial-cleaning-pickering/" class="area-pill">Pickering</a>
 </div></div></section>
 
-<section class="section" style="background:var(--off)"><div class="container"><div class="section-header"><h2>Related <span style="color:var(--green)">Services</span></h2><p>Explore our full range of commercial cleaning services in the GTA</p></div><ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;list-style:none;padding:0;text-align:center"><li style="margin-bottom:6px"><a href="/office-cleaning-gta/">Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/medical-office-cleaning-gta/">Medical Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/post-construction-cleaning-gta/">Post-Construction Cleaning</a></li><li style="margin-bottom:6px"><a href="/warehouse-cleaning-gta/">Warehouse Cleaning</a></li><li style="margin-bottom:6px"><a href="/window-cleaning-gta/">Window Cleaning</a></li><li style="margin-bottom:6px"><a href="/floor-care-stripping-gta/">Floor Care &amp; Stripping</a></li><li style="margin-bottom:6px"><a href="/janitorial-services-gta/">Janitorial Services</a></li></ul><p style="text-align:center;margin-top:20px"><a href="/services.html" class="btn btn-primary">View All 8 Services &rarr;</a></p></div></section>
+<section class="section" style="background:var(--off)"><div class="container"><div class="section-header"><h2>Related <span style="color:var(--green)">Services</span></h2><p data-split="lines">Explore our full range of commercial cleaning services in the GTA</p></div><ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;list-style:none;padding:0;text-align:center"><li style="margin-bottom:6px"><a href="/office-cleaning-gta/">Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/medical-office-cleaning-gta/">Medical Office Cleaning</a></li><li style="margin-bottom:6px"><a href="/post-construction-cleaning-gta/">Post-Construction Cleaning</a></li><li style="margin-bottom:6px"><a href="/warehouse-cleaning-gta/">Warehouse Cleaning</a></li><li style="margin-bottom:6px"><a href="/window-cleaning-gta/">Window Cleaning</a></li><li style="margin-bottom:6px"><a href="/floor-care-stripping-gta/">Floor Care &amp; Stripping</a></li><li style="margin-bottom:6px"><a href="/janitorial-services-gta/">Janitorial Services</a></li></ul><p style="text-align:center;margin-top:20px"><a href="/services.html" class="btn btn-primary">View All 8 Services &rarr;</a></p></div></section>
 
-<section class="section" style="background:var(--white)"><div class="container"><div class="section-header"><h2>Also <span style="color:var(--green)">Serving</span></h2><p>We provide this service across all major GTA cities</p></div><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><a href="/commercial-cleaning-brampton/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Brampton</a><a href="/commercial-cleaning-mississauga/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Mississauga</a><a href="/commercial-cleaning-toronto/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Toronto</a><a href="/commercial-cleaning-vaughan/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Vaughan</a><a href="/commercial-cleaning-markham/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Markham</a><a href="/commercial-cleaning-scarborough/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Scarborough</a><a href="/commercial-cleaning-etobicoke/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Etobicoke</a><a href="/commercial-cleaning-north-york/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">North York</a><a href="/commercial-cleaning-richmond-hill/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Richmond Hill</a><a href="/commercial-cleaning-oakville/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Oakville</a><a href="/commercial-cleaning-burlington/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Burlington</a><a href="/commercial-cleaning-ajax/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Ajax</a><a href="/commercial-cleaning-whitby/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Whitby</a><a href="/commercial-cleaning-pickering/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Pickering</a></div></div></section>
+<section class="section" style="background:var(--white)"><div class="container"><div class="section-header"><h2>Also <span style="color:var(--green)">Serving</span></h2><p data-split="lines">We provide this service across all major GTA cities</p></div><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><a href="/commercial-cleaning-brampton/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Brampton</a><a href="/commercial-cleaning-mississauga/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Mississauga</a><a href="/commercial-cleaning-toronto/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Toronto</a><a href="/commercial-cleaning-vaughan/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Vaughan</a><a href="/commercial-cleaning-markham/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Markham</a><a href="/commercial-cleaning-scarborough/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Scarborough</a><a href="/commercial-cleaning-etobicoke/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Etobicoke</a><a href="/commercial-cleaning-north-york/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">North York</a><a href="/commercial-cleaning-richmond-hill/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Richmond Hill</a><a href="/commercial-cleaning-oakville/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Oakville</a><a href="/commercial-cleaning-burlington/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Burlington</a><a href="/commercial-cleaning-ajax/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Ajax</a><a href="/commercial-cleaning-whitby/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Whitby</a><a href="/commercial-cleaning-pickering/" style="display:inline-flex;padding:8px 16px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:.85rem;color:var(--text);text-decoration:none">Pickering</a></div></div></section>
 <section class="cta-section"><div class="container">
-<h2>Need Carpet Cleaning?</h2>
-<p>Get your free quote within 2 hours. Most replies within 30 minutes.</p>
+<h2 data-split="heading">Need Carpet Cleaning?</h2>
+<p data-split="lines">Get your free quote within 2 hours. Most replies within 30 minutes.</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a>
 </div></section>
 
@@ -224,7 +254,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>GTA Scrub</h3>
-        <p>Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
+        <p data-split="lines">Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
         <div style="display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap">
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#shield"/></svg>Insured and Bonded</span>
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#star"/></svg>4.9 Stars</span>
@@ -235,7 +265,7 @@
       <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/blog/">Blog</a></li><li><a href="/case-studies/">Case Studies</a></li></ul></div>
       <div><h4>Links</h4><ul><li><a href="/vs-jan-pro/">vs Jan-Pro</a></li><li><a href="/sitemap.xml">Sitemap</a></li><li><a href="https://login.gtascrub.com">Client Portal</a></li><li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Reviews</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
+    <div class="footer-bottom"><p data-split="lines">&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
   </div>
 </footer>
 <div class="sticky-cta"><a href="/contact.html" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#phone"/></svg>Call +1 (289) 277-0213</a></div>
@@ -254,4 +284,10 @@
     <symbol id="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.564 6.068 6 8.789 6 11h4v10H0z"/></symbol>
   </defs>
 </svg>
+    <!-- ============================================
+         SITE ANIMATION SCRIPTS — ORDER MATTERS
+         ============================================ -->
+    <script src="/js/lib-init.js"></script>
+    <script src="/js/splittype-animations.js"></script>
+    <script src="/js/animations.js"></script>
 </body></html>

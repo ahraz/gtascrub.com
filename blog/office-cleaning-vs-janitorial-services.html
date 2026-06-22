@@ -19,7 +19,37 @@
 <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.min.css?v=17">
 <script src="/script.min.js?v=17" defer></script>
-</head><body>
+    <!-- ============================================
+         ANIMATION LIBRARY STACK — DO NOT REORDER
+         ============================================ -->
+
+    <!-- Lenis smooth scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+    <!-- GSAP core + ScrollTrigger + SplitText (now free) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js" defer></script>
+
+    <!-- SplitType (free, open-source SplitText alternative) -->
+    <script src="https://unpkg.com/split-type" defer></script>
+
+    <!-- Swiper.js (testimonials carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- CountUp.js (animated stat counters) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js" defer></script>
+
+    <!-- Barba.js (smooth page transitions) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/2.9.7/barba.umd.min.js" defer></script>
+
+    <!-- vanilla-tilt.js (3D card hover effect) -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+
+    <!-- Lenis (loaded last in head so it is available immediately) -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+</head><body data-barba="wrapper" data-barba="wrapper">
 <a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
 <style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
 <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -41,27 +71,27 @@
   </div>
 
 </nav>
-<main id="main-content">
+<main data-barba="container" data-barba-namespace="page" id="main-content">
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <span>Office Cleaning vs Janitorial Services: What's the...</span></nav>
-<h1>Office Cleaning vs Janitorial Services: What's the Difference for GTA Businesses?</h1><p>May 22, 2025 &middot; By GTA Scrub Team</p></div></section>
+<h1 data-split="hero">Office Cleaning vs Janitorial Services: What's the Difference for GTA Businesses?</h1><p data-split="lines">May 22, 2025 &middot; By GTA Scrub Team</p></div></section>
 <section class="section"><div class="container content-page">
-<h2>What Is Janitorial Service?</h2>
-<p>Janitorial service is maintenance cleaning performed daily or frequently to keep a facility clean. Tasks include emptying bins, cleaning washrooms, mopping floors, vacuuming carpets, dusting surfaces, and restocking supplies. Most GTA businesses use janitorial services daily or several times per week.</p>
-<h2>What Is Office Cleaning?</h2>
-<p>Office cleaning goes deeper, addressing tasks that don't need daily attention: deep carpet cleaning, floor stripping and waxing, interior window cleaning, detailing kitchen appliances, and deep dusting of vents. Typically scheduled weekly, bi-weekly, or monthly.</p>
-<h2>Key Differences</h2>
-<p>Janitorial is high-frequency, surface-level maintenance. Office cleaning is lower frequency but greater depth. Most GTA businesses benefit from combining both: daily janitorial plus periodic deep cleaning. GTA Scrub offers integrated programs combining both services.</p>
-<h2>Why GTA Businesses Need Both</h2>
-<p>Janitorial alone leaves accumulated dust and grime that shortens carpet life and reduces air quality. Office cleaning alone cannot maintain daily washroom sanitation. The most cost-effective approach includes both services tailored to your needs.</p>
-<h2>Building a Combined Program</h2>
-<p>GTA Scrub starts with a free assessment to design a customized program. Typically daily or thrice-weekly janitorial plus monthly deep cleaning. Every visit documented with CleanCheck photo-verified reports for complete accountability.</p>
+<h2 data-split="heading">What Is Janitorial Service?</h2>
+<p data-split="lines">Janitorial service is maintenance cleaning performed daily or frequently to keep a facility clean. Tasks include emptying bins, cleaning washrooms, mopping floors, vacuuming carpets, dusting surfaces, and restocking supplies. Most GTA businesses use janitorial services daily or several times per week.</p>
+<h2 data-split="heading">What Is Office Cleaning?</h2>
+<p data-split="lines">Office cleaning goes deeper, addressing tasks that don't need daily attention: deep carpet cleaning, floor stripping and waxing, interior window cleaning, detailing kitchen appliances, and deep dusting of vents. Typically scheduled weekly, bi-weekly, or monthly.</p>
+<h2 data-split="heading">Key Differences</h2>
+<p data-split="lines">Janitorial is high-frequency, surface-level maintenance. Office cleaning is lower frequency but greater depth. Most GTA businesses benefit from combining both: daily janitorial plus periodic deep cleaning. GTA Scrub offers integrated programs combining both services.</p>
+<h2 data-split="heading">Why GTA Businesses Need Both</h2>
+<p data-split="lines">Janitorial alone leaves accumulated dust and grime that shortens carpet life and reduces air quality. Office cleaning alone cannot maintain daily washroom sanitation. The most cost-effective approach includes both services tailored to your needs.</p>
+<h2 data-split="heading">Building a Combined Program</h2>
+<p data-split="lines">GTA Scrub starts with a free assessment to design a customized program. Typically daily or thrice-weekly janitorial plus monthly deep cleaning. Every visit documented with CleanCheck photo-verified reports for complete accountability.</p>
 <div style="background:var(--off);border-radius:var(--radius);padding:32px;text-align:center;margin-top:32px">
 <p style="font-size:1.1rem;margin-bottom:16px">Get your free, no-obligation quote today.</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a></div></div></section>
 <div class="sticky-cta"><a href="/contact.html" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#phone"/></svg>Call +1 (289) 277-0213</a></div>
 <section class="section" style="background:var(--off)"><div class="container">
-<div class="section-header"><h2>Professional Commercial Cleaning <span style="color:var(--green)">in the GTA</span></h2><p>Need expert cleaning services? GTA Scrub provides photo-verified commercial cleaning across Brampton, Mississauga, Toronto, and all GTA cities.</p></div>
+<div class="section-header"><h2>Professional Commercial Cleaning <span style="color:var(--green)">in the GTA</span></h2><p data-split="lines">Need expert cleaning services? GTA Scrub provides photo-verified commercial cleaning across Brampton, Mississauga, Toronto, and all GTA cities.</p></div>
 <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
 <a href="/office-cleaning-gta/" class="btn btn-primary" style="font-size:.85rem;padding:10px 20px">Office Cleaning</a>
 <a href="/medical-office-cleaning-gta/" class="btn btn-primary" style="font-size:.85rem;padding:10px 20px">Medical Office Cleaning</a>
@@ -76,7 +106,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>GTA Scrub</h3>
-        <p>Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
+        <p data-split="lines">Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
         <div style="display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap">
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#shield"/></svg>Insured and Bonded</span>
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#star"/></svg>4.9 Stars</span>
@@ -87,7 +117,7 @@
       <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/blog/">Blog</a></li><li><a href="/case-studies/">Case Studies</a></li></ul></div>
       <div><h4>Links</h4><ul><li><a href="/vs-jan-pro/">vs Jan-Pro</a></li><li><a href="/sitemap.xml">Sitemap</a></li><li><a href="https://login.gtascrub.com">Client Portal</a></li><li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Reviews</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
+    <div class="footer-bottom"><p data-split="lines">&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
   </div>
 </footer>
 
@@ -105,4 +135,10 @@
     <symbol id="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.564 6.068 6 8.789 6 11h4v10H0z"/></symbol>
   </defs>
 </svg>
+    <!-- ============================================
+         SITE ANIMATION SCRIPTS — ORDER MATTERS
+         ============================================ -->
+    <script src="/js/lib-init.js"></script>
+    <script src="/js/splittype-animations.js"></script>
+    <script src="/js/animations.js"></script>
 </body></html>

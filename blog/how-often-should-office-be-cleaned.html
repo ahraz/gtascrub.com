@@ -19,7 +19,37 @@
 <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.min.css?v=17">
 <script src="/script.min.js?v=17" defer></script>
-</head><body>
+    <!-- ============================================
+         ANIMATION LIBRARY STACK — DO NOT REORDER
+         ============================================ -->
+
+    <!-- Lenis smooth scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+    <!-- GSAP core + ScrollTrigger + SplitText (now free) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js" defer></script>
+
+    <!-- SplitType (free, open-source SplitText alternative) -->
+    <script src="https://unpkg.com/split-type" defer></script>
+
+    <!-- Swiper.js (testimonials carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- CountUp.js (animated stat counters) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js" defer></script>
+
+    <!-- Barba.js (smooth page transitions) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/2.9.7/barba.umd.min.js" defer></script>
+
+    <!-- vanilla-tilt.js (3D card hover effect) -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+
+    <!-- Lenis (loaded last in head so it is available immediately) -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+</head><body data-barba="wrapper" data-barba="wrapper">
 <a href="#main-content" style="position:absolute;left:-9999px;z-index:9999;padding:.5rem 1rem;background:var(--primary);color:#fff;text-decoration:none;font-size:.875rem">Skip to main content</a>
 <style>a[href="#main-content"]:focus{left:1rem;top:1rem;clip:auto}</style>
 <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -41,27 +71,27 @@
   </div>
 
 </nav>
-<main id="main-content">
+<main data-barba="container" data-barba-namespace="page" id="main-content">
 <section class="page-header"><div class="container">
 <nav class="breadcrumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <span>How Often Should Your Office Be Cleaned? A Guide f...</span></nav>
-<h1>How Often Should Your Office Be Cleaned? A Guide for GTA Business Owners</h1><p>June 10, 2025 &middot; By GTA Scrub Team</p></div></section>
+<h1 data-split="hero">How Often Should Your Office Be Cleaned? A Guide for GTA Business Owners</h1><p data-split="lines">June 10, 2025 &middot; By GTA Scrub Team</p></div></section>
 <section class="section"><div class="container content-page">
-<h2>Daily Office Cleaning: Who Needs It?</h2>
-<p>High-traffic offices, customer-facing retail spaces, medical clinics, and shared workspaces benefit most from daily professional cleaning. In Toronto's downtown core, offices with over 50 employees typically require daily service to maintain hygiene and appearance. Daily cleaning includes emptying all bins, sanitizing kitchen and washroom surfaces, wiping down high-touch points like door handles and elevator buttons, vacuuming high-traffic areas, and a quick dusting of visible surfaces.</p>
-<h2>Weekly Office Cleaning: The Sweet Spot for Most Businesses</h2>
-<p>For the average GTA office with 10-30 employees, weekly professional cleaning strikes the ideal balance between cost and cleanliness. Weekly service includes everything in a daily clean plus deeper vacuuming of carpeted areas, mopping hard floors, detailed dusting of blinds and ledges, cleaning interior windows, and restocking washroom supplies. Offices in Brampton, Mississauga, and Vaughan often fall into this category.</p>
-<h2>Bi-Weekly and Monthly Deep Cleaning</h2>
-<p>Some smaller offices or those with limited foot traffic may opt for bi-weekly or monthly professional cleaning. While this works for very small teams, we generally advise that bi-weekly cleaning often misses the mark on washroom hygiene and kitchen sanitation. Monthly deep cleaning is best as a supplement to weekly or daily service, focusing on carpet shampooing, floor stripping and waxing, and deep cleaning of appliances.</p>
-<h2>Factors That Affect Cleaning Frequency in GTA Offices</h2>
-<p>Several variables determine ideal cleaning frequency. Employee count directly correlates with how quickly a space gets dirty. The nature of your work matters too: medical offices require daily sanitization per Ontario PHO guidelines. Your location plays a role: downtown Toronto offices contend with more outdoor pollutants than suburban offices in Oakville or Richmond Hill. Seasonal factors like winter salt, spring pollen, and construction dust can all increase cleaning needs.</p>
-<h2>Office Cleaning Frequency by Season</h2>
-<p>GTA businesses should consider seasonal adjustments. Winter brings salt and sand into lobbies, requiring daily mopping of entrance areas. Spring and fall allergy seasons call for more frequent dusting and HEPA vacuuming. The smartest approach is a flexible cleaning agreement allowing you to increase frequency during peak months — exactly what GTA Scrub offers our clients across the GTA.</p>
+<h2 data-split="heading">Daily Office Cleaning: Who Needs It?</h2>
+<p data-split="lines">High-traffic offices, customer-facing retail spaces, medical clinics, and shared workspaces benefit most from daily professional cleaning. In Toronto's downtown core, offices with over 50 employees typically require daily service to maintain hygiene and appearance. Daily cleaning includes emptying all bins, sanitizing kitchen and washroom surfaces, wiping down high-touch points like door handles and elevator buttons, vacuuming high-traffic areas, and a quick dusting of visible surfaces.</p>
+<h2 data-split="heading">Weekly Office Cleaning: The Sweet Spot for Most Businesses</h2>
+<p data-split="lines">For the average GTA office with 10-30 employees, weekly professional cleaning strikes the ideal balance between cost and cleanliness. Weekly service includes everything in a daily clean plus deeper vacuuming of carpeted areas, mopping hard floors, detailed dusting of blinds and ledges, cleaning interior windows, and restocking washroom supplies. Offices in Brampton, Mississauga, and Vaughan often fall into this category.</p>
+<h2 data-split="heading">Bi-Weekly and Monthly Deep Cleaning</h2>
+<p data-split="lines">Some smaller offices or those with limited foot traffic may opt for bi-weekly or monthly professional cleaning. While this works for very small teams, we generally advise that bi-weekly cleaning often misses the mark on washroom hygiene and kitchen sanitation. Monthly deep cleaning is best as a supplement to weekly or daily service, focusing on carpet shampooing, floor stripping and waxing, and deep cleaning of appliances.</p>
+<h2 data-split="heading">Factors That Affect Cleaning Frequency in GTA Offices</h2>
+<p data-split="lines">Several variables determine ideal cleaning frequency. Employee count directly correlates with how quickly a space gets dirty. The nature of your work matters too: medical offices require daily sanitization per Ontario PHO guidelines. Your location plays a role: downtown Toronto offices contend with more outdoor pollutants than suburban offices in Oakville or Richmond Hill. Seasonal factors like winter salt, spring pollen, and construction dust can all increase cleaning needs.</p>
+<h2 data-split="heading">Office Cleaning Frequency by Season</h2>
+<p data-split="lines">GTA businesses should consider seasonal adjustments. Winter brings salt and sand into lobbies, requiring daily mopping of entrance areas. Spring and fall allergy seasons call for more frequent dusting and HEPA vacuuming. The smartest approach is a flexible cleaning agreement allowing you to increase frequency during peak months — exactly what GTA Scrub offers our clients across the GTA.</p>
 <div style="background:var(--off);border-radius:var(--radius);padding:32px;text-align:center;margin-top:32px">
 <p style="font-size:1.1rem;margin-bottom:16px">Ready for professional commercial cleaning in the GTA?</p>
 <a href="/contact.html" class="btn btn-accent btn-lg cta-pulse">Get Your Free Quote <span class="btn-icon-wrap"><svg aria-hidden="true"><use href="#arrow-right"/></svg></span></a></div></div></section>
 <div class="sticky-cta"><a href="/contact.html" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#phone"/></svg>Call +1 (289) 277-0213</a></div>
 <section class="section" style="background:var(--off)"><div class="container">
-<div class="section-header"><h2>Professional Commercial Cleaning <span style="color:var(--green)">in the GTA</span></h2><p>Need expert cleaning services? GTA Scrub provides photo-verified commercial cleaning across Brampton, Mississauga, Toronto, and all GTA cities.</p></div>
+<div class="section-header"><h2>Professional Commercial Cleaning <span style="color:var(--green)">in the GTA</span></h2><p data-split="lines">Need expert cleaning services? GTA Scrub provides photo-verified commercial cleaning across Brampton, Mississauga, Toronto, and all GTA cities.</p></div>
 <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
 <a href="/office-cleaning-gta/" class="btn btn-primary" style="font-size:.85rem;padding:10px 20px">Office Cleaning</a>
 <a href="/medical-office-cleaning-gta/" class="btn btn-primary" style="font-size:.85rem;padding:10px 20px">Medical Office Cleaning</a>
@@ -76,7 +106,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>GTA Scrub</h3>
-        <p>Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
+        <p data-split="lines">Commercial cleaning and janitorial services across the Greater Toronto Area. Photo-verified CleanCheck reports with every clean.</p>
         <div style="display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap">
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#shield"/></svg>Insured and Bonded</span>
           <span style="display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .625rem;background:rgba(255,255,255,.05);border-radius:9999px;font-size:.75rem"><svg width="12" height="12" aria-hidden="true"><use href="#star"/></svg>4.9 Stars</span>
@@ -87,7 +117,7 @@
       <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/blog/">Blog</a></li><li><a href="/case-studies/">Case Studies</a></li></ul></div>
       <div><h4>Links</h4><ul><li><a href="/vs-jan-pro/">vs Jan-Pro</a></li><li><a href="/sitemap.xml">Sitemap</a></li><li><a href="https://login.gtascrub.com">Client Portal</a></li><li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Reviews</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
+    <div class="footer-bottom"><p data-split="lines">&copy; 2025 GTA Scrub. All rights reserved. &middot; 20 Glenfield Cres, Brampton, ON L6S1W2 &middot; +1 (289) 277-0213</p></div>
   </div>
 </footer>
 
@@ -105,4 +135,10 @@
     <symbol id="quote" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.564 6.068 6 8.789 6 11h4v10H0z"/></symbol>
   </defs>
 </svg>
+    <!-- ============================================
+         SITE ANIMATION SCRIPTS — ORDER MATTERS
+         ============================================ -->
+    <script src="/js/lib-init.js"></script>
+    <script src="/js/splittype-animations.js"></script>
+    <script src="/js/animations.js"></script>
 </body></html>

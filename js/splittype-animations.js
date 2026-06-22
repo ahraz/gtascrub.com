@@ -92,19 +92,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─── 4. HIGHLIGHT TEXT — shimmer reveal ────────────────────────────────
+  // Must run AFTER hero headline SplitType split so .char children exist
   const highlights = document.querySelectorAll('.text-highlight');
 
   highlights.forEach(el => {
-    el.style.cssText += `
-      background: linear-gradient(90deg, #34C78A, #00D4FF, #1B6CA8, #34C78A);
-      background-size: 300% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    `;
+    // Target both the parent and any .char children SplitType may have created
+    const targets = el.querySelectorAll('.char, .word');
+    const applyTo = targets.length ? targets : [el];
+
+    // Apply gradient via style (more reliable for vendor prefixes than GSAP set)
+    const gradientCss = [
+      'background: linear-gradient(90deg, #34C78A, #00D4FF, #1B6CA8, #34C78A)',
+      'background-size: 300% auto',
+      '-webkit-background-clip: text',
+      '-webkit-text-fill-color: transparent',
+      'background-clip: text',
+    ].join(';');
+
+    applyTo.forEach(el => {
+      el.style.cssText += gradientCss;
+    });
 
     const tl = gsap.timeline({ paused: true });
-    tl.to(el, {
+    tl.to(applyTo, {
       backgroundPosition: '300% center',
       duration:           2.5,
       ease:               'none',

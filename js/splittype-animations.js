@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const counters = document.querySelectorAll('[data-countup="true"]');
 
   counters.forEach(el => {
-    const endVal   = parseInt(el.dataset.count || '0', 10);
+    const endVal   = parseFloat(el.dataset.count || '0');
     const suffix   = el.dataset.suffix || '';
     const prefix   = el.dataset.prefix || '';
     const decimals = parseInt(el.dataset.decimals || '0', 10);

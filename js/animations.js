@@ -169,49 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ═══════════════════════════════════════════════════════════════════
-  // 7. FAQ ACCORDION
-  // Targets .faq-item elements. One open at a time.
-  // ═══════════════════════════════════════════════════════════════════
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const trigger = item.querySelector('.faq-trigger, .faq-q');
-    const body    = item.querySelector('.faq-body');
-    const icon    = item.querySelector('.faq-icon');
-
-    if (!trigger || !body) return;
-
-    gsap.set(body, { height: 0, overflow: 'hidden', opacity: 0 });
-
-    trigger.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-
-      // Close all others
-      faqItems.forEach(other => {
-        if (other !== item && other.classList.contains('open')) {
-          other.classList.remove('open');
-          const otherBody = other.querySelector('.faq-body');
-          const otherIcon = other.querySelector('.faq-icon');
-          gsap.to(otherBody, { height: 0, opacity: 0, duration: 0.35, ease: 'power2.inOut' });
-          if (otherIcon) gsap.to(otherIcon, { rotation: 0, duration: 0.3, ease: 'power2.out' });
-        }
-      });
-
-      // Toggle this item
-      if (isOpen) {
-        item.classList.remove('open');
-        gsap.to(body, { height: 0, opacity: 0, duration: 0.35, ease: 'power2.inOut' });
-        if (icon) gsap.to(icon, { rotation: 0, duration: 0.3, ease: 'power2.out' });
-      } else {
-        item.classList.add('open');
-        gsap.to(body, { height: 'auto', opacity: 1, duration: 0.4, ease: 'power2.out' });
-        if (icon) gsap.to(icon, { rotation: 45, duration: 0.3, ease: 'bounceOut' });
-      }
-    });
-  });
-
-  // ═══════════════════════════════════════════════════════════════════
-  // 8. SWIPER TESTIMONIALS CAROUSEL
+  // 7. SWIPER TESTIMONIALS CAROUSEL
   // Targets .testimonials-swiper — replaces CSS-only carousel.
   // ═══════════════════════════════════════════════════════════════════
   const testimonialSwiper = document.querySelector('.testimonials-swiper');

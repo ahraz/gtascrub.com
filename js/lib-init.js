@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined') {
       window.lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(time => window.lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
     } else {
       // Fallback RAF loop if GSAP not available
       function rafLoop(time) {

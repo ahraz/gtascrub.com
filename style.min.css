@@ -6,7 +6,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto}.hero-particle,.hero::before,.hero::after,.cursor-glow{display:none!important}}
-body{font-family:var(--font-body);font-size:var(--text-base);line-height:var(--leading-normal);color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;animation:pageIn .6s cubic-bezier(.16,1,.3,1) both}
+body{font-family:var(--font-body);font-size:var(--text-base);line-height:var(--leading-normal);color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;animation:pageIn .6s cubic-bezier(.16,1,.3,1) both;overflow-x:hidden}
 @keyframes pageIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--color-primary);text-decoration:none;transition:color .3s cubic-bezier(.16,1,.3,1)}
@@ -93,7 +93,7 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 .hero-trust-line svg{width:16px;height:16px;color:var(--color-accent);flex-shrink:0}
 .hero-trust-line span{display:flex;align-items:center;gap:var(--space-1)}
 .hero-content .hero-trust-line span{display:flex;align-items:center;gap:var(--space-1)}
-@media(max-width:768px){.hero-content .hero-trust-line{justify-content:center;flex-wrap:wrap}.stats-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-8);margin-top:var(--space-8);padding-top:var(--space-8);border-top:1px solid rgba(255,255,255,0.08)}.stats-trust-item{display:flex;align-items:center;gap:var(--space-3);color:rgba(255,255,255,0.65);font-size:var(--text-sm);font-weight:500}.stats-trust-item svg{width:44px;height:44px;color:var(--color-accent);flex-shrink:0}}
+@media(max-width:768px){.hero-content .hero-trust-line{justify-content:center;flex-wrap:wrap}.stats-trust-row{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:2rem;margin-top:var(--space-8);padding-top:var(--space-8);border-top:1px solid rgba(255,255,255,0.08)}.stats-trust-item{display:flex;align-items:center;gap:var(--space-3);color:rgba(255,255,255,0.65);font-size:var(--text-sm);font-weight:500}.stats-trust-item svg{width:48px!important;height:48px!important;color:var(--color-accent);flex-shrink:0}}
 
 /* ── Hero Visual Card ── */
 .hero-visual{display:flex;justify-content:center;align-items:center;position:relative}

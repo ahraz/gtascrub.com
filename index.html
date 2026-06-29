@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="robots" content="index,follow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/design.css?v=4"><title>GTA Scrub — Commercial Cleaning, Photo-Verified</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="robots" content="index,follow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="google-site-verification" content="Dc5V06ZppaI_N__v9PnK1fDLs86Z03sffqQC0Pi0Y-0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/design.css?v=5"><title>GTA Scrub — Commercial Cleaning, Photo-Verified</title>
 <meta name="description" content="Commercial cleaning across the GTA with photo-verified CleanCheck reports. Free quotes, insured and bonded.">
 <link rel="canonical" href="https://gtascrub.com/">
 <meta property="og:title" content="GTA Scrub — Commercial Cleaning, Photo-Verified">
 <meta property="og:description" content="Commercial cleaning across the GTA with photo-verified CleanCheck reports. Free quotes, insured and bonded.">
 <meta property="og:image" content="https://gtascrub.com/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="modulepreload" href="/js/rolldown-runtime-chunk.js">
+<link rel="modulepreload" href="/js/react-spline-chunk.js">
 </head>
 <body>
 <nav class="nav" aria-label="Main navigation">
@@ -27,7 +29,7 @@
   </div>
 </nav>
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div id="spline-hero-widget"></div>
   
   <div class="container">
     <div class="hero-content">
@@ -197,5 +199,6 @@ document.getElementById('addons')?.addEventListener('change',function(){uC()});
 uC();
 var ct=document.getElementById('chatToggle'),cp=document.getElementById('chatPopup'),cc=document.getElementById('chatClose');if(ct&&cp){ct.addEventListener('click',function(e){e.stopPropagation();cp.classList.toggle('open')});if(cc)cc.addEventListener('click',function(){cp.classList.remove('open')});document.addEventListener('click',function(e){if(!cp.contains(e.target)&&e.target!==ct)cp.classList.remove('open')})}
 </script>
+<script type="module" src="/js/widget.js"></script>
 </body>
 </html>

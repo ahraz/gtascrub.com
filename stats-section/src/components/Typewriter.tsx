@@ -1,8 +1,15 @@
 import { useRef } from 'react'
-import { motion, useInView } from 'motion/react'
+import { motion, useInView } from 'framer-motion'
 
-export default function Typewriter({ text, delay = 0, speed = 0.015, className = '' }) {
-  const ref = useRef(null)
+interface TypewriterProps {
+  text: string
+  delay?: number
+  speed?: number
+  className?: string
+}
+
+export default function Typewriter({ text, delay = 0, speed = 0.015, className = '' }: TypewriterProps) {
+  const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-10px' })
 
   const parentVariants = {

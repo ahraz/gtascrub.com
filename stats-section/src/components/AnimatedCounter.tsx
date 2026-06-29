@@ -1,8 +1,15 @@
 import { useRef, useEffect } from 'react'
-import { useInView, animate } from 'motion/react'
+import { useInView, animate } from 'framer-motion'
 
-export default function AnimatedCounter({ value, suffix = '', prefix = '', decimals = 0 }) {
-  const ref = useRef(null)
+interface AnimatedCounterProps {
+  value: number
+  suffix?: string
+  prefix?: string
+  decimals?: number
+}
+
+export default function AnimatedCounter({ value, suffix = '', prefix = '', decimals = 0 }: AnimatedCounterProps) {
+  const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
   const animated = useRef(false)
 
@@ -12,7 +19,7 @@ export default function AnimatedCounter({ value, suffix = '', prefix = '', decim
       animate(0, value, {
         duration: 1.5,
         ease: 'easeOut',
-        onUpdate(val) {
+        onUpdate(val: number) {
           if (ref.current) {
             ref.current.textContent = prefix + val.toFixed(decimals) + suffix
           }

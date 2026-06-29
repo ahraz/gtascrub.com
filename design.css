@@ -85,7 +85,7 @@ ul,ol{list-style:none}
 }
 
 /* ── Hero ── */
-.hero{position:relative;overflow:hidden;min-height:520px;padding:var(--space-5xl) 0}
+.hero{position:relative;overflow:hidden;min-height:520px;padding:var(--space-5xl) 0;background:var(--canvas-soft)}
 .hero-bg{position:absolute;top:0;right:0;bottom:0;left:40%;background:linear-gradient(90deg,var(--canvas-soft) 0%,transparent 25%),url('/images/3eddc3b0-54a2-4d91-8759-e765e599a6cd-removebg-preview.png') center center / cover no-repeat;z-index:1;pointer-events:none}
 .hero .container,.hero-badge,.hero-actions{position:relative;z-index:2}
 .hero .container{max-width:640px;margin:0 0 0 auto;padding:0 var(--content-padding)}

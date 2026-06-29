@@ -1,19 +1,24 @@
 :root {
   /* ── Premium Brand Colors ── */
-  --color-primary:       #0F3460;
-  --color-primary-light: #1B6CA8;
-  --color-primary-dark:  #0A1628;
+  --color-primary:       #1B6CA8;
+  --color-primary-light: #3B8FD4;
+  --color-primary-dark:  #0F3460;
 
-  /* Accent */
-  --color-accent:        #C9A962;
-  --color-accent-light:  #DFC07A;
-  --color-accent-dark:   #A8873E;
+  /* Accent — fresh clean green */
+  --color-accent:        #34C78A;
+  --color-accent-light:  #5EDBA8;
+  --color-accent-dark:   #1EA872;
+
+  /* Dark section backgrounds */
+  --color-bg-dark:       #0A1628;
+  --color-bg-mid:        #0D2137;
 
   /* Neutrals */
   --color-bg:            #F8FAFC;
   --color-surface:       #FFFFFF;
+  --color-surface-alt:   #F8FAFC;
   --color-border:        #E2E8F0;
-  --color-text:          #0F172A;
+  --color-text:          #1A2332;
   --color-text-muted:    #64748B;
   --color-text-light:    #94A3B8;
 
@@ -23,17 +28,17 @@
 
   /* ── Premium Gradients ── */
   --grad-primary:   linear-gradient(135deg, #0F3460 0%, #1B6CA8 50%, #0F3460 100%);
-  --grad-hero:      linear-gradient(160deg, #060D1A 0%, #0F3460 45%, #0A1628 100%);
-  --grad-accent:    linear-gradient(90deg, #C9A962, #DFC07A, #C9A962);
+  --grad-hero:      linear-gradient(160deg, #0A1628 0%, #0F3460 45%, #0A1628 100%);
+  --grad-accent:    linear-gradient(90deg, #34C78A, #5EDBA8, #34C78A);
   --grad-card:      linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(248,250,252,0.9) 100%);
   --grad-dark:      linear-gradient(160deg, #060D1A 0%, #0A1628 100%);
   --grad-aurora:    conic-gradient(from 180deg at 50% 50%, #0F3460 0deg, #1B6CA8 90deg, #0F3460 180deg, #0A1628 270deg, #0F3460 360deg);
-  --grad-cta:       linear-gradient(90deg, #C9A962, #DFC07A);
+  --grad-cta:       linear-gradient(90deg, #34C78A, #1B6CA8);
 
   /* ── Aurora UI Mesh Gradients ── */
-  --aurora-1: radial-gradient(ellipse at 20% 50%, rgba(27,108,168,0.12) 0%, transparent 50%);
-  --aurora-2: radial-gradient(ellipse at 80% 50%, rgba(201,169,98,0.06) 0%, transparent 50%);
-  --aurora-3: radial-gradient(ellipse at 50% 0%, rgba(27,108,168,0.08) 0%, transparent 40%);
+  --aurora-1: radial-gradient(ellipse at 20% 50%, rgba(27,108,168,0.15) 0%, transparent 50%);
+  --aurora-2: radial-gradient(ellipse at 80% 50%, rgba(52,199,138,0.08) 0%, transparent 50%);
+  --aurora-3: radial-gradient(ellipse at 50% 0%, rgba(27,108,168,0.1) 0%, transparent 40%);
 
   /* ── Glassmorphism ── */
   --glass-bg:       rgba(255, 255, 255, 0.06);
@@ -44,7 +49,7 @@
 
   /* ── Glow Effects ── */
   --glow-blue:      0 0 40px rgba(27, 108, 168, 0.3);
-  --glow-gold:      0 0 30px rgba(201, 169, 98, 0.25);
+  --glow-green:     0 0 30px rgba(52, 199, 138, 0.25);
   --glow-white:     0 0 60px rgba(255, 255, 255, 0.06);
 
   /* ── Typography ── */

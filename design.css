@@ -86,7 +86,7 @@ ul,ol{list-style:none}
 
 /* ── Hero ── */
 .hero{position:relative;overflow:hidden;min-height:520px;padding:var(--space-5xl) 0;background:var(--canvas-soft)}
-#spline-hero-widget{position:absolute;top:0;right:0;bottom:0;left:40%;background:linear-gradient(90deg,var(--canvas-soft) 0%,transparent 25%);z-index:1;pointer-events:none}
+#spline-hero-widget{position:absolute;top:0;right:0;bottom:0;left:40%;background:linear-gradient(90deg,var(--canvas-soft) 0%,transparent 25%);z-index:1}
 #spline-hero-widget canvas{width:100%!important;height:100%!important;object-fit:cover}
 .hero .container,.hero-badge,.hero-actions{position:relative;z-index:2}
 .hero .container{max-width:640px;margin:0 0 0 auto;padding:0 var(--content-padding)}

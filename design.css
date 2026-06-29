@@ -147,18 +147,45 @@ ul,ol{list-style:none}
 @media(max-width:768px){.services-grid{grid-template-columns:1fr}}
 @media(min-width:769px)and(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}
 
-/* ── Testimonials ── */
-.testimonials-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-xl)}
-.testimonial-card{background:var(--canvas);border-radius:var(--radius-xl);padding:var(--space-xl);border:1px solid var(--border)}
-.testimonial-stars{display:flex;gap:2px;margin-bottom:var(--space-md)}
-.testimonial-text{font-size:14px;color:var(--body);line-height:1.6;margin-bottom:var(--space-lg);flex:1}
-.testimonial-author{display:flex;align-items:center;gap:var(--space-md)}
-.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--primary-pale);color:var(--ink-deep);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-.testimonial-author strong{font-size:13px;font-weight:600;color:var(--ink);display:block}
-.testimonial-author span{font-size:12px;color:var(--mute)}
-@media(max-width:768px){.testimonials-grid{grid-template-columns:1fr}}
-@media(min-width:769px)and(max-width:1024px){.testimonials-grid{grid-template-columns:repeat(2,1fr)}}
+/* ── Testimonials (Circular Carousel) ── */
+.circular-testimonials{position:relative;display:flex;align-items:center;justify-content:center;min-height:460px;padding:20px;user-select:none}
+.ct-orbits{position:relative;width:100%;max-width:700px;aspect-ratio:1;margin:0 auto}
+.ct-dot{position:absolute;width:56px;height:56px;border-radius:50%;border:3px solid var(--border);cursor:pointer;transition:all .4s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--mute);background:var(--canvas);box-shadow:0 2px 8px rgba(0,0,0,0.06);z-index:2}
+.ct-dot::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid transparent;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.ct-dot.active{border-color:var(--primary);color:var(--on-primary);background:var(--primary);box-shadow:0 4px 20px rgba(112,207,54,0.35);transform:scale(1.12)}
+.ct-dot.active::before{border-color:rgba(112,207,54,0.25)}
+.ct-dot:hover:not(.active){border-color:var(--primary);color:var(--primary);transform:scale(1.06)}
 
+.ct-center-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:340px;text-align:center;z-index:1;pointer-events:none}
+.ct-stars{font-size:18px;letter-spacing:2px;margin-bottom:12px;color:#f5b342}
+.ct-quote{font-size:16px;line-height:1.7;color:var(--body);margin-bottom:16px;transition:opacity .3s}
+.ct-author-info strong{display:block;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.ct-author-info span{font-size:13px;color:var(--mute)}
+
+.ct-arrow{position:absolute;top:50%;z-index:3;width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:var(--canvas);color:var(--ink);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;transform:translateY(-50%);box-shadow:0 2px 8px rgba(0,0,0,0.06);line-height:1}
+.ct-arrow:hover{background:var(--primary);border-color:var(--primary);color:var(--on-primary);box-shadow:0 4px 16px rgba(112,207,54,0.3)}
+.ct-arrow--prev{left:0}.ct-arrow--next{right:0}
+
+@media(max-width:768px){
+  .ct-orbits{max-width:380px}
+  .ct-dot{width:44px;height:44px;font-size:11px;border-width:2px}
+  .ct-dot::before{inset:-6px}
+  .ct-center-card{width:240px}
+  .ct-quote{font-size:14px}
+  .ct-stars{font-size:16px}
+  .ct-arrow{width:38px;height:38px;font-size:18px}
+}
+@media(max-width:480px){
+  .circular-testimonials{min-height:380px;padding:10px}
+  .ct-orbits{max-width:280px}
+  .ct-dot{width:38px;height:38px;font-size:10px}
+  .ct-dot::before{inset:-5px}
+  .ct-center-card{width:180px}
+  .ct-quote{font-size:13px;margin-bottom:10px}
+  .ct-author-info strong{font-size:13px}
+  .ct-author-info span{font-size:11px}
+  .ct-arrow{width:32px;height:32px;font-size:15px}
+}
 /* ── Pricing Calculator ── */
 .calc-card{background:var(--canvas);border-radius:var(--radius-xl);padding:var(--space-3xl);border:1px solid var(--border);max-width:640px;margin:0 auto}
 .calc-price{text-align:center;margin-bottom:var(--space-2xl)}

@@ -90,25 +90,76 @@
 <h1 data-split="hero">Commercial Cleaning Service Areas in the GTA</h1>
 <p data-split="lines">We serve 14+ cities across the Greater Toronto Area with photo-verified commercial cleaning</p>
 </div></section>
-<section class="section"><div class="container">
-<div class="section-header"><h2>Find Your <span>City</span></h2><p style="color:var(--muted);margin-bottom:12px">GTA Scrub provides commercial cleaning services across 14 cities in the Greater Toronto Area. Every location receives the same quality: CleanCheck photo-verified reports, dedicated cleaning teams, and transparent flat-rate pricing.</p>
-<p style="color:var(--muted);margin-bottom:20px">Click your city below to see available commercial cleaning services — office cleaning, medical office cleaning, post-construction, warehouse cleaning, window cleaning, floor care, carpet cleaning, and janitorial services.</p></div>
-<div class="areas-grid">
-<a href="/commercial-cleaning-brampton/" class="area-pill">&#x276F; Brampton</a>
-<a href="/commercial-cleaning-mississauga/" class="area-pill">&#x276F; Mississauga</a>
-<a href="/commercial-cleaning-toronto/" class="area-pill">&#x276F; Toronto</a>
-<a href="/commercial-cleaning-vaughan/" class="area-pill">&#x276F; Vaughan</a>
-<a href="/commercial-cleaning-markham/" class="area-pill">&#x276F; Markham</a>
-<a href="/commercial-cleaning-scarborough/" class="area-pill">&#x276F; Scarborough</a>
-<a href="/commercial-cleaning-etobicoke/" class="area-pill">&#x276F; Etobicoke</a>
-<a href="/commercial-cleaning-north-york/" class="area-pill">&#x276F; North York</a>
-<a href="/commercial-cleaning-richmond-hill/" class="area-pill">&#x276F; Richmond Hill</a>
-<a href="/commercial-cleaning-oakville/" class="area-pill">&#x276F; Oakville</a>
-<a href="/commercial-cleaning-burlington/" class="area-pill">&#x276F; Burlington</a>
-<a href="/commercial-cleaning-ajax/" class="area-pill">&#x276F; Ajax</a>
-<a href="/commercial-cleaning-whitby/" class="area-pill">&#x276F; Whitby</a>
-<a href="/commercial-cleaning-pickering/" class="area-pill">&#x276F; Pickering</a>
+<section class="section section-alt"><div class="container">
+<div class="section-header"><h2 data-split="heading">Find Your <span class="text-highlight">City</span></h2><p data-split="lines" style="color:var(--muted);margin-bottom:12px">GTA Scrub provides commercial cleaning services across 14 cities in the Greater Toronto Area. Every location receives the same quality: CleanCheck photo-verified reports, dedicated cleaning teams, and transparent flat-rate pricing.</p>
+<p data-split="lines" style="color:var(--muted);margin-bottom:20px">Type your city or postal code below to see if we serve your area.</p></div>
+<div class="area-checker" data-animate>
+<input type="text" class="area-input" id="areaSearchInput" placeholder="Type your city name or postal code..." autocomplete="off">
+<div class="area-result" id="areaResult"></div>
+<div class="area-pills" id="areaPills">
+<a href="/commercial-cleaning-brampton/" class="area-pill" data-area="brampton">&#x276F; Brampton</a>
+<a href="/commercial-cleaning-mississauga/" class="area-pill" data-area="mississauga">&#x276F; Mississauga</a>
+<a href="/commercial-cleaning-toronto/" class="area-pill" data-area="toronto">&#x276F; Toronto</a>
+<a href="/commercial-cleaning-vaughan/" class="area-pill" data-area="vaughan">&#x276F; Vaughan</a>
+<a href="/commercial-cleaning-markham/" class="area-pill" data-area="markham">&#x276F; Markham</a>
+<a href="/commercial-cleaning-scarborough/" class="area-pill" data-area="scarborough">&#x276F; Scarborough</a>
+<a href="/commercial-cleaning-etobicoke/" class="area-pill" data-area="etobicoke">&#x276F; Etobicoke</a>
+<a href="/commercial-cleaning-north-york/" class="area-pill" data-area="north-york">&#x276F; North York</a>
+<a href="/commercial-cleaning-richmond-hill/" class="area-pill" data-area="richmond-hill">&#x276F; Richmond Hill</a>
+<a href="/commercial-cleaning-oakville/" class="area-pill" data-area="oakville">&#x276F; Oakville</a>
+<a href="/commercial-cleaning-burlington/" class="area-pill" data-area="burlington">&#x276F; Burlington</a>
+<a href="/commercial-cleaning-ajax/" class="area-pill" data-area="ajax">&#x276F; Ajax</a>
+<a href="/commercial-cleaning-whitby/" class="area-pill" data-area="whitby">&#x276F; Whitby</a>
+<a href="/commercial-cleaning-pickering/" class="area-pill" data-area="pickering">&#x276F; Pickering</a>
 </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var input = document.getElementById('areaSearchInput');
+  var result = document.getElementById('areaResult');
+  var pills = document.querySelectorAll('.area-pill');
+  var servedAreas = ['brampton','mississauga','toronto','vaughan','markham','scarborough','etobicoke','north-york','richmond-hill','oakville','burlington','ajax','whitby','pickering','newmarket','thornhill','woodbridge','concord','downtown toronto','midtown','the annex','leslieville','east york','riverdale','oakdale','king city'];
+  
+  if (!input) return;
+  input.addEventListener('input', function(){
+    var query = this.value.trim().toLowerCase();
+    var anyMatch = false;
+    pills.forEach(function(pill){
+      var area = pill.getAttribute('data-area') || '';
+      var text = pill.textContent.toLowerCase();
+      var matches = query.length > 0 && (text.includes(query) || area.includes(query));
+      if (matches) anyMatch = true;
+      if (typeof window.highlightPills === 'function') {
+        window.highlightPills(query);
+      } else {
+        pill.style.transform = matches ? 'scale(1.08)' : 'scale(1)';
+        pill.style.transition = 'transform 0.2s ease';
+      }
+      if (matches) {
+        pill.style.borderColor = 'var(--color-accent)';
+        pill.style.background = 'rgba(52,199,138,0.12)';
+        pill.style.color = 'var(--color-accent-dark)';
+        pill.style.fontWeight = '700';
+      } else {
+        pill.style.borderColor = '';
+        pill.style.background = '';
+        pill.style.color = '';
+        pill.style.fontWeight = '';
+      }
+    });
+    if (query.length > 0 && anyMatch) {
+      result.textContent = '✓ Yes! We serve ' + query.charAt(0).toUpperCase() + query.slice(1) + ' — click any highlighted city';
+      result.className = 'area-result yes';
+    } else if (query.length > 0) {
+      result.textContent = 'Contact us — we likely serve your area. Call +1 (289) 277-0213';
+      result.className = 'area-result no';
+    } else {
+      result.textContent = '';
+      result.className = 'area-result';
+    }
+  });
+});
+</script>
 </div></section>
 <section class="stats-bar"><div class="container"><div class="stats-grid">
 <div><div class="stat-number">14+</div><div class="stat-label">GTA Cities</div></div>

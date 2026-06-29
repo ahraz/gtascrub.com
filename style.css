@@ -177,20 +177,11 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 .checklist-item svg{width:20px;height:20px;flex-shrink:0;color:var(--color-accent);margin-top:1px}
 .checklist-item span{font-size:var(--text-sm);color:var(--color-text);line-height:var(--leading-normal)}
 
-/* ── Testimonials ── */
-.testi-carousel{overflow:hidden;position:relative}
-.testi-track{display:flex;gap:var(--space-6);transition:transform .5s ease}
-.testi-card{min-width:calc(50% - var(--space-3));background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-8);box-shadow:var(--shadow-sm);border:1px solid var(--color-border);flex-shrink:0}@media(max-width:640px){.testi-card{min-width:100%}}
-.testi-stars{display:flex;gap:2px;margin-bottom:var(--space-3)}
-.testi-stars svg{width:16px;height:16px;color:var(--color-warning)}
-.testi-text{font-size:var(--text-sm);color:var(--color-text);line-height:var(--leading-normal);margin-bottom:var(--space-4);font-style:italic}
-.testi-author{display:flex;align-items:center;gap:var(--space-3)}
-.testi-avatar{width:40px;height:40px;border-radius:50%;background:rgba(27,108,168,0.1);color:var(--color-primary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--text-sm)}
-.testi-name{font-size:var(--text-sm);font-weight:600}
-.testi-role{font-size:var(--text-xs);color:var(--color-text-muted)}
-.testi-nav{display:flex;justify-content:center;gap:var(--space-3);margin-top:var(--space-8)}
-.testi-nav button{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--color-border);background:var(--color-surface);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--color-text)}
-.testi-nav button:hover{border-color:var(--color-primary);color:var(--color-primary)}
+/* ── Checklist Tabs ── */
+.checklist-tabs{max-width:720px;margin:0 auto}.checklist-tab-bar{display:flex;gap:var(--space-2);margin-bottom:var(--space-6);background:var(--color-surface-alt);padding:4px;border-radius:var(--radius-md);border:1px solid var(--color-border);width:fit-content}.checklist-tab{padding:10px 24px;border:none;border-radius:calc(var(--radius-md) - 2px);font-family:var(--font-body);font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);background:transparent;cursor:pointer;transition:all .25s ease}.checklist-tab.active{background:var(--color-surface);color:var(--color-primary);box-shadow:var(--shadow-sm)}.checklist-tab:hover:not(.active){color:var(--color-text)}.checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}@media(max-width:640px){.checklist-grid{grid-template-columns:1fr}}.checklist-item{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3) var(--space-4);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-sm);transition:all .2s}.checklist-item:hover{border-color:var(--color-accent);background:rgba(52,199,138,0.03)}.checklist-item svg{width:20px;height:20px;flex-shrink:0;color:var(--color-accent);margin-top:1px}.checklist-item span{font-size:var(--text-sm);color:var(--color-text);line-height:var(--leading-normal)}
+
+/* ── Testimonials Carousel ── */
+.testimonials-swiper{padding:20px 4px 40px;overflow:visible}.testimonials-swiper .swiper-slide{height:auto}.testimonials-swiper .swiper-button-next,.testimonials-swiper .swiper-button-prev{width:40px;height:40px;border-radius:50%;background:var(--color-surface);box-shadow:var(--shadow-md);color:var(--color-primary);transition:all .3s}.testimonials-swiper .swiper-button-next::after,.testimonials-swiper .swiper-button-prev::after{font-size:14px;font-weight:700}.testimonials-swiper .swiper-button-next:hover,.testimonials-swiper .swiper-button-prev:hover{background:var(--color-primary);color:#fff;transform:scale(1.05)}.testimonials-swiper .swiper-pagination-bullet{background:var(--color-primary);opacity:.3}.testimonials-swiper .swiper-pagination-bullet-active{opacity:1;width:24px;border-radius:4px}.testimonial-card{background:var(--grad-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-8);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;height:100%;display:flex;flex-direction:column}.testimonial-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}.testimonial-card::before{content:'"';position:absolute;top:-10px;right:20px;font-size:120px;line-height:1;font-family:Georgia,serif;color:var(--color-accent);opacity:.12;pointer-events:none}.testimonial-stars{display:flex;gap:2px;margin-bottom:var(--space-4)}.testimonial-text{font-size:var(--text-sm);color:var(--color-text-muted);line-height:var(--leading-normal);flex:1;margin-bottom:var(--space-4);position:relative;z-index:1}.testimonial-author{display:flex;align-items:center;gap:var(--space-3);padding-top:var(--space-4);border-top:1px solid var(--color-border)}.testimonial-author .testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--grad-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--text-xs);flex-shrink:0}.testimonial-author strong{display:block;font-size:var(--text-sm);font-weight:700;color:var(--color-text)}.testimonial-author span{display:block;font-size:var(--text-xs);color:var(--color-text-muted);margin-top:1px}
 
 /* ── Area Checker ── */
 .area-checker{max-width:600px;margin:0 auto;text-align:center}
@@ -200,7 +191,7 @@ a:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px;border
 .area-result.yes{color:var(--color-success)}
 .area-result.no{color:var(--color-text-muted)}
 .area-pills{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center;margin-top:var(--space-6)}
-.area-pill{padding:6px 14px;background:rgba(27,108,168,0.08);color:var(--color-primary);border-radius:999px;font-size:var(--text-sm);border:none;cursor:default;font-weight:500;font-family:var(--font-body)}
+.area-pill{padding:8px 18px;background:rgba(27,108,168,0.08);color:var(--color-primary);border-radius:999px;font-size:var(--text-sm);border:1.5px solid transparent;cursor:pointer;font-weight:500;font-family:var(--font-body);text-decoration:none;transition:all .2s ease}.area-pill:hover{background:rgba(27,108,168,0.14);transform:translateY(-1px)}
 
 /* ── FAQ ── */
 .faq-list{max-width:720px;margin:0 auto}

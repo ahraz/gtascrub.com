@@ -197,6 +197,5 @@ document.getElementById('addons')?.addEventListener('change',function(){uC()});
 uC();
 var ct=document.getElementById('chatToggle'),cp=document.getElementById('chatPopup'),cc=document.getElementById('chatClose');if(ct&&cp){ct.addEventListener('click',function(e){e.stopPropagation();cp.classList.toggle('open')});if(cc)cc.addEventListener('click',function(){cp.classList.remove('open')});document.addEventListener('click',function(e){if(!cp.contains(e.target)&&e.target!==ct)cp.classList.remove('open')})}
 </script>
-<script type="module" src="/js/widget.js"></script>
 </body>
 </html>

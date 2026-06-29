@@ -86,7 +86,10 @@ ul,ol{list-style:none}
 
 /* ── Hero ── */
 .hero{position:relative;overflow:hidden;min-height:520px;padding:var(--space-5xl) 0;background:var(--canvas-soft)}
-#spline-hero-widget{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg,var(--canvas-soft) 15%,transparent 40%);z-index:2;pointer-events:auto}
+#spline-hero-widget{position:absolute;top:0;left:0;right:0;bottom:0;z-index:2;pointer-events:auto;overflow:hidden;
+  background:url('/images/hero-janitor.png') no-repeat center/cover}
+#spline-hero-widget::before{content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,var(--canvas-soft) 15%,transparent 40%)}
 #spline-hero-widget canvas{width:100%!important;height:100%!important;object-fit:cover}
 .hero .container{position:relative;z-index:3;pointer-events:none;max-width:640px;margin:0 0 0 auto;padding:0 var(--content-padding)}
 .hero-badge,.hero-actions,.hero-actions *{pointer-events:auto}
@@ -103,7 +106,8 @@ ul,ol{list-style:none}
 
 @media(max-width:768px){
   .hero{padding:var(--space-4xl) 0;min-height:auto}
-  #spline-hero-widget{position:relative;inset:auto;height:220px;margin-bottom:var(--space-lg);border-radius:var(--radius-lg);background:none;z-index:1}
+  #spline-hero-widget{position:relative;inset:auto;height:220px;margin-bottom:var(--space-lg);border-radius:var(--radius-lg);z-index:1;background:url('/images/hero-janitor.png') no-repeat center/cover}
+  #spline-hero-widget::before{background:linear-gradient(90deg,var(--canvas-soft) 0%,transparent 30%)}
   .hero .container{z-index:2;pointer-events:auto;max-width:100%}
   .hero h1{font-size:48px;letter-spacing:-2px}
 }

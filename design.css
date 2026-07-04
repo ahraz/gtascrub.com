@@ -47,7 +47,7 @@
 /* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:var(--font-body);font-size:16px;font-weight:400;line-height:1.5;color:var(--body);background:var(--canvas);min-height:100vh}
+body{font-family:var(--font-body);font-size:16px;font-weight:400;line-height:1.5;color:var(--body);background:var(--canvas);min-height:100vh;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--ink);text-decoration:none;transition:color .2s}
 a:hover{color:var(--primary)}
@@ -118,7 +118,7 @@ ul,ol{list-style:none}
   #spline-hero-widget{position:relative;inset:auto;height:200px;margin-bottom:var(--space-lg);border-radius:var(--radius-lg);z-index:1}
   #spline-hero-widget::before{background:url('/images/hero-janitor.png') no-repeat center/cover}
   #spline-hero-widget::after{background:linear-gradient(90deg,var(--canvas-soft) 0%,transparent 20%)}
-  .hero .container{z-index:2;pointer-events:auto;max-width:100%}
+  .hero .container{z-index:2;pointer-events:auto;max-width:100%;margin:0}
   .hero h1{font-size:44px;letter-spacing:-1.5px;line-height:0.9}
   .hero p{font-size:16px}
   .hero-actions{flex-direction:column;gap:var(--space-sm)}
@@ -176,9 +176,9 @@ ul,ol{list-style:none}
 @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:var(--space-md)}}
 @media(max-width:375px){
   .stats-grid{gap:var(--space-sm)}
-  .stat-item{padding:var(--space-lg)}
-  .stat-value{font-size:36px}
-  .stat-label{font-size:12px}
+  .stat-item{padding:12px 8px}
+  .stat-value{font-size:28px;letter-spacing:-0.5px}
+  .stat-label{font-size:11px;word-break:break-word;hyphens:auto}
 }
 
 /* ── Service Cards ── */
@@ -442,4 +442,9 @@ ul,ol{list-style:none}
 @media(max-width:375px){
   .area-pill{padding:8px 16px;font-size:13px}
   .area-input{font-size:15px;padding:10px 16px}
+}
+
+/* ── Chat widget bottom spacing ── */
+@media(max-width:768px){
+  body{padding-bottom:80px}
 }

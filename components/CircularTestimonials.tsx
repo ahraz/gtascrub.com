@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState, useMemo, useCallback } from "react";
+import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -50,7 +51,7 @@ export const CircularTestimonials = ({ testimonials, autoplay = true, colors = {
     <div className="w-full max-w-5xl mx-auto p-4 md:p-8 overflow-visible">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div className="relative w-full h-[300px] md:h-[400px] [perspective:1000px]" ref={imageContainerRef}>
-          {testimonials.map((testimonial, index) => ( <img key={testimonial.src} src={testimonial.src} alt={testimonial.name} className="absolute w-full h-full object-cover rounded-3xl shadow-2xl" data-index={index} style={getImageStyle(index)} /> ))}
+          {testimonials.map((testimonial, index) => ( <Image key={testimonial.src} src={testimonial.src} alt={testimonial.name} width={400} height={400} className="absolute w-full h-full object-cover rounded-3xl shadow-2xl" data-index={index} style={getImageStyle(index)} /> ))}
         </div>
         <div className="flex flex-col justify-center h-full">
           <AnimatePresence mode="wait">

@@ -47,28 +47,27 @@ export const CircularTestimonials = ({ testimonials, autoplay = true, colors = {
   const quoteVariants = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -20 } };
 
   return (
-    <div className="testimonial-container">
-      <div className="testimonial-grid">
-        <div className="image-container" ref={imageContainerRef}>
-          {testimonials.map((testimonial, index) => ( <img key={testimonial.src} src={testimonial.src} alt={testimonial.name} className="testimonial-image" data-index={index} style={getImageStyle(index)} /> ))}
+    <div className="w-full max-w-5xl mx-auto p-4 md:p-8 overflow-visible">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="relative w-full h-[300px] md:h-[400px] [perspective:1000px]" ref={imageContainerRef}>
+          {testimonials.map((testimonial, index) => ( <img key={testimonial.src} src={testimonial.src} alt={testimonial.name} className="absolute w-full h-full object-cover rounded-3xl shadow-2xl" data-index={index} style={getImageStyle(index)} /> ))}
         </div>
-        <div className="testimonial-content">
+        <div className="flex flex-col justify-center h-full">
           <AnimatePresence mode="wait">
             <motion.div key={activeIndex} variants={quoteVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3, ease: "easeInOut" }}>
-              <h3 className="name" style={{ color: colorName, fontSize: fontSizeName }}>{activeTestimonial.name}</h3>
-              <p className="designation" style={{ color: colorDesignation, fontSize: fontSizeDesignation }}>{activeTestimonial.designation}</p>
-              <motion.p className="quote" style={{ color: colorTestimony, fontSize: fontSizeQuote }}>
+              <h3 className="font-bold mb-1 tracking-tight" style={{ color: colorName, fontSize: fontSizeName }}>{activeTestimonial.name}</h3>
+              <p className="mb-8 font-medium" style={{ color: colorDesignation, fontSize: fontSizeDesignation }}>{activeTestimonial.designation}</p>
+              <motion.p className="leading-relaxed" style={{ color: colorTestimony, fontSize: fontSizeQuote }}>
                 {activeTestimonial.quote.split(" ").map((word, i) => ( <motion.span key={i} initial={{ filter: "blur(10px)", opacity: 0, y: 5 }} animate={{ filter: "blur(0px)", opacity: 1, y: 0 }} transition={{ duration: 0.22, ease: "easeInOut", delay: 0.025 * i }} style={{ display: "inline-block" }}>{word}&nbsp;</motion.span> ))}
               </motion.p>
             </motion.div>
           </AnimatePresence>
-          <div className="arrow-buttons">
-            <button className="arrow-button prev-button" onClick={handlePrev} style={{ backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg }} onMouseEnter={() => setHoverPrev(true)} onMouseLeave={() => setHoverPrev(false)} aria-label="Previous testimonial"><FaArrowLeft size={28} color={colorArrowFg} /></button>
-            <button className="arrow-button next-button" onClick={handleNext} style={{ backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg }} onMouseEnter={() => setHoverNext(true)} onMouseLeave={() => setHoverNext(false)} aria-label="Next testimonial"><FaArrowRight size={28} color={colorArrowFg} /></button>
+          <div className="flex gap-4 mt-8">
+            <button className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300 shadow-md border-none" onClick={handlePrev} style={{ backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg }} onMouseEnter={() => setHoverPrev(true)} onMouseLeave={() => setHoverPrev(false)} aria-label="Previous testimonial"><FaArrowLeft size={28} color={colorArrowFg} /></button>
+            <button className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300 shadow-md border-none" onClick={handleNext} style={{ backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg }} onMouseEnter={() => setHoverNext(true)} onMouseLeave={() => setHoverNext(false)} aria-label="Next testimonial"><FaArrowRight size={28} color={colorArrowFg} /></button>
           </div>
         </div>
       </div>
-      <style jsx>{` .testimonial-container { width: 100%; max-width: 56rem; padding: 2rem; mx-auto; } .testimonial-grid { display: grid; gap: 5rem; } .image-container { position: relative; width: 100%; height: 24rem; perspective: 1000px; } .testimonial-image { position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); } .testimonial-content { display: flex; flex-direction: column; justify-content: space-between; } .name { font-weight: bold; margin-bottom: 0.25rem; } .designation { margin-bottom: 2rem; } .quote { line-height: 1.75; } .arrow-buttons { display: flex; gap: 1.5rem; padding-top: 3rem; } .arrow-button { width: 2.7rem; height: 2.7rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color 0.3s; border: none; } @media (min-width: 768px) { .testimonial-grid { grid-template-columns: 1fr 1fr; } .arrow-buttons { padding-top: 0; } } `}</style>
     </div>
   );
 };

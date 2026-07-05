@@ -3,11 +3,11 @@ import React, { useEffect } from "react";
 import CircularTestimonials from "@/components/CircularTestimonials";
 
 const testimonialsData = [
-  { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months. Their CleanCheck reports give us real proof of quality.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "/images/placeholder-1.jpg" },
-  { quote: "We run a dental clinic in North York and need hospital-grade cleanliness. GTA Scrub delivers every single time.", name: "Dr. Raj Patel", designation: "Dental Clinic, North York", src: "/images/placeholder-2.jpg" },
-  { quote: "After a major renovation, GTA Scrub's post-construction team was incredible. The place looked better than new.", name: "Mike Liu", designation: "Retail Manager, Brampton", src: "/images/placeholder-3.jpg" },
-  { quote: "We switched to GTA Scrub for our Etobicoke warehouse and saved 30%. The quality is even better than our previous cleaner.", name: "Jennifer Thompson", designation: "Operations Director, Etobicoke", src: "/images/placeholder-4.jpg" },
-  { quote: "Reliable, thorough, and always on time. The CleanCheck system gives us confidence we're getting what we pay for.", name: "Mark Chen", designation: "Office Manager, Toronto", src: "/images/placeholder-5.jpg" },
+  { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months. Their CleanCheck reports give us real proof of quality.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" },
+  { quote: "We run a dental clinic in North York and need hospital-grade cleanliness. GTA Scrub delivers every single time.", name: "Dr. Raj Patel", designation: "Dental Clinic, North York", src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" },
+  { quote: "After a major renovation, GTA Scrub's post-construction team was incredible. The place looked better than new.", name: "Mike Liu", designation: "Retail Manager, Brampton", src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80" },
+  { quote: "We switched to GTA Scrub for our Etobicoke warehouse and saved 30%. The quality is even better than our previous cleaner.", name: "Jennifer Thompson", designation: "Operations Director, Etobicoke", src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80" },
+  { quote: "Reliable, thorough, and always on time. The CleanCheck system gives us confidence we're getting what we pay for.", name: "Mark Chen", designation: "Office Manager, Toronto", src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" },
 ];
 
 export default function Home() {

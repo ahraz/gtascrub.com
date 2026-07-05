@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import CircularTestimonials from "@/components/CircularTestimonials";
 import PricingCalculator from "@/components/PricingCalculator";
+import CleaningChecklist from "@/components/CleaningChecklist";
 
 const testimonialsData = [
   { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months. Their CleanCheck reports give us real proof of quality.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" },
@@ -54,30 +55,6 @@ export default function Home() {
       faqs.forEach((btn, i) => btn.removeEventListener('click', handlers[i]));
     };
   }, []);
-
-  useEffect(() => {
-    /* ── Checklist Tabs ── */
-    const tabs = document.querySelectorAll('.checklist-tab');
-    const handlers: ((e: Event) => void)[] = [];
-    tabs.forEach((tab) => {
-      const handler = (e: Event) => {
-        const t = e.currentTarget as HTMLElement;
-        const tabVal = t.getAttribute('data-tab');
-        document.querySelectorAll('.checklist-tab').forEach((x) => x.classList.remove('active'));
-        t.classList.add('active');
-        document.querySelectorAll('.checklist-panel').forEach((p) => p.classList.remove('active'));
-        const panel = document.getElementById('panel-' + tabVal);
-        if (panel) panel.classList.add('active');
-      };
-      tab.addEventListener('click', handler);
-      handlers.push(handler);
-    });
-    return () => {
-      tabs.forEach((tab, i) => tab.removeEventListener('click', handlers[i]));
-    };
-  }, []);
-
-
 
   useEffect(() => {
     /* ── Chat Toggle ── */
@@ -195,32 +172,7 @@ export default function Home() {
       </div></section>
 
       {/* ── Checklist ── */}
-      <section className="py-24 bg-white"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">What&apos;s Included</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Our Cleaning Checklist</h2><p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Every clean follows a strict 90-point checklist.</p></div>
-        <div className="checklist-tabs max-w-4xl mx-auto">
-          <div className="checklist-tab-bar flex justify-center gap-2 mb-10"><button className="checklist-tab active px-8 py-3 text-sm font-bold rounded-2xl transition-all bg-brand text-brand-ink" data-tab="standard">Standard Clean</button><button className="checklist-tab px-8 py-3 text-sm font-bold rounded-2xl transition-all bg-gray-100 text-gray-600 hover:text-brand-ink" data-tab="deep">Deep Clean</button></div>
-          <div className="checklist-panel active" id="panel-standard"><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Dust all surfaces including blinds and baseboards</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Vacuum all carpets and rugs</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Mop all hard floors</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Clean and sanitize all washrooms</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Empty all trash bins and replace liners</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Wipe down kitchen/breakroom surfaces</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Disinfect high-touch surfaces</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Clean interior glass and mirrors</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Photo-verified CleanCheck report</div>
-          </div></div>
-          <div className="checklist-panel" id="panel-deep"><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Everything in Standard Clean, plus:</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Deep carpet extraction or steam cleaning</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Inside all cabinets and drawers</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Behind and under all furniture</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Light fixtures and ceiling fans</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Wall washing and baseboard detailing</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Interior window frames and sills</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">✓ Full appliance cleaning</div>
-            <div className="checklist-item flex items-start gap-3 p-4 bg-gray-50 rounded-2xl text-sm font-medium text-gray-700">⚠️ Detailed CleanCheck report with 90-point score</div>
-          </div></div>
-        </div></div></section>
+      <CleaningChecklist />
 
       {/* ── FAQ ── */}
       <section className="py-24 bg-gray-50"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">FAQ</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Common Questions</h2><p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Everything you need to know.</p></div>

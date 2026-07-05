@@ -31,19 +31,25 @@
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <div class="container">
-    <a href="/" class="nav-logo">
+<nav class="sticky top-0 z-[100] bg-white/80 backdrop-blur-md border-b border-gray-200" aria-label="Main navigation">
+  <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 text-xl font-extrabold text-brand-ink tracking-tight">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#70cf36"/><path d="M16 6l2.2 4.8L23 13l-4.8 2.2L16 20l-2.2-4.8L9 13l4.8-2.2L16 6z" fill="#0e0f0c"/></svg>
       GTA Scrub
     </a>
-    <button class="nav-toggle" data-toggle="nav-links" aria-expanded="false" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/contact.html" class="nav-cta">Book Now →</a></li>
+    
+    <button class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5" aria-label="Toggle menu">
+      <span class="block w-6 h-0.5 bg-brand-ink rounded-full"></span>
+      <span class="block w-6 h-0.5 bg-brand-ink rounded-full"></span>
+      <span class="block w-6 h-0.5 bg-brand-ink rounded-full"></span>
+    </button>
+
+    <ul class="hidden md:flex items-center gap-2">
+      <li><a href="/" class="px-4 py-2 text-sm font-bold text-brand-ink bg-gray-100 rounded-full transition-colors">Home</a></li>
+      <li><a href="/services.html" class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-brand-ink hover:bg-gray-50 rounded-full transition-colors">Services</a></li>
+      <li><a href="/about.html" class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-brand-ink hover:bg-gray-50 rounded-full transition-colors">About</a></li>
+      <li><a href="/blog.html" class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-brand-ink hover:bg-gray-50 rounded-full transition-colors">Blog</a></li>
+      <li><a href="/contact.html" class="ml-2 px-6 py-2.5 bg-brand hover:bg-brand-active text-brand-ink text-sm font-bold rounded-full shadow-sm transition-transform hover:-translate-y-0.5">Book Now →</a></li>
     </ul>
   </div>
 </nav>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import CircularTestimonials from "@/components/CircularTestimonials";
+import PricingCalculator from "@/components/PricingCalculator";
 
 const testimonialsData = [
   { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months. Their CleanCheck reports give us real proof of quality.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" },
@@ -76,69 +77,7 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    /* ── Pricing Calculator ── */
-    const rates: Record<string, number> = { home: 120, office: 150, commercial: 200 };
-    const bedRate = 25, bathRate = 20;
-    const multipliers: Record<string, number> = { standard: 1, deep: 1.4, move: 1.6 };
-    let propType = 'home', cleanType = 'standard', beds = 1, baths = 1;
 
-    function updateCalc() {
-      const base = rates[propType] || 120;
-      let total = (base + (beds * bedRate) + (baths * bathRate)) * multipliers[cleanType];
-      document.querySelectorAll('#addons input:checked').forEach((c) => {
-        total += parseFloat((c as HTMLInputElement).getAttribute('data-price') || '0');
-      });
-      const el = document.getElementById('calcTotal');
-      if (el) el.textContent = '$' + Math.round(total);
-    }
-
-    const propTypeEl = document.getElementById('propType');
-    if (propTypeEl) {
-      propTypeEl.querySelectorAll('.calc-toggle').forEach((b) => {
-        b.addEventListener('click', (e) => {
-          const btn = e.currentTarget as HTMLElement;
-          propTypeEl.querySelectorAll('.calc-toggle').forEach((x) => x.classList.remove('active'));
-          btn.classList.add('active');
-          propType = btn.getAttribute('data-value') || 'home';
-          updateCalc();
-        });
-      });
-    }
-
-    const cleanTypeEl = document.getElementById('cleanType');
-    if (cleanTypeEl) {
-      cleanTypeEl.addEventListener('click', (e) => {
-        const target = (e.target as HTMLElement);
-        if (target.classList.contains('calc-toggle')) {
-          cleanTypeEl.querySelectorAll('.calc-toggle').forEach((x) => x.classList.remove('active'));
-          target.classList.add('active');
-          cleanType = target.getAttribute('data-value') || 'standard';
-          updateCalc();
-        }
-      });
-    }
-
-    const addons = document.getElementById('addons');
-    if (addons) addons.addEventListener('change', updateCalc);
-
-    ['bed', 'bath'].forEach((t) => {
-      const mi = document.getElementById(t + 'Minus');
-      const pl = document.getElementById(t + 'Plus');
-      const co = document.getElementById(t + 'Count');
-      if (mi && pl && co) {
-        mi.addEventListener('click', () => {
-          let v = parseInt(co.textContent || '1', 10);
-          if (v > 1) { co.textContent = String(v - 1); if (t === 'bed') beds = v - 1; else baths = v - 1; updateCalc(); }
-        });
-        pl.addEventListener('click', () => {
-          let v = parseInt(co.textContent || '1', 10);
-          if (v < 20) { co.textContent = String(v + 1); if (t === 'bed') beds = v + 1; else baths = v + 1; updateCalc(); }
-        });
-      }
-    });
-    updateCalc();
-  }, []);
 
   useEffect(() => {
     /* ── Chat Toggle ── */
@@ -252,19 +191,8 @@ export default function Home() {
 
       {/* ── Pricing Calculator ── */}
       <section className="py-24 bg-gray-50"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">Transparent Pricing</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Get an Instant Estimate</h2><p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">No surprises. Your price is calculated instantly.</p></div>
-        <div className="max-w-3xl mx-auto bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 md:p-12">
-          <div className="text-center mb-12"><div className="text-6xl md:text-7xl font-black text-brand-ink tracking-tight mb-2" id="calcTotal">$120</div><div className="text-gray-500 text-sm font-medium">Final price confirmed after free walk-through</div></div>
-          <div className="space-y-8">
-            <div><label className="block text-sm font-bold text-gray-700 mb-3">Property Type</label><div className="calc-toggles inline-flex bg-gray-100 p-1.5 rounded-2xl" id="propType"><button className="calc-toggle active px-6 py-2.5 text-sm font-bold text-gray-600 rounded-xl transition-all hover:text-brand-ink" data-value="home">Home</button><button className="calc-toggle px-6 py-2.5 text-sm font-bold text-gray-600 rounded-xl transition-all hover:text-brand-ink" data-value="office">Office</button><button className="calc-toggle px-6 py-2.5 text-sm font-bold text-gray-600 rounded-xl transition-all hover:text-brand-ink" data-value="commercial">Commercial</button></div></div>
-            <div className="grid grid-cols-2 gap-6">
-              <div><label className="block text-sm font-bold text-gray-700 mb-3">Bedrooms / Rooms</label><div className="calc-stepper inline-flex bg-gray-100 p-1.5 rounded-2xl items-center"><button className="w-10 h-10 flex items-center justify-center text-xl font-bold text-gray-600 rounded-xl hover:bg-white transition-all" id="bedMinus">−</button><span className="w-10 text-center text-sm font-bold text-brand-ink" id="bedCount">1</span><button className="w-10 h-10 flex items-center justify-center text-xl font-bold text-gray-600 rounded-xl hover:bg-white transition-all" id="bedPlus">+</button></div></div>
-              <div><label className="block text-sm font-bold text-gray-700 mb-3">Bathrooms</label><div className="calc-stepper inline-flex bg-gray-100 p-1.5 rounded-2xl items-center"><button className="w-10 h-10 flex items-center justify-center text-xl font-bold text-gray-600 rounded-xl hover:bg-white transition-all" id="bathMinus">−</button><span className="w-10 text-center text-sm font-bold text-brand-ink" id="bathCount">1</span><button className="w-10 h-10 flex items-center justify-center text-xl font-bold text-gray-600 rounded-xl hover:bg-white transition-all" id="bathPlus">+</button></div></div>
-            </div>
-            <div><label className="block text-sm font-bold text-gray-700 mb-3">Clean Type</label><div className="calc-toggles inline-flex bg-gray-100 p-1.5 rounded-2xl" id="cleanType"><button className="calc-toggle active px-6 py-2.5 text-sm font-bold text-gray-600 rounded-xl transition-all hover:text-brand-ink" data-value="standard">Standard</button><button className="calc-toggle px-6 py-2.5 text-sm font-bold text-gray-600 rounded-xl transition-all hover:text-brand-ink" data-value="deep">Deep Clean</button><button className="calc-toggle px-6 py-2.5 text-sm font-bold text-gray-600 rounded-xl transition-all hover:text-brand-ink" data-value="move">Move In/Out</button></div></div>
-            <div><label className="block text-sm font-bold text-gray-700 mb-3 text-center">Add-Ons</label><div className="grid grid-cols-2 md:grid-cols-4 gap-3" id="addons"><label className="calc-checkbox flex items-center gap-3 p-3 bg-gray-50 rounded-2xl cursor-pointer text-sm font-medium text-gray-700 transition-all hover:bg-gray-100"><input type="checkbox" data-price="30" className="accent-brand w-4 h-4"/> Inside Fridge (+$30)</label><label className="calc-checkbox flex items-center gap-3 p-3 bg-gray-50 rounded-2xl cursor-pointer text-sm font-medium text-gray-700 transition-all hover:bg-gray-100"><input type="checkbox" data-price="25" className="accent-brand w-4 h-4"/> Inside Oven (+$25)</label><label className="calc-checkbox flex items-center gap-3 p-3 bg-gray-50 rounded-2xl cursor-pointer text-sm font-medium text-gray-700 transition-all hover:bg-gray-100"><input type="checkbox" data-price="40" className="accent-brand w-4 h-4"/> Windows (+$40)</label><label className="calc-checkbox flex items-center gap-3 p-3 bg-gray-50 rounded-2xl cursor-pointer text-sm font-medium text-gray-700 transition-all hover:bg-gray-100"><input type="checkbox" data-price="35" className="accent-brand w-4 h-4"/> Laundry (+$35)</label></div></div>
-            <a href="/contact.html" className="calc-cta block w-full py-5 mt-10 bg-brand hover:bg-brand-active text-brand-ink text-lg font-black rounded-2xl shadow-lg shadow-brand/20 transition-transform hover:-translate-y-1 text-center">Book This Clean →</a>
-          </div>
-        </div></div></section>
+        <PricingCalculator />
+      </div></section>
 
       {/* ── Checklist ── */}
       <section className="py-24 bg-white"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">What&apos;s Included</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Our Cleaning Checklist</h2><p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Every clean follows a strict 90-point checklist.</p></div>

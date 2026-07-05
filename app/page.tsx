@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import CircularTestimonials from "@/components/CircularTestimonials";
 import PricingCalculator from "@/components/PricingCalculator";
 import CleaningChecklist from "@/components/CleaningChecklist";
+import FAQAccordion from "@/components/FAQAccordion";
 
 const testimonialsData = [
   { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months. Their CleanCheck reports give us real proof of quality.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" },
@@ -27,33 +28,6 @@ export default function Home() {
       toggle.addEventListener('click', handler);
       return () => toggle.removeEventListener('click', handler);
     }
-  }, []);
-
-  useEffect(() => {
-    /* ── FAQ ── */
-    const faqs = document.querySelectorAll('.faq-q');
-    const handlers: ((e: Event) => void)[] = [];
-    faqs.forEach((btn, i) => {
-      const handler = (e: Event) => {
-        const item = (e.currentTarget as HTMLElement).closest('.faq-item');
-        if (!item) return;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach((x) => {
-          x.classList.remove('open');
-          const q = x.querySelector('.faq-q');
-          if (q) q.setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          (e.currentTarget as HTMLElement).setAttribute('aria-expanded', 'true');
-        }
-      };
-      btn.addEventListener('click', handler);
-      handlers.push(handler);
-    });
-    return () => {
-      faqs.forEach((btn, i) => btn.removeEventListener('click', handlers[i]));
-    };
   }, []);
 
   useEffect(() => {
@@ -175,15 +149,7 @@ export default function Home() {
       <CleaningChecklist />
 
       {/* ── FAQ ── */}
-      <section className="py-24 bg-gray-50"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">FAQ</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Common Questions</h2><p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Everything you need to know.</p></div>
-        <div className="faq-list max-w-3xl mx-auto space-y-4">
-          <div className="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden"><button className="faq-q w-full flex justify-between items-center p-6 text-left text-lg font-bold text-brand-ink hover:bg-gray-50 transition-colors" aria-expanded="false">How much does commercial cleaning cost? <span className="faq-icon">+</span></button><div className="faq-body px-6 pb-6">Prices vary based on square footage and frequency. Most offices start at $150 per visit.</div></div>
-          <div className="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden"><button className="faq-q w-full flex justify-between items-center p-6 text-left text-lg font-bold text-brand-ink hover:bg-gray-50 transition-colors" aria-expanded="false">Are you insured and bonded? <span className="faq-icon">+</span></button><div className="faq-body px-6 pb-6">Yes. Fully insured and bonded. We provide proof of insurance before starting.</div></div>
-          <div className="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden"><button className="faq-q w-full flex justify-between items-center p-6 text-left text-lg font-bold text-brand-ink hover:bg-gray-50 transition-colors" aria-expanded="false">What cleaning products do you use? <span className="faq-icon">+</span></button><div className="faq-body px-6 pb-6">Eco-friendly, non-toxic products. Hospital-grade disinfectants for medical facilities.</div></div>
-          <div className="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden"><button className="faq-q w-full flex justify-between items-center p-6 text-left text-lg font-bold text-brand-ink hover:bg-gray-50 transition-colors" aria-expanded="false">What if I need to cancel? <span className="faq-icon">+</span></button><div className="faq-body px-6 pb-6">Flexible scheduling with no long-term contracts. Cancel with 24 hours notice.</div></div>
-          <div className="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden"><button className="faq-q w-full flex justify-between items-center p-6 text-left text-lg font-bold text-brand-ink hover:bg-gray-50 transition-colors" aria-expanded="false">Do I need to be present? <span className="faq-icon">+</span></button><div className="faq-body px-6 pb-6">Not at all. Many clients provide after-hours access. All staff are background-checked.</div></div>
-          <div className="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden"><button className="faq-q w-full flex justify-between items-center p-6 text-left text-lg font-bold text-brand-ink hover:bg-gray-50 transition-colors" aria-expanded="false">How often should I schedule? <span className="faq-icon">+</span></button><div className="faq-body px-6 pb-6">Most clients choose weekly or bi-weekly. Daily for high-traffic spaces.</div></div>
-        </div></div></section>
+      <FAQAccordion />
 
       {/* ── CTA Banner ── */}
       <section className="py-24 bg-brand-ink text-center"><div className="container mx-auto px-6"><h2 className="text-4xl md:text-5xl font-black text-brand mb-6">Ready for a Spotless Space?</h2><p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">Get your free quote within 2 hours. Most replies within 30 minutes.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><a href="/contact.html" className="bg-brand text-brand-ink px-8 py-4 rounded-2xl font-bold inline-block hover:bg-brand-active transition-colors shadow-lg shadow-brand/30">Book Online</a><a href="tel:+12892770213" className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-2xl font-bold inline-block hover:bg-white/20 transition-colors">Call Us Now</a></div></div></section>

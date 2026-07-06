@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 
 export default function ReferralsPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+    <main className="min-h-screen pt-20 pb-16 lg:pt-32 lg:pb-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         
         {/* Left Column: Copy */}
-        <div className="lg:col-span-5 space-y-8 sticky top-32">
+        <div className="lg:col-span-5 space-y-6 lg:space-y-8 lg:sticky lg:top-32">
           <span className="inline-block bg-[#e2f6d5] text-[#163300] font-bold px-4 py-2 rounded-full text-sm tracking-wider uppercase">Partner Program</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0e0f0c] tracking-tight leading-tight">
-            Great Businesses <br/>Know Great Businesses.
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0e0f0c] tracking-tight leading-tight">
+            Great Businesses <br className="hidden sm:block"/>Know Great Businesses.
           </h1>
           <p className="text-xl text-gray-500 leading-relaxed">
             Help your network elevate their workspace standards. Refer a clinic, office, or facility to GTA Scrub, and we&apos;ll reward both of you when they sign a recurring contract.

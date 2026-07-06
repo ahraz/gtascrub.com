@@ -5,6 +5,7 @@ import CircularTestimonials from "@/components/CircularTestimonials";
 import PricingCalculator from "@/components/PricingCalculator";
 import CleaningChecklist from "@/components/CleaningChecklist";
 import FAQAccordion from "@/components/FAQAccordion";
+import SocialCards from "@/components/SocialCards";
 
 const testimonialsData = [
   { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" },
@@ -66,6 +67,8 @@ export default function Home() {
         <span className="flex items-center gap-2 text-sm font-semibold text-gray-600"><svg width="18" height="18" viewBox="0 0 24 24" fill="#70cf36"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 500+ Happy Clients</span>
         <span className="flex items-center gap-2 text-sm font-semibold text-gray-600"><svg width="18" height="18" viewBox="0 0 24 24" fill="#70cf36"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Same-Day Availability</span>
       </div></div>
+
+      <SocialCards />
 
       <section className="py-20 bg-white"><div className="container mx-auto px-6"><div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div className="text-center p-8 bg-gray-50 rounded-3xl"><div className="text-4xl md:text-5xl font-black text-brand-ink mb-2">5,000+</div><div className="text-sm font-bold text-gray-500">Cleans Completed</div></div>

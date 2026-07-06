@@ -6,6 +6,7 @@ import PricingCalculator from "@/components/PricingCalculator";
 import CleaningChecklist from "@/components/CleaningChecklist";
 import FAQAccordion from "@/components/FAQAccordion";
 import SocialCards from "@/components/SocialCards";
+import { ServiceGrid } from "@/components/ui/service-grid";
 
 const testimonialsData = [
   { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" },
@@ -50,6 +51,17 @@ export default function Home() {
 
   // Duplicate the array to create an off-screen buffer for the GSAP infinite loop
   const portfolioCards = [...baseCards, ...baseCards];
+
+  const servicesData = [
+    { name: "Office Cleaning", href: "/services/office-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=400&fit=crop&q=80" },
+    { name: "Medical Clinics", href: "/services/medical-office-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=400&fit=crop&q=80" },
+    { name: "Post-Construction", href: "/services/post-construction-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=400&fit=crop&q=80" },
+    { name: "Warehouses", href: "/services/warehouse-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=400&fit=crop&q=80" },
+    { name: "Window Cleaning", href: "/services/window-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1527345931282-79010bc18b0e?w=400&h=400&fit=crop&q=80" },
+    { name: "Floor Care", href: "/services/floor-care-stripping-gta", imageUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop&q=80" },
+    { name: "Carpet Cleaning", href: "/services/carpet-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1558904541-efa843a96f09?w=400&h=400&fit=crop&q=80" },
+    { name: "Janitorial Services", href: "/services/janitorial-services-gta", imageUrl: "https://images.unsplash.com/photo-1584824486516-0555a07fc511?w=400&h=400&fit=crop&q=80" },
+  ];
 
   return (
     <>
@@ -97,15 +109,13 @@ export default function Home() {
         <div className="text-center p-8 bg-gray-50 rounded-3xl"><div className="text-4xl md:text-5xl font-black text-brand-ink mb-2">7+</div><div className="text-sm font-bold text-gray-500">Years in Business</div></div>
       </div></div></section>
 
-      <section className="py-24 bg-gray-50"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">What We Clean</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Full-Service Commercial Cleaning</h2><p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">From offices to warehouses.</p></div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div className="lg:col-span-2 bg-[#e2f6d5] rounded-3xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 p-8 flex flex-col"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-5 shadow-sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0e0f0c"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg></div><h3 className="text-xl font-bold text-brand-ink mb-3">Office Cleaning</h3><p className="text-gray-700 mb-6 flex-1">Daily, weekly, or monthly cleaning for offices of all sizes.</p><Link href="/services/office-cleaning-gta" className="inline-flex items-center gap-1 font-semibold text-brand-ink">Learn More <span aria-hidden="true">→</span></Link></div>
-          <div className="rounded-3xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 p-8 flex flex-col bg-white"><div className="w-12 h-12 bg-[#e2f6d5] rounded-2xl flex items-center justify-center mb-5 shadow-sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0e0f0c"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg></div><h3 className="text-xl font-bold text-brand-ink mb-3">Medical Cleaning</h3><p className="text-gray-700 mb-6 flex-1">Hospital-grade disinfection for dental and medical.</p><Link href="/services/medical-office-cleaning-gta" className="inline-flex items-center gap-1 font-semibold text-brand-ink">Learn More <span aria-hidden="true">→</span></Link></div>
-          <div className="rounded-3xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 p-8 flex flex-col bg-white"><div className="w-12 h-12 bg-[#e2f6d5] rounded-2xl flex items-center justify-center mb-5 shadow-sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0e0f0c"><path d="M3 14h4v-4H3v4zm0 8h4v-4H3v4zm8-16h4V2h-4v4z"/></svg></div><h3 className="text-xl font-bold text-brand-ink mb-3">Post-Construction</h3><p className="text-gray-700 mb-6 flex-1">Construction dust and debris removal for new builds.</p><Link href="/services/post-construction-cleaning-gta" className="inline-flex items-center gap-1 font-semibold text-brand-ink">Learn More <span aria-hidden="true">→</span></Link></div>
-          <div className="rounded-3xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 p-8 flex flex-col bg-white"><div className="w-12 h-12 bg-[#e2f6d5] rounded-2xl flex items-center justify-center mb-5 shadow-sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0e0f0c"><path d="M20 8h-3V4H3v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg></div><h3 className="text-xl font-bold text-brand-ink mb-3">Warehouse Cleaning</h3><p className="text-gray-700 mb-6 flex-1">Industrial-scale cleaning for warehouses and factories.</p><Link href="/services/warehouse-cleaning-gta" className="inline-flex items-center gap-1 font-semibold text-brand-ink">Learn More <span aria-hidden="true">→</span></Link></div>
-          <div className="rounded-3xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 p-8 flex flex-col bg-white"><div className="w-12 h-12 bg-[#e2f6d5] rounded-2xl flex items-center justify-center mb-5 shadow-sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0e0f0c"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm4 12h-2v-4h-2v4H8v-2l4-4 4 4v2z"/></svg></div><h3 className="text-xl font-bold text-brand-ink mb-3">Window Cleaning</h3><p className="text-gray-700 mb-6 flex-1">Interior and exterior commercial window cleaning.</p><Link href="/services/window-cleaning-gta" className="inline-flex items-center gap-1 font-semibold text-brand-ink">Learn More <span aria-hidden="true">→</span></Link></div>
-          <div className="rounded-3xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 p-8 flex flex-col bg-white"><div className="w-12 h-12 bg-[#e2f6d5] rounded-2xl flex items-center justify-center mb-5 shadow-sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0e0f0c"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg></div><h3 className="text-xl font-bold text-brand-ink mb-3">Recurring Maintenance</h3><p className="text-gray-700 mb-6 flex-1">Custom recurring plans. Weekly or monthly schedules.</p><Link href="/services" className="inline-flex items-center gap-1 font-semibold text-brand-ink">Learn More <span aria-hidden="true">→</span></Link></div>
-        </div></div></section>
+      <div className="bg-gray-50 border-y border-gray-100">
+        <ServiceGrid
+          title="Full-Service Commercial Cleaning"
+          subtitle="Specialized cleaning protocols tailored to your industry's exact standards."
+          services={servicesData}
+        />
+      </div>
 
       <section className="py-24 bg-brand-pale overflow-hidden relative"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-white px-5 py-2 rounded-full mb-5 shadow-sm border border-brand/20">Real Reviews</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Trusted by 500+ GTA Businesses</h2></div>
         <CircularTestimonials testimonials={testimonialsData} colors={{ arrowHoverBackground: '#70cf36' }} />

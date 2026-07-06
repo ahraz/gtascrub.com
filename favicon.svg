@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#2DD4BF"/></linearGradient></defs>
-  <path d="M50 4L88 22v28c0 22-16 38-38 46-22-8-38-24-38-46V22Z" fill="url(#g)"/>
-  <circle cx="50" cy="50" r="18" fill="#fff"/>
-  <text x="50" y="56" text-anchor="middle" fill="url(#g)" font-size="14" font-weight="900" font-family="sans-serif">GS</text>
-</svg>

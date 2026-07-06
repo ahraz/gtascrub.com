@@ -72,7 +72,7 @@ export default function SocialCards({ cards }: SocialCardsProps) {
   const prevVisible = useRef<Set<number>>(new Set());
 
   const totalCards = cards.length;
-  const needsPagination = totalCards > MAX_VISIBLE;
+  const needsPagination = totalCards > 1;
   const [centerIndex, setCenterIndex] = useState(needsPagination ? HALF : totalCards >> 1);
 
   const getVisibleMap = useCallback((center: number) => {
@@ -263,7 +263,7 @@ export default function SocialCards({ cards }: SocialCardsProps) {
 
   return (
     <div className="flex flex-col items-center w-full relative z-20">
-      <div ref={containerRef} className="fan-layout relative w-full h-[450px] md:h-[600px] max-w-[80rem] mx-auto overflow-hidden md:overflow-visible">
+      <div ref={containerRef} className="fan-layout relative w-full mt-8 h-[550px] md:h-[750px] max-w-[80rem] mx-auto overflow-hidden md:overflow-visible">
         {cards.map((card, index) => {
           const image = (
             <div className="relative w-full h-full overflow-hidden rounded-2xl bg-gray-900 shadow-2xl">
@@ -276,7 +276,7 @@ export default function SocialCards({ cards }: SocialCardsProps) {
           );
 
           // CRITICAL FIX: Removed tailwind absolute translations. GSAP owns positioning via xPercent/yPercent.
-          const cardClass = "fan-card w-[260px] h-[340px] md:w-[320px] md:h-[420px] cursor-pointer will-change-transform";
+          const cardClass = "fan-card w-[260px] h-[400px] md:w-[360px] md:h-[580px] cursor-pointer will-change-transform";
 
           return card.linkUrl ? (
             <a key={index} href={card.linkUrl} target={card.linkUrl.startsWith("http") ? "_blank" : "_self"} rel="noopener noreferrer" className={cardClass}>{image}</a>

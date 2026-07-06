@@ -74,6 +74,7 @@ export default function SocialCards({ cards }: SocialCardsProps) {
   const totalCards = cards.length;
   const needsPagination = totalCards > 1;
   const [centerIndex, setCenterIndex] = useState(needsPagination ? HALF : totalCards >> 1);
+  const [isVisible, setIsVisible] = useState(false);
 
   const getVisibleMap = useCallback((center: number) => {
     const map = new Map<number, number>();
@@ -97,6 +98,18 @@ export default function SocialCards({ cards }: SocialCardsProps) {
   }, [totalCards, needsPagination]);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.15 });
+
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const container = containerRef.current;
     if (!container || !totalCards) return;
 
@@ -112,6 +125,13 @@ export default function SocialCards({ cards }: SocialCardsProps) {
       yPercent: -50,
       transformOrigin: "center center"
     });
+
+    // Hold cards in their hidden/scaled-down state until scrolled into view
+    if (!isVisible) {
+      const hMult = getHeightMultiplier(window.innerWidth);
+      gsap.set(cardElements, { x: 0, y: `${12 * hMult}rem`, rotation: 0, scale: 0.5, opacity: 0 });
+      return;
+    }
 
     const visibleMap = getVisibleMap(centerIndex);
     const previouslyVisible = prevVisible.current;
@@ -251,7 +271,7 @@ export default function SocialCards({ cards }: SocialCardsProps) {
       window.removeEventListener("resize", onResize);
       if (leaveTimer) clearTimeout(leaveTimer);
     };
-  }, [centerIndex, totalCards, getVisibleMap, needsPagination]);
+  }, [centerIndex, totalCards, getVisibleMap, needsPagination, isVisible]);
 
   if (!totalCards) return null;
 

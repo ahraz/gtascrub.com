@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface CardItem {
   imgUrl: string;
@@ -75,6 +76,21 @@ export default function SocialCards({ cards }: SocialCardsProps) {
   const needsPagination = totalCards > 1;
   const [centerIndex, setCenterIndex] = useState(needsPagination ? HALF : totalCards >> 1);
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedCard(null);
+      if (e.key === "ArrowLeft" && selectedCard !== null) {
+        setSelectedCard((prev) => (prev! - 1 + totalCards) % totalCards);
+      }
+      if (e.key === "ArrowRight" && selectedCard !== null) {
+        setSelectedCard((prev) => (prev! + 1) % totalCards);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedCard, totalCards]);
 
   const getVisibleMap = useCallback((center: number) => {
     const map = new Map<number, number>();
@@ -298,10 +314,14 @@ export default function SocialCards({ cards }: SocialCardsProps) {
           // CRITICAL FIX: Removed tailwind absolute translations. GSAP owns positioning via xPercent/yPercent.
           const cardClass = "fan-card w-[260px] h-[400px] md:w-[360px] md:h-[580px] cursor-pointer will-change-transform";
 
-          return card.linkUrl ? (
-            <a key={index} href={card.linkUrl} target={card.linkUrl.startsWith("http") ? "_blank" : "_self"} rel="noopener noreferrer" className={cardClass}>{image}</a>
-          ) : (
-            <div key={index} className={cardClass}>{image}</div>
+          return (
+            <div
+              key={index}
+              className={cardClass}
+              onClick={() => setSelectedCard(index)}
+            >
+              {image}
+            </div>
           );
         })}
       </div>
@@ -321,6 +341,78 @@ export default function SocialCards({ cards }: SocialCardsProps) {
           </button>
         </div>
       )}
+
+      {/* --- PREMIUM LIGHTBOX OVERLAY --- */}
+      <AnimatePresence>
+        {selectedCard !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md px-4"
+            onClick={() => setSelectedCard(null)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedCard(null)}
+              className="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors z-[110]"
+              aria-label="Close"
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            {/* Left Arrow */}
+            <button
+              onClick={(e) => { e.stopPropagation(); setSelectedCard((prev) => (prev! - 1 + totalCards) % totalCards); }}
+              className="absolute left-4 md:left-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-[110]"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+
+            {/* Right Arrow */}
+            <button
+              onClick={(e) => { e.stopPropagation(); setSelectedCard((prev) => (prev! + 1) % totalCards); }}
+              className="absolute right-4 md:right-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-[110]"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+
+            {/* Image Container */}
+            <motion.div
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[85vh] rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-black"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={cards[selectedCard].imgUrl}
+                alt={cards[selectedCard].alt}
+                className="w-full h-full max-h-[85vh] object-contain"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 bg-gradient-to-t from-black via-black/60 to-transparent">
+                <motion.h3
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-white text-2xl md:text-4xl font-black tracking-tight"
+                >
+                  {cards[selectedCard].alt}
+                </motion.h3>
+                <motion.p
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-white/70 mt-2 text-base md:text-lg"
+                >
+                  Swipe to explore our premium commercial cleaning standards.
+                </motion.p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -59,6 +59,7 @@ export default function PricingCalculator() {
   const [frequency, setFrequency] = useState(24);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const ratesRecord = useMemo(() => rates, []);
 
@@ -81,7 +82,26 @@ export default function PricingCalculator() {
   const handleSetRooms = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setRooms(Number(e.target.value)), []);
   const handleSetFrequency = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setFrequency(Number(e.target.value)), []);
   const handleSetEmail = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value), []);
-  const handleSubmit = useCallback(() => setSubmitted(true), []);
+  const handleSubmit = useCallback(async () => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formspree.io/f/mvzjyrrw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          type: "Pricing Calculator Lead",
+          propertyType,
+          sqFt,
+          frequency,
+          estimatedCost: total,
+          userEmail: email,
+        }),
+      });
+      if (response.ok) setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [propertyType, sqFt, frequency, total, email]);
 
   /* ── Step 1: Facility ── */
   const renderStep1 = useCallback(() => (
@@ -230,11 +250,11 @@ export default function PricingCalculator() {
             />
             <button
               onClick={handleSubmit}
-              disabled={!canProceedStep3}
+              disabled={!canProceedStep3 || isSubmitting}
               aria-label="Send detailed breakdown to my email"
               className="w-full py-4 bg-[#70cf36] hover:bg-[#8deb52] disabled:bg-gray-200 disabled:text-gray-400 text-[#0e0f0c] text-base font-black rounded-2xl shadow-lg shadow-[#70cf36]/30 transition-all hover:-translate-y-0.5 disabled:shadow-none disabled:hover:translate-y-0"
             >
-              Send Detailed Breakdown to My Email →
+              {isSubmitting ? "Sending…" : "Send Detailed Breakdown to My Email →"}
             </button>
           </div>
         ) : (
@@ -248,7 +268,7 @@ export default function PricingCalculator() {
         )}
       </div>
     );
-  }, [propertyType, sqFt, rooms, frequency, total, email, submitted, ratesRecord, handleSetEmail, handleSubmit, canProceedStep3]);
+  }, [propertyType, sqFt, rooms, frequency, total, email, submitted, isSubmitting, ratesRecord, handleSetEmail, handleSubmit, canProceedStep3]);
 
   return (
     <div className="bg-white rounded-[2rem] p-6 md:p-8 shadow-xl border border-gray-100 max-w-xl mx-auto">

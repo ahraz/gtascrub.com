@@ -22,12 +22,12 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Services</h4>
-          <Link href="/office-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Office Cleaning</Link>
-          <Link href="/medical-office-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Medical Cleaning</Link>
-          <Link href="/post-construction-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Post-Construction</Link>
-          <Link href="/warehouse-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Warehouse Cleaning</Link>
-          <Link href="/window-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Window Cleaning</Link>
-          <Link href="/carpet-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Carpet Cleaning</Link>
+          <Link href="/services/office-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Office Cleaning</Link>
+          <Link href="/services/medical-office-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Medical Cleaning</Link>
+          <Link href="/services/post-construction-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Post-Construction</Link>
+          <Link href="/services/warehouse-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Warehouse Cleaning</Link>
+          <Link href="/services/window-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Window Cleaning</Link>
+          <Link href="/services/carpet-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Carpet Cleaning</Link>
         </div>
         <div>
           <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Contact Us</h4>

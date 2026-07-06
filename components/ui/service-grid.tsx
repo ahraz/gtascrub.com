@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 interface ServiceItem {
   name: string;
@@ -23,13 +22,12 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const itemVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: "spring" as const, damping: 20, stiffness: 260 },
   },
 };
 
@@ -60,27 +58,33 @@ export function ServiceGrid({ title, subtitle, services }: ServiceGridProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12"
         >
-          {services.map((service) => (
-            <motion.div key={service.name} variants={cardVariants}>
-              <Link
+          {services.map((service, index) => (
+              <motion.a
+                key={index}
                 href={service.href}
-                className="group flex flex-col items-center text-center p-6 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300"
+                className="group flex flex-col items-center justify-start gap-4 text-center cursor-pointer outline-none"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -8 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-gray-100 mb-4 ring-2 ring-gray-100 group-hover:ring-brand/40 transition-all duration-300">
+                {/* Image Container - Strictly constrained to make a perfect circle */}
+                <div className="relative flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-md overflow-visible">
                   <img
                     src={service.imageUrl}
-                    alt={service.name}
-                    className="object-cover rounded-full shadow-sm transition-transform duration-300 group-hover:scale-110"
+                    alt={`${service.name} service icon`}
+                    className="w-full h-full object-cover rounded-full shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg"
                   />
                 </div>
-                <h3 className="text-sm md:text-base font-bold text-brand-ink group-hover:text-brand transition-colors">
+                
+                {/* Text Label */}
+                <span className="text-sm sm:text-base font-bold text-gray-800 transition-colors duration-300 group-hover:text-[#70cf36]">
                   {service.name}
-                </h3>
-              </Link>
-            </motion.div>
-          ))}
+                </span>
+              </motion.a>
+            ))}
         </motion.div>
       </div>
     </section>

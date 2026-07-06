@@ -17,6 +17,7 @@ export default function Footer() {
           <Link href="/services" className="block mb-3 hover:text-white transition-colors">Services</Link>
           <Link href="/about" className="block mb-3 hover:text-white transition-colors">About Us</Link>
           <Link href="/blog" className="block mb-3 hover:text-white transition-colors">Blog</Link>
+          <Link href="/referrals" className="block mb-3 hover:text-white transition-colors">Refer & Earn</Link>
           <Link href="/faq" className="block mb-3 hover:text-white transition-colors">FAQ</Link>
           <Link href="/contact" className="block mb-3 hover:text-white transition-colors">Contact</Link>
         </div>

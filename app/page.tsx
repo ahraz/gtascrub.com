@@ -57,9 +57,9 @@ export default function Home() {
     { name: "Medical Clinics", href: "/services/medical-office-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=400&fit=crop&q=80" },
     { name: "Post-Construction", href: "/services/post-construction-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=400&fit=crop&q=80" },
     { name: "Warehouses", href: "/services/warehouse-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=400&fit=crop&q=80" },
-    { name: "Window Cleaning", href: "/services/window-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1527345931282-79010bc18b0e?w=400&h=400&fit=crop&q=80" },
+    { name: "Window Cleaning", href: "/services/window-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=400&fit=crop&q=80" },
     { name: "Floor Care", href: "/services/floor-care-stripping-gta", imageUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop&q=80" },
-    { name: "Carpet Cleaning", href: "/services/carpet-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1558904541-efa843a96f09?w=400&h=400&fit=crop&q=80" },
+    { name: "Carpet Cleaning", href: "/services/carpet-cleaning-gta", imageUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&h=400&fit=crop&q=80" },
     { name: "Janitorial Services", href: "/services/janitorial-services-gta", imageUrl: "https://images.unsplash.com/photo-1584824486516-0555a07fc511?w=400&h=400&fit=crop&q=80" },
   ];
 

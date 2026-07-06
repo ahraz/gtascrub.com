@@ -29,12 +29,12 @@ export const CircularTestimonials = ({ testimonials, autoplay = true, colors = {
 
   useEffect(() => { function handleResize() { if (imageContainerRef.current) { setContainerWidth(imageContainerRef.current.offsetWidth); } } handleResize(); window.addEventListener("resize", handleResize); return () => window.removeEventListener("resize", handleResize); }, []);
 
-  useEffect(() => { if (autoplay) { autoplayIntervalRef.current = setInterval(() => { setActiveIndex((prev) => (prev + 1) % testimonialsLength); }, 5000); } return () => { if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current); }; }, [autoplay, testimonialsLength]);
-
-  useEffect(() => { const handleKey = (e: KeyboardEvent) => { if (e.key === "ArrowLeft") handlePrev(); if (e.key === "ArrowRight") handleNext(); }; window.addEventListener("keydown", handleKey); return () => window.removeEventListener("keydown", handleKey); }, [activeIndex, testimonialsLength]);
-
   const handleNext = useCallback(() => { setActiveIndex((prev) => (prev + 1) % testimonialsLength); if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current); }, [testimonialsLength]);
   const handlePrev = useCallback(() => { setActiveIndex((prev) => (prev - 1 + testimonialsLength) % testimonialsLength); if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current); }, [testimonialsLength]);
+
+  useEffect(() => { if (autoplay) { autoplayIntervalRef.current = setInterval(() => { setActiveIndex((prev) => (prev + 1) % testimonialsLength); }, 5000); } return () => { if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current); }; }, [autoplay, testimonialsLength]);
+
+  useEffect(() => { const handleKey = (e: KeyboardEvent) => { if (e.key === "ArrowLeft") handlePrev(); if (e.key === "ArrowRight") handleNext(); }; window.addEventListener("keydown", handleKey); return () => window.removeEventListener("keydown", handleKey); }, [activeIndex, testimonialsLength, handleNext, handlePrev]);
 
   function getImageStyle(index: number): React.CSSProperties {
     const gap = calculateGap(containerWidth); const maxStickUp = gap * 0.8; const offset = (index - activeIndex + testimonialsLength) % testimonialsLength;

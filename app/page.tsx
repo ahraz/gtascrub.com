@@ -38,7 +38,7 @@ export default function Home() {
     }
   }, []);
 
-  const portfolioCards = [
+  const baseCards = [
     { imgUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&q=80", alt: "Corporate Office" },
     { imgUrl: "https://images.unsplash.com/photo-1584421523409-1959737b83f0?w=800&q=80", alt: "Dental Clinic" },
     { imgUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80", alt: "Lobby & Reception" },
@@ -47,6 +47,9 @@ export default function Home() {
     { imgUrl: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=800&q=80", alt: "Post-Construction" },
     { imgUrl: "https://images.unsplash.com/photo-1574681604085-f538d38bfa79?w=800&q=80", alt: "Retail Space" },
   ];
+
+  // Duplicate the array to create an off-screen buffer for the GSAP infinite loop
+  const portfolioCards = [...baseCards, ...baseCards];
 
   return (
     <>

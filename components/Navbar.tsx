@@ -28,7 +28,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-[100] bg-white/80 backdrop-blur-md border-b border-gray-200" aria-label="Main navigation">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-xl font-extrabold text-brand-ink tracking-tight">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#70cf36"/><path d="M16 6l2.2 4.8L23 13l-4.8 2.2L16 20l-2.2-4.8L9 13l4.8-2.2L16 6z" fill="#0e0f0c"/></svg>
+          <img src="/images/gtascrub.png" alt="GTA Scrub" className="w-8 h-8 rounded-lg object-contain" />
           GTA Scrub
         </Link>
         <button onClick={toggle} className="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5" aria-expanded={open} aria-label="Toggle menu">

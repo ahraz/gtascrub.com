@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-6">
         <div>
           <Link href="/" className="flex items-center gap-2 text-lg font-extrabold text-white mb-4">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#70cf36"/><path d="M16 6l2.2 4.8L23 13l-4.8 2.2L16 20l-2.2-4.8L9 13l4.8-2.2L16 6z" fill="#0e0f0c"/></svg>
+            <img src="/images/gtascrub.png" alt="GTA Scrub" className="w-7 h-7 rounded-md object-contain" />
             GTA Scrub
           </Link>
           <p className="text-sm leading-relaxed">Photo-verified commercial cleaning across the GTA. Insured, bonded, and trusted by 500+ businesses.</p>

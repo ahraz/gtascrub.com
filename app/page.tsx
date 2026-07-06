@@ -38,6 +38,16 @@ export default function Home() {
     }
   }, []);
 
+  const portfolioCards = [
+    { imgUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&q=80", alt: "Corporate Office" },
+    { imgUrl: "https://images.unsplash.com/photo-1584421523409-1959737b83f0?w=800&q=80", alt: "Dental Clinic" },
+    { imgUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80", alt: "Lobby & Reception" },
+    { imgUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80", alt: "Industrial Warehouse" },
+    { imgUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80", alt: "Janitorial Team" },
+    { imgUrl: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=800&q=80", alt: "Post-Construction" },
+    { imgUrl: "https://images.unsplash.com/photo-1574681604085-f538d38bfa79?w=800&q=80", alt: "Retail Space" },
+  ];
+
   return (
     <>
       <section className="relative min-h-[520px] lg:min-h-[700px] flex items-center py-20 overflow-hidden bg-gray-50 bg-[url('/images/hero-janitor.png')] bg-cover bg-center bg-no-repeat">
@@ -68,7 +78,14 @@ export default function Home() {
         <span className="flex items-center gap-2 text-sm font-semibold text-gray-600"><svg width="18" height="18" viewBox="0 0 24 24" fill="#70cf36"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Same-Day Availability</span>
       </div></div>
 
-      <SocialCards />
+      <section className="py-20 md:py-32 overflow-hidden bg-white">
+        <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
+          <span className="inline-block bg-[#e2f6d5] text-[#163300] font-bold px-4 py-2 rounded-full text-sm tracking-wider uppercase mb-6">Verified Quality</span>
+          <h2 className="text-4xl md:text-5xl font-black text-[#0e0f0c] tracking-tight mb-4">See Our Standards in Action.</h2>
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">Swipe through our recent commercial cleaning projects across Brampton and the GTA.</p>
+        </div>
+        <SocialCards cards={portfolioCards} />
+      </section>
 
       <section className="py-20 bg-white"><div className="container mx-auto px-6"><div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div className="text-center p-8 bg-gray-50 rounded-3xl"><div className="text-4xl md:text-5xl font-black text-brand-ink mb-2">5,000+</div><div className="text-sm font-bold text-gray-500">Cleans Completed</div></div>

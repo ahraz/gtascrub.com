@@ -2,46 +2,17 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-interface CardData {
+export interface CardData {
   imgUrl: string;
   alt: string;
   linkUrl?: string;
 }
 
-const cards: CardData[] = [
-  {
-    imgUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
-    alt: "Office Cleaning — Mississauga",
-    linkUrl: "/services/office-cleaning-gta",
-  },
-  {
-    imgUrl: "https://images.unsplash.com/photo-1582741660776-75c0a7b3f08b?auto=format&fit=crop&w=800&q=80",
-    alt: "Medical Clinic Cleaning — North York",
-    linkUrl: "/services/medical-office-cleaning-gta",
-  },
-  {
-    imgUrl: "https://images.unsplash.com/photo-1504307651254-84280e7f79a0?auto=format&fit=crop&w=800&q=80",
-    alt: "Post-Construction — Brampton",
-    linkUrl: "/services/post-construction-cleaning-gta",
-  },
-  {
-    imgUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-    alt: "Warehouse Cleaning — Toronto",
-    linkUrl: "/services/warehouse-cleaning-gta",
-  },
-  {
-    imgUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80",
-    alt: "Window Cleaning — Etobicoke",
-    linkUrl: "/services/window-cleaning-gta",
-  },
-  {
-    imgUrl: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80",
-    alt: "Floor Care — Vaughan",
-    linkUrl: "/services/floor-care-stripping-gta",
-  },
-];
+interface SocialCardsProps {
+  cards: CardData[];
+}
 
-export default function SocialCards() {
+export default function SocialCards({ cards }: SocialCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | HTMLAnchorElement)[]>([]);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
@@ -186,22 +157,10 @@ export default function SocialCards() {
   };
 
   return (
-    <section className="py-28 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">Recent Work</span>
-          <h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">
-            See Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-green-600">Recent Projects</span>
-          </h2>
-          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-            Hover over any project to learn more. Click to view the service page.
-          </p>
-        </div>
-
-        <div
-          ref={containerRef}
-          className="fan-layout flex relative justify-center items-center w-full h-[450px] md:h-[600px] max-w-[80rem] mx-auto"
-        >
+    <div
+      ref={containerRef}
+      className="fan-layout flex relative justify-center items-center w-full h-[450px] md:h-[600px] max-w-[80rem] mx-auto"
+    >
           {cards.map((card, index) => {
             const image = (
               <div className="relative w-full h-full overflow-hidden rounded-2xl bg-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
@@ -238,8 +197,6 @@ export default function SocialCards() {
               </div>
             );
           })}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 }

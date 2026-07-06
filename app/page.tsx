@@ -7,6 +7,7 @@ import CleaningChecklist from "@/components/CleaningChecklist";
 import FAQAccordion from "@/components/FAQAccordion";
 import SocialCards from "@/components/SocialCards";
 import { ServiceGrid } from "@/components/ui/service-grid";
+import AnimatedStats from "@/components/AnimatedStats";
 
 const testimonialsData = [
   { quote: "GTA Scrub has been cleaning our Mississauga office for 8 months.", name: "Sarah Kamal", designation: "Office Manager, Mississauga", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" },
@@ -102,12 +103,7 @@ export default function Home() {
         <SocialCards cards={portfolioCards} />
       </section>
 
-      <section className="py-20 bg-white"><div className="container mx-auto px-6"><div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="text-center p-8 bg-gray-50 rounded-3xl"><div className="text-4xl md:text-5xl font-black text-brand-ink mb-2">5,000+</div><div className="text-sm font-bold text-gray-500">Cleans Completed</div></div>
-        <div className="text-center p-8 bg-gray-50 rounded-3xl"><div className="text-4xl md:text-5xl font-black text-brand-ink mb-2">99%</div><div className="text-sm font-bold text-gray-500">Customer Satisfaction</div></div>
-        <div className="text-center p-8 bg-gray-50 rounded-3xl"><div className="text-4xl md:text-5xl font-black text-brand-ink mb-2">4.9</div><div className="text-sm font-bold text-gray-500">Average Rating</div></div>
-        <div className="text-center p-8 bg-gray-50 rounded-3xl"><div className="text-4xl md:text-5xl font-black text-brand-ink mb-2">7+</div><div className="text-sm font-bold text-gray-500">Years in Business</div></div>
-      </div></div></section>
+      <AnimatedStats />
 
       <div className="bg-gray-50 border-y border-gray-100">
         <ServiceGrid

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { serviceAreas, getServiceAreaBySlug } from "@/lib/data/serviceAreas";
+import { serviceDetails as servicesData } from "@/lib/data/services";
 
 export async function generateStaticParams() {
   return serviceAreas.map((area) => ({ city: area.slug }));
@@ -19,16 +20,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const services = [
-  { name: "Office Cleaning", desc: "Daily, weekly, or bi-weekly office cleaning with CleanCheck photo-verified reports. Dedicated teams who know your space.", href: "/services/office-cleaning-gta" },
-  { name: "Medical Cleaning", desc: "Infection control and PHO-compliant cleaning for medical and dental offices. Biohazard disposal included.", href: "/services/medical-office-cleaning-gta" },
-  { name: "Post-Construction", desc: "Heavy construction dust and debris removal for new builds and renovations. Full site prep for occupancy.", href: "/services/post-construction-cleaning-gta" },
-  { name: "Warehouse Cleaning", desc: "Large-space cleaning for warehouses and industrial facilities. Ride-on scrubbers, dust control, and waste removal.", href: "/services/warehouse-cleaning-gta" },
-  { name: "Window Cleaning", desc: "Interior and exterior commercial window cleaning. Streak-free results with pure-water systems.", href: "/services/window-cleaning-gta" },
-  { name: "Floor Care & Stripping", desc: "Professional floor stripping, waxing, and buffing for all hard floor surfaces.", href: "/services/floor-care-stripping-gta" },
-  { name: "Carpet Cleaning", desc: "Deep carpet extraction and steam cleaning for commercial spaces.", href: "/services/carpet-cleaning-gta" },
-  { name: "Janitorial Services", desc: "Comprehensive janitorial services for offices, retail, and commercial properties.", href: "/services/janitorial-services-gta" },
-];
+const services = servicesData.map((svc) => ({
+  name: svc.name,
+  desc: svc.description,
+  href: `/services/${svc.slug}`,
+}));
 
 export default function CityServiceAreaPage({ params }: Props) {
   const area = getServiceAreaBySlug(params.city);

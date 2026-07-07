@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { serviceDetails, getServiceDetailBySlug } from "@/lib/data/services";
+import { serviceAreas } from "@/lib/data/serviceAreas";
 import PricingCalculator from "@/components/PricingCalculator";
 import CleaningChecklist from "@/components/CleaningChecklist";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -202,6 +203,24 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           ))}
         </div>
       </div></section>
+
+      {/* ── Hub & Spoke: Cities We Serve ── */}
+      <section className="py-16 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Providing {svc.name} Across the GTA</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {serviceAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/service-areas/${area.slug}`}
+                className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-600 hover:border-[#70cf36] hover:text-[#70cf36] transition-colors"
+              >
+                {area.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── CTA ── */}
       <section className="py-24 bg-brand-ink text-center"><div className="container mx-auto px-6">

@@ -5,6 +5,7 @@ import { serviceAreas } from "@/lib/data/serviceAreas";
 export const metadata: Metadata = {
   title: "Service Areas — GTA Scrub Commercial Cleaning",
   description: "GTA Scrub provides commercial cleaning services across all 14 GTA cities. Brampton, Mississauga, Toronto, and more.",
+    alternates: { canonical: "https://gtascrub.com/service-areas" },
 };
 
 export default function ServiceAreasPage() {

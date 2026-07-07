@@ -4,6 +4,7 @@ import ReferralForm from "@/components/ReferralForm";
 export const metadata: Metadata = {
   title: "Partner Referral Program | GTA Scrub",
   description: "Refer a business in the GTA to GTA Scrub and earn up to a $250 account credit or $150 gift card when they sign a commercial cleaning contract.",
+    alternates: { canonical: "https://gtascrub.com/referrals" },
 };
 
 export default function ReferralsPage() {

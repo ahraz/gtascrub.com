@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: svc.title,
     description: svc.description,
+    alternates: { canonical: `https://gtascrub.com/services/${svc.slug}` },
   };
 }
 

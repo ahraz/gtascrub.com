@@ -15,18 +15,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: area.title,
     description: area.description,
+    alternates: { canonical: `https://gtascrub.com/service-areas/${area.slug}` },
   };
 }
 
 const services = [
-  { name: "Office Cleaning", desc: "Daily, weekly, or bi-weekly office cleaning with CleanCheck photo-verified reports. Dedicated teams who know your space.", href: "/office-cleaning-gta" },
-  { name: "Medical Cleaning", desc: "Infection control and PHO-compliant cleaning for medical and dental offices. Biohazard disposal included.", href: "/medical-office-cleaning-gta" },
-  { name: "Post-Construction", desc: "Heavy construction dust and debris removal for new builds and renovations. Full site prep for occupancy.", href: "/post-construction-cleaning-gta" },
-  { name: "Warehouse Cleaning", desc: "Large-space cleaning for warehouses and industrial facilities. Ride-on scrubbers, dust control, and waste removal.", href: "/warehouse-cleaning-gta" },
-  { name: "Window Cleaning", desc: "Interior and exterior commercial window cleaning. Streak-free results with pure-water systems.", href: "/window-cleaning-gta" },
-  { name: "Floor Care & Stripping", desc: "Professional floor stripping, waxing, and buffing for all hard floor surfaces.", href: "/floor-care-stripping-gta" },
-  { name: "Carpet Cleaning", desc: "Deep carpet extraction and steam cleaning for commercial spaces.", href: "/carpet-cleaning-gta" },
-  { name: "Janitorial Services", desc: "Comprehensive janitorial services for offices, retail, and commercial properties.", href: "/janitorial-services-gta" },
+  { name: "Office Cleaning", desc: "Daily, weekly, or bi-weekly office cleaning with CleanCheck photo-verified reports. Dedicated teams who know your space.", href: "/services/office-cleaning-gta" },
+  { name: "Medical Cleaning", desc: "Infection control and PHO-compliant cleaning for medical and dental offices. Biohazard disposal included.", href: "/services/medical-office-cleaning-gta" },
+  { name: "Post-Construction", desc: "Heavy construction dust and debris removal for new builds and renovations. Full site prep for occupancy.", href: "/services/post-construction-cleaning-gta" },
+  { name: "Warehouse Cleaning", desc: "Large-space cleaning for warehouses and industrial facilities. Ride-on scrubbers, dust control, and waste removal.", href: "/services/warehouse-cleaning-gta" },
+  { name: "Window Cleaning", desc: "Interior and exterior commercial window cleaning. Streak-free results with pure-water systems.", href: "/services/window-cleaning-gta" },
+  { name: "Floor Care & Stripping", desc: "Professional floor stripping, waxing, and buffing for all hard floor surfaces.", href: "/services/floor-care-stripping-gta" },
+  { name: "Carpet Cleaning", desc: "Deep carpet extraction and steam cleaning for commercial spaces.", href: "/services/carpet-cleaning-gta" },
+  { name: "Janitorial Services", desc: "Comprehensive janitorial services for offices, retail, and commercial properties.", href: "/services/janitorial-services-gta" },
 ];
 
 export default function CityServiceAreaPage({ params }: Props) {

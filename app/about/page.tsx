@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us — GTA Scrub Commercial Cleaning",
   description: "Learn about GTA Scrub, the GTA's premier commercial cleaning company. Photo-verified CleanCheck reports, insured and bonded.",
+    alternates: { canonical: "https://gtascrub.com/about" },
 };
 
 export default function AboutPage() {

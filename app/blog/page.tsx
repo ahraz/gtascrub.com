@@ -5,6 +5,7 @@ import { blogPosts } from "@/lib/data/blogPosts";
 export const metadata: Metadata = {
   title: "Blog — GTA Scrub Commercial Cleaning",
   description: "Expert insights on commercial cleaning, office hygiene, and facility management across the GTA.",
+    alternates: { canonical: "https://gtascrub.com/blog" },
 };
 
 export default function BlogPage() {

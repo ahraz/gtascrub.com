@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "FAQ — GTA Scrub Commercial Cleaning",
   description: "Frequently asked questions about GTA Scrub commercial cleaning services.",
+    alternates: { canonical: "https://gtascrub.com/faq" },
 };
 
 export default function FaqPage() {

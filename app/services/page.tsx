@@ -5,6 +5,7 @@ import { serviceDetails } from "@/lib/data/services";
 export const metadata: Metadata = {
   title: "Our Services — GTA Scrub Commercial Cleaning",
   description: "Full commercial cleaning services across the GTA. Office, medical, post-construction, warehouse, window cleaning.",
+    alternates: { canonical: "https://gtascrub.com/services" },
 };
 
 export default function ServicesPage() {

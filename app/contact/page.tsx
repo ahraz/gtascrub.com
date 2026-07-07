@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us — GTA Scrub Commercial Cleaning",
   description: "Get a free commercial cleaning quote within 2 hours. Most replies within 30 minutes. Serving all GTA cities.",
+    alternates: { canonical: "https://gtascrub.com/contact" },
 };
 
 export default function ContactPage() {

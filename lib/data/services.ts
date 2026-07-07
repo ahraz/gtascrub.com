@@ -4,6 +4,8 @@ export interface ServiceDetail {
   shortName: string;
   title: string;
   description: string;
+  image: string;
+  galleryImages: string[];
   heroH1: string;
   heroSub: string;
   introParas: string[];
@@ -21,6 +23,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Office",
     title: "Office Cleaning Services in Brampton & GTA | GTA Scrub",
     description: "Professional office cleaning in Brampton & GTA. Daily, weekly, or bi-weekly service with photo-verified CleanCheck reports. Insured & bonded.",
+  image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80", "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80"],
     heroH1: "Commercial Office Cleaning Services in the GTA",
     heroSub: "Professional office cleaning with photo-verified quality reports — serving Brampton, Toronto, Mississauga & all GTA cities",
     introParas: [
@@ -77,6 +81,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Medical",
     title: "Medical Office Cleaning in Brampton & GTA | GTA Scrub",
     description: "PHO-compliant medical office cleaning in the GTA. Infection control, biohazard disposal, terminal cleaning for dental & medical clinics. Free quotes.",
+  image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80", "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80", "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80"],
     heroH1: "Medical & Dental Office Cleaning in the GTA",
     heroSub: "Infection control, biohazard disposal, and PHO-compliant cleaning for healthcare facilities across the GTA",
     introParas: [
@@ -133,6 +139,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Post-Construction",
     title: "Post-Construction Cleaning in Brampton & GTA | GTA Scrub",
     description: "Post-construction cleaning in the GTA. 5-phase process: debris removal, HEPA dust control, windows, deep cleaning & floor care. Free estimates.",
+  image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80", "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=800&q=80", "https://images.unsplash.com/photo-1578996952314-52a0ae5a8c9a?w=800&q=80"],
     heroH1: "Post-Construction Cleaning in the GTA",
     heroSub: "From debris to move-in ready — professional post-construction cleaning across Brampton, Toronto, Mississauga & all GTA cities",
     introParas: [
@@ -189,6 +197,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Warehouse",
     title: "Warehouse Cleaning in Brampton & GTA | GTA Scrub",
     description: "Industrial warehouse cleaning in the GTA. Ride-on scrubbers, dust control, rack cleaning & waste removal. Free quotes, bonded & insured.",
+  image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80", "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80", "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=800&q=80"],
     heroH1: "Warehouse & Industrial Cleaning in the GTA",
     heroSub: "Large-space cleaning for warehouses, distribution centres, and industrial facilities across the GTA",
     introParas: [
@@ -245,6 +255,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Window",
     title: "Commercial Window Cleaning in Brampton & GTA | GTA Scrub",
     description: "Commercial window cleaning in the GTA. Interior & exterior, storefronts to high-rises. Streak-free, professional-grade equipment. Free quotes.",
+  image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80", "https://images.unsplash.com/photo-1560253023-3ec50d4774c7?w=800&q=80", "https://images.unsplash.com/photo-1621905252507-b35492cc74b3?w=800&q=80"],
     heroH1: "Commercial Window Cleaning in the GTA",
     heroSub: "Streak-free interior and exterior window cleaning for commercial buildings across Brampton, Toronto, Mississauga & all GTA cities",
     introParas: [
@@ -301,6 +313,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Floor Care",
     title: "Floor Stripping & Waxing in Brampton & GTA | GTA Scrub",
     description: "Commercial floor stripping & waxing in the GTA. VCT, hardwood, tile, concrete. Strip, wax, buff & seal. Weekend & overnight service.",
+  image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80", "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80", "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=800&q=80"],
     heroH1: "Floor Care, Stripping & Waxing in the GTA",
     heroSub: "Professional floor restoration — stripping, waxing, buffing, and sealing for commercial spaces across the GTA",
     introParas: [
@@ -357,6 +371,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Carpet",
     title: "Commercial Carpet Cleaning in Brampton & GTA | GTA Scrub",
     description: "Commercial carpet cleaning in the GTA. Hot water extraction, stain treatment & deodorizing. Truck-mounted equipment, fast drying. Free quotes.",
+  image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80", "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80", "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"],
     heroH1: "Commercial Carpet Cleaning in the GTA",
     heroSub: "Professional carpet cleaning — hot water extraction, spot treatment, and deodorizing for businesses across the GTA",
     introParas: [
@@ -413,6 +429,8 @@ export const serviceDetails: ServiceDetail[] = [
     shortName: "Janitorial",
     title: "Janitorial Services in Brampton & GTA | GTA Scrub",
     description: "Full-service janitorial programs for GTA businesses. Nightly cleaning, restroom sanitation, supply restocking & waste management with CleanCheck reports.",
+  image: "https://images.unsplash.com/photo-1584824486516-0555a07fc511?w=800&q=80",
+  galleryImages: ["https://images.unsplash.com/photo-1584824486516-0555a07fc511?w=800&q=80", "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80", "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"],
     heroH1: "Janitorial Services in the GTA",
     heroSub: "Complete janitorial programs — nightly cleaning, restroom sanitation, and waste management across Brampton, Toronto, Mississauga & all GTA cities",
     introParas: [

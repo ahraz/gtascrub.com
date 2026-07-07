@@ -31,6 +31,10 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
     <>
       {/* ── Hero ── */}
       <section className="relative py-28 bg-gray-50 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={svc.image} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/70" />
+        </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">{svc.shortName} Cleaning</span>
           <h1 className="text-4xl lg:text-6xl font-black text-brand-ink tracking-tight mb-6 max-w-4xl mx-auto leading-[1.1]">{svc.heroH1}</h1>
@@ -43,9 +47,9 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* ── Intro ── */}
-      <section className="py-20 bg-white"><div className="container mx-auto px-6 max-w-4xl">
-        <div className="grid md:grid-cols-5 gap-12 items-start">
-          <div className="md:col-span-3">
+      <section className="py-20 bg-white"><div className="container mx-auto px-6 max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div>
             <h2 className="text-3xl font-black text-brand-ink mb-6">Professional <span className="text-[#70cf36]">{svc.name}</span> in the GTA</h2>
             {svc.introParas.map((p, i) => (
               <p key={i} className="text-gray-600 leading-relaxed mb-4">{p}</p>
@@ -59,18 +63,23 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               ))}
             </div>
           </div>
-          <div className="md:col-span-2 bg-gray-50 rounded-3xl p-8 shadow-sm">
-            <h3 className="font-bold text-brand-ink mb-4 text-center">CleanCheck Score</h3>
-            <div className="text-center mb-6">
-              <div className="text-6xl font-black text-brand-ink">90</div>
-              <div className="text-sm text-gray-500">/ 100 Quality Score</div>
+          <div className="space-y-6">
+            <div className="rounded-3xl overflow-hidden shadow-lg">
+              <img src={svc.image} alt={svc.name} className="w-full h-72 object-cover" />
             </div>
-            <div className="space-y-3">
-              <div><div className="text-2xl font-black text-brand-ink">5,000+</div><div className="text-sm text-gray-500">Spaces Cleaned</div></div>
-              <div><div className="text-2xl font-black text-brand-ink">14</div><div className="text-sm text-gray-500">GTA Cities Covered</div></div>
-              <div><div className="text-2xl font-black text-brand-ink">4.9/5</div><div className="text-sm text-gray-500">Average Rating</div></div>
+            <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
+              <h3 className="font-bold text-brand-ink mb-4 text-center">CleanCheck Score</h3>
+              <div className="text-center mb-6">
+                <div className="text-6xl font-black text-brand-ink">90</div>
+                <div className="text-sm text-gray-500">/ 100 Quality Score</div>
+              </div>
+              <div className="space-y-3">
+                <div><div className="text-2xl font-black text-brand-ink">5,000+</div><div className="text-sm text-gray-500">Spaces Cleaned</div></div>
+                <div><div className="text-2xl font-black text-brand-ink">14</div><div className="text-sm text-gray-500">GTA Cities Covered</div></div>
+                <div><div className="text-2xl font-black text-brand-ink">4.9/5</div><div className="text-sm text-gray-500">Average Rating</div></div>
+              </div>
+              <Link href="/contact" className="mt-6 inline-block w-full text-center py-3 bg-brand text-brand-ink font-bold rounded-xl hover:bg-brand-active transition-colors">Get Your Quote →</Link>
             </div>
-            <Link href="/contact" className="mt-6 inline-block w-full text-center py-3 bg-brand text-brand-ink font-bold rounded-xl hover:bg-brand-active transition-colors">Get Your Quote →</Link>
           </div>
         </div>
       </div></section>
@@ -102,8 +111,24 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         </div>
       </div></section>
 
-      {/* ── Process ── */}
+      {/* ── Gallery ── */}
       <section className="py-24 bg-white"><div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">Our Work</span>
+          <h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">{svc.name} in Action</h2>
+          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">See the quality and attention to detail we bring to every {svc.shortName.toLowerCase()} space.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {svc.galleryImages.map((img, i) => (
+            <div key={i} className="rounded-2xl overflow-hidden shadow-sm aspect-[4/3]">
+              <img src={img} alt={`${svc.name} - photo ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+          ))}
+        </div>
+      </div></section>
+
+      {/* ── Process ── */}
+      <section className="py-24 bg-gray-50"><div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="inline-block text-sm font-bold text-brand-ink bg-brand-pale px-5 py-2 rounded-full mb-5 border border-brand/20">Our Process</span>
           <h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">How It Works</h2>

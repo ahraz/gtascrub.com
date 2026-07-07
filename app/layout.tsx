@@ -16,6 +16,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        {/* LocalBusiness Schema for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CleaningService",
+              "name": "GTA Scrub",
+              "image": "https://gtascrub.com/images/hero-janitor.png",
+              "description": "Premium commercial cleaning, janitorial, and post-construction cleaning services for businesses, clinics, and offices across Brampton and the GTA.",
+              "url": "https://gtascrub.com",
+              "telephone": "+1-289-277-0213",
+              "areaServed": [
+                { "@type": "City", "name": "Brampton" },
+                { "@type": "City", "name": "Mississauga" },
+                { "@type": "City", "name": "Toronto" },
+                { "@type": "City", "name": "Vaughan" }
+              ],
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Brampton",
+                "addressRegion": "ON",
+                "addressCountry": "CA"
+              }
+            })
+          }}
+        />
       </body>
     </html>
   );

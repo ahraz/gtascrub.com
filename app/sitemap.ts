@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://gtascrub.com'
 
   // Base routes
-  const routes = ['', '/about', '/contact', '/faq', '/services', '/service-areas', '/blog'].map((route) => ({
+  const routes = ['', '/about', '/contact', '/faq', '/review', '/services', '/service-areas', '/blog'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'monthly' as const,

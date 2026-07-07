@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Service Areas", href: "/service-areas" },
   { name: "Refer & Earn", href: "/referrals" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
@@ -57,7 +56,7 @@ export default function Navbar() {
               </li>
             );
           })}
-          <li><Link href="/contact" onClick={close} className="block ml-0 md:ml-2 px-6 py-2.5 bg-brand hover:bg-brand-active text-brand-ink text-sm font-bold rounded-full shadow-sm transition-transform hover:-translate-y-0.5 text-center">Book Now →</Link></li>
+          <li className="flex items-center gap-2"><a href="https://login.gtascrub.com/" onClick={close} className="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-black transition-colors">Login</a><Link href="/contact" onClick={close} className="block ml-0 md:ml-2 px-6 py-2.5 bg-brand hover:bg-brand-active text-brand-ink text-sm font-bold rounded-full shadow-sm transition-transform hover:-translate-y-0.5 text-center">Book Now →</Link></li>
         </ul>
       </div>
     </nav>

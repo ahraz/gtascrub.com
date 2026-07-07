@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { motion, useTransform, useSpring, useMotionValue, useScroll } from "framer-motion";
+import { motion, useTransform, useSpring, useMotionValue, useScroll, useInView } from "framer-motion";
 
 export type AnimationPhase = "scatter" | "line" | "circle" | "bottom-strip";
 
@@ -42,13 +42,11 @@ function FlipCard({ src, index, target }: FlipCardProps) {
                 transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
                 whileHover={{ rotateY: 180, scale: 1.2, zIndex: 50 }}
             >
-                {/* Front Face */}
                 <div className="absolute inset-0 h-full w-full overflow-hidden rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] bg-gray-200" style={{ backfaceVisibility: "hidden" }}>
                     <img src={src} alt={`portfolio-${index}`} className="h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-transparent" />
                 </div>
 
-                {/* Back Face */}
                 <div className="absolute inset-0 h-full w-full overflow-hidden rounded-xl shadow-lg bg-[#0e0f0c] flex flex-col items-center justify-center p-4 border border-[#70cf36]/30" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
                     <div className="text-center">
                         <p className="text-[10px] font-black text-[#70cf36] uppercase tracking-widest mb-1">Clean</p>
@@ -62,7 +60,6 @@ function FlipCard({ src, index, target }: FlipCardProps) {
 
 const TOTAL_IMAGES = 15;
 
-// Commercial Cleaning Portfolio Images
 const IMAGES = [
     "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=600&fit=crop",
     "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=600&fit=crop",
@@ -87,17 +84,17 @@ export default function ScrollGallery() {
     const [introPhase, setIntroPhase] = useState<AnimationPhase>("scatter");
     const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
     
-    // The new native scroll refs
     const sectionRef = useRef<HTMLElement>(null);
     const stickyRef = useRef<HTMLDivElement>(null);
 
-    // 1. Native Scroll Tracking (The Magic Fix)
+    // 1. Trigger animation ONLY when scrolled into view
+    const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
+
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start start", "end end"]
     });
 
-    // Map the 0-1 native scroll progress to our animation math
     const MAX_SCROLL = 2500;
     const virtualScroll = useTransform(scrollYProgress, [0, 1], [0, MAX_SCROLL]);
 
@@ -139,11 +136,13 @@ export default function ScrollGallery() {
         return () => container.removeEventListener("mousemove", handleMouseMove);
     }, [mouseX]);
 
+    // 2. Delayed Intro Sequence (Waits for isInView)
     useEffect(() => {
+        if (!isInView) return;
         const timer1 = setTimeout(() => setIntroPhase("line"), 500);
         const timer2 = setTimeout(() => setIntroPhase("circle"), 2000);
         return () => { clearTimeout(timer1); clearTimeout(timer2); };
-    }, []);
+    }, [isInView]);
 
     const scatterPositions = useMemo(() => {
         return IMAGES.slice(0, TOTAL_IMAGES).map(() => ({
@@ -171,12 +170,10 @@ export default function ScrollGallery() {
 
     return (
         <>
-        {/* The 300vh Wrapper ensures the user scrolls natively for a long time */}
-        <section ref={sectionRef} className="relative w-full h-[300vh] bg-white border-t border-gray-100">
-            {/* The Sticky container locks to the screen */}
+        {/* 3. Increased wrapper to 500vh to slow down the scrub speed drastically */}
+        <section ref={sectionRef} className="relative w-full h-[500vh] bg-white border-t border-gray-100">
             <div ref={stickyRef} className="sticky top-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center perspective-1000">
 
-                {/* Intro Text (Fades out) */}
                 <div className="absolute z-0 flex flex-col items-center justify-center text-center pointer-events-none top-1/2 -translate-y-1/2">
                     <motion.h2
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
@@ -196,7 +193,6 @@ export default function ScrollGallery() {
                     </motion.p>
                 </div>
 
-                {/* Arc Active Content (Fades in) */}
                 <motion.div
                     style={{ opacity: contentOpacity, y: contentY }}
                     className="absolute top-[15%] md:top-[10%] z-10 flex flex-col items-center justify-center text-center pointer-events-none px-4"
@@ -209,7 +205,6 @@ export default function ScrollGallery() {
                     </p>
                 </motion.div>
 
-                {/* Main Container */}
                 <div className="relative flex items-center justify-center w-full h-full mt-10 md:mt-20">
                     {IMAGES.slice(0, TOTAL_IMAGES).map((src, i) => {
                         let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
@@ -225,7 +220,6 @@ export default function ScrollGallery() {
                             const isMobile = containerSize.width < 768;
                             const minDimension = Math.min(containerSize.width, containerSize.height);
 
-                            // Circle Phase
                             const circleRadius = Math.min(minDimension * 0.35, 350);
                             const circleAngle = (i / TOTAL_IMAGES) * 360;
                             const circleRad = (circleAngle * Math.PI) / 180;
@@ -235,7 +229,6 @@ export default function ScrollGallery() {
                                 rotation: circleAngle + 90,
                             };
 
-                            // Bottom Arc Phase
                             const baseRadius = Math.min(containerSize.width, containerSize.height * 1.5);
                             const arcRadius = baseRadius * (isMobile ? 1.4 : 1.1);
                             const arcApexY = containerSize.height * (isMobile ? 0.35 : 0.25);
@@ -259,7 +252,6 @@ export default function ScrollGallery() {
                                 scale: isMobile ? 1.4 : 1.8, 
                             };
 
-                            // Morph
                             target = {
                                 x: lerp(circlePos.x, arcPos.x, morphValue),
                                 y: lerp(circlePos.y, arcPos.y, morphValue),

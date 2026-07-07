@@ -93,6 +93,10 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
           <Link href="/contact" className="bg-brand text-brand-ink px-8 py-4 rounded-2xl font-bold inline-block hover:bg-brand-active transition-colors shadow-lg shadow-brand/30">Book Online</Link>
           <a href="tel:+12892770213" className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-2xl font-bold inline-block hover:bg-white/20 transition-colors">Call +1 (289) 277-0213</a>
         </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
+          <Link href="/services" className="hover:text-white underline underline-offset-2 transition-colors">Explore Our Cleaning Services →</Link>
+          <Link href="/blog" className="hover:text-white underline underline-offset-2 transition-colors">More Cleaning Tips →</Link>
+        </div>
       </div></section>
     </>
   );

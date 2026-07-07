@@ -15,11 +15,13 @@ export default function Footer() {
           <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Quick Links</h4>
           <Link href="/" className="block mb-3 hover:text-white transition-colors">Home</Link>
           <Link href="/services" className="block mb-3 hover:text-white transition-colors">Services</Link>
+          <Link href="/service-areas" className="block mb-3 hover:text-white transition-colors">Service Areas</Link>
           <Link href="/about" className="block mb-3 hover:text-white transition-colors">About Us</Link>
           <Link href="/blog" className="block mb-3 hover:text-white transition-colors">Blog</Link>
           <Link href="/referrals" className="block mb-3 hover:text-white transition-colors">Refer & Earn</Link>
           <Link href="/faq" className="block mb-3 hover:text-white transition-colors">FAQ</Link>
           <Link href="/contact" className="block mb-3 hover:text-white transition-colors">Contact</Link>
+          <Link href="/review" className="block mb-3 hover:text-white transition-colors">Leave a Review</Link>
         </div>
         <div>
           <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Services</h4>
@@ -28,7 +30,10 @@ export default function Footer() {
           <Link href="/services/post-construction-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Post-Construction</Link>
           <Link href="/services/warehouse-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Warehouse Cleaning</Link>
           <Link href="/services/window-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Window Cleaning</Link>
+          <Link href="/services/floor-care-stripping-gta" className="block mb-3 hover:text-white transition-colors">Floor Care & Stripping</Link>
           <Link href="/services/carpet-cleaning-gta" className="block mb-3 hover:text-white transition-colors">Carpet Cleaning</Link>
+          <Link href="/services/janitorial-services-gta" className="block mb-3 hover:text-white transition-colors">Janitorial Services</Link>
+          <Link href="/services" className="block mt-4 text-sm font-bold text-brand hover:text-white transition-colors">View All Services →</Link>
         </div>
         <div>
           <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Contact Us</h4>

@@ -83,6 +83,10 @@ export default function Home() {
               <Link href="/contact" className="inline-flex justify-center items-center px-8 py-4 font-bold text-brand-ink bg-brand hover:bg-brand-active rounded-2xl shadow-lg shadow-brand/30 transition-all hover:-translate-y-1">Get a Free Quote</Link>
               <Link href="/services" className="inline-flex justify-center items-center px-8 py-4 font-bold text-brand-ink bg-white border-2 border-gray-200 hover:border-brand-ink rounded-2xl transition-all">See Our Services</Link>
             </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-sm text-gray-500 pointer-events-auto">
+              <Link href="/service-areas" className="hover:text-brand-ink underline underline-offset-2 transition-colors">14 GTA Cities Covered →</Link>
+              <Link href="/about" className="hover:text-brand-ink underline underline-offset-2 transition-colors">About Our Team →</Link>
+            </div>
           </div>
         </div>
       </section>
@@ -113,7 +117,7 @@ export default function Home() {
         />
       </div>
 
-      <section className="py-24 bg-brand-pale overflow-hidden relative"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-white px-5 py-2 rounded-full mb-5 shadow-sm border border-brand/20">Real Reviews</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Trusted by 500+ GTA Businesses</h2></div>
+      <section className="py-24 bg-brand-pale overflow-hidden relative"><div className="container mx-auto px-6"><div className="text-center mb-16"><span className="inline-block text-sm font-bold text-brand-ink bg-white px-5 py-2 rounded-full mb-5 shadow-sm border border-brand/20">Real Reviews</span><h2 className="text-4xl lg:text-5xl font-black text-brand-ink tracking-tight">Trusted by 500+ GTA Businesses</h2><p className="text-gray-500 mt-4"><Link href="/review" className="font-semibold underline underline-offset-2 hover:text-brand-ink transition-colors">Leave us a review →</Link></p></div>
         <CircularTestimonials testimonials={testimonialsData} colors={{ arrowHoverBackground: '#70cf36' }} />
       </div></section>
 
@@ -124,7 +128,7 @@ export default function Home() {
       <CleaningChecklist />
       <FAQAccordion />
 
-      <section className="py-24 bg-brand-ink text-center"><div className="container mx-auto px-6"><h2 className="text-4xl md:text-5xl font-black text-brand mb-6">Ready for a Spotless Space?</h2><p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">Get your free quote within 2 hours.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link href="/contact" className="bg-brand text-brand-ink px-8 py-4 rounded-2xl font-bold inline-block hover:bg-brand-active transition-colors shadow-lg shadow-brand/30">Book Online</Link><a href="tel:+12892770213" className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-2xl font-bold inline-block hover:bg-white/20 transition-colors">Call Us Now</a></div></div></section>
+      <section className="py-24 bg-brand-ink text-center"><div className="container mx-auto px-6"><h2 className="text-4xl md:text-5xl font-black text-brand mb-6">Ready for a Spotless Space?</h2><p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">Get your free quote within 2 hours.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link href="/contact" className="bg-brand text-brand-ink px-8 py-4 rounded-2xl font-bold inline-block hover:bg-brand-active transition-colors shadow-lg shadow-brand/30">Book Online</Link><a href="tel:+12892770213" className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-2xl font-bold inline-block hover:bg-white/20 transition-colors">Call Us Now</a></div><div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400"><Link href="/blog" className="hover:text-white underline underline-offset-2 transition-colors">Cleaning Tips & Guides →</Link><Link href="/referrals" className="hover:text-white underline underline-offset-2 transition-colors">Refer a Business & Earn →</Link></div></div></section>
 
       <div className="chat-bubble">
         <button className="chat-btn" id="chatToggle" aria-label="Open chat">

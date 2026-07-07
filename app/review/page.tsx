@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 
-const GOOGLE_REVIEW_LINK = "https://search.google.com/local/writereview?placeid=0xfdd53a0790dc6b22";
+const GOOGLE_REVIEW_LINK = "https://www.google.com/maps/place/GTA+Scrub/@43.901344,-79.2986321,9z/data=!3m1!4b1!4m6!3m5!1s0x22ed3c780fec60c9:0xfdd53a0790dc6b22!8m2!3d43.901344!4d-79.2986321!16s%2Fg%2F11nq7rrf_q?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D";
 
 export default function ReviewFunnel() {
   const [rating, setRating] = useState<number | null>(null);

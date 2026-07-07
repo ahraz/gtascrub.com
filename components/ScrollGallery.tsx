@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
+import { motion, useTransform, useSpring, useMotionValue, useScroll } from "framer-motion";
 
 export type AnimationPhase = "scatter" | "line" | "circle" | "bottom-strip";
 
@@ -61,7 +61,6 @@ function FlipCard({ src, index, target }: FlipCardProps) {
 }
 
 const TOTAL_IMAGES = 15;
-const MAX_SCROLL = 2500; 
 
 // Commercial Cleaning Portfolio Images
 const IMAGES = [
@@ -87,10 +86,23 @@ const lerp = (start: number, end: number, t: number) => start * (1 - t) + end * 
 export default function ScrollGallery() {
     const [introPhase, setIntroPhase] = useState<AnimationPhase>("scatter");
     const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
-    const containerRef = useRef<HTMLDivElement>(null);
+    
+    // The new native scroll refs
+    const sectionRef = useRef<HTMLElement>(null);
+    const stickyRef = useRef<HTMLDivElement>(null);
+
+    // 1. Native Scroll Tracking (The Magic Fix)
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end end"]
+    });
+
+    // Map the 0-1 native scroll progress to our animation math
+    const MAX_SCROLL = 2500;
+    const virtualScroll = useTransform(scrollYProgress, [0, 1], [0, MAX_SCROLL]);
 
     useEffect(() => {
-        if (!containerRef.current) return;
+        if (!stickyRef.current) return;
         const handleResize = (entries: ResizeObserverEntry[]) => {
             for (const entry of entries) {
                 setContainerSize({
@@ -100,65 +112,10 @@ export default function ScrollGallery() {
             }
         };
         const observer = new ResizeObserver(handleResize);
-        observer.observe(containerRef.current);
-        setContainerSize({ width: containerRef.current.offsetWidth, height: containerRef.current.offsetHeight });
+        observer.observe(stickyRef.current);
+        setContainerSize({ width: stickyRef.current.offsetWidth, height: stickyRef.current.offsetHeight });
         return () => observer.disconnect();
     }, []);
-
-    const virtualScroll = useMotionValue(0);
-    const scrollRef = useRef(0);
-    const touchStartY = useRef<number | null>(null);
-    const touchScrollBase = useRef(0);
-
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
-
-        const handleWheel = (e: WheelEvent) => {
-            const atTop = scrollRef.current === 0 && e.deltaY < 0;
-            const atBottom = scrollRef.current === MAX_SCROLL && e.deltaY > 0;
-
-            if (!atTop && !atBottom) {
-                e.preventDefault();
-                const newScroll = Math.min(Math.max(scrollRef.current + e.deltaY, 0), MAX_SCROLL);
-                scrollRef.current = newScroll;
-                virtualScroll.set(newScroll);
-            }
-        };
-
-        const handleTouchStart = (e: TouchEvent) => {
-            touchStartY.current = e.touches[0].clientY;
-            touchScrollBase.current = scrollRef.current;
-        };
-
-        const handleTouchMove = (e: TouchEvent) => {
-            if (touchStartY.current === null) return;
-            const deltaY = (touchStartY.current - e.touches[0].clientY) * 1.5;
-            const newScroll = Math.min(Math.max(touchScrollBase.current + deltaY, 0), MAX_SCROLL);
-            const atTop = scrollRef.current === 0 && deltaY < 0;
-            const atBottom = scrollRef.current === MAX_SCROLL && deltaY > 0;
-            if (!atTop && !atBottom) {
-                e.preventDefault();
-                scrollRef.current = newScroll;
-                virtualScroll.set(newScroll);
-            }
-        };
-
-        const handleTouchEnd = () => {
-            touchStartY.current = null;
-        };
-
-        container.addEventListener("wheel", handleWheel, { passive: false });
-        container.addEventListener("touchstart", handleTouchStart, { passive: true });
-        container.addEventListener("touchmove", handleTouchMove, { passive: false });
-        container.addEventListener("touchend", handleTouchEnd, { passive: true });
-        return () => {
-            container.removeEventListener("wheel", handleWheel);
-            container.removeEventListener("touchstart", handleTouchStart);
-            container.removeEventListener("touchmove", handleTouchMove);
-            container.removeEventListener("touchend", handleTouchEnd);
-        };
-    }, [virtualScroll]);
 
     const morphProgress = useTransform(virtualScroll, [0, 600], [0, 1]);
     const smoothMorph = useSpring(morphProgress, { stiffness: 40, damping: 20 });
@@ -170,7 +127,7 @@ export default function ScrollGallery() {
     const smoothMouseX = useSpring(mouseX, { stiffness: 30, damping: 20 });
 
     useEffect(() => {
-        const container = containerRef.current;
+        const container = stickyRef.current;
         if (!container) return;
         const handleMouseMove = (e: MouseEvent) => {
             const rect = container.getBoundingClientRect();
@@ -178,18 +135,8 @@ export default function ScrollGallery() {
             const normalizedX = (relativeX / rect.width) * 2 - 1;
             mouseX.set(normalizedX * 100);
         };
-        const handleTouchMoveParallax = (e: TouchEvent) => {
-            const rect = container.getBoundingClientRect();
-            const relativeX = e.touches[0].clientX - rect.left;
-            const normalizedX = (relativeX / rect.width) * 2 - 1;
-            mouseX.set(normalizedX * 100);
-        };
         container.addEventListener("mousemove", handleMouseMove);
-        container.addEventListener("touchmove", handleTouchMoveParallax, { passive: true });
-        return () => {
-            container.removeEventListener("mousemove", handleMouseMove);
-            container.removeEventListener("touchmove", handleTouchMoveParallax);
-        };
+        return () => container.removeEventListener("mousemove", handleMouseMove);
     }, [mouseX]);
 
     useEffect(() => {
@@ -223,8 +170,11 @@ export default function ScrollGallery() {
     const contentY = useTransform(smoothMorph, [0.8, 1], [20, 0]);
 
     return (
-        <section className="relative w-full h-[80vh] min-h-[600px] bg-white overflow-hidden border-t border-gray-100">
-            <div ref={containerRef} className="absolute inset-0 flex flex-col items-center justify-center perspective-1000">
+        <>
+        {/* The 300vh Wrapper ensures the user scrolls natively for a long time */}
+        <section ref={sectionRef} className="relative w-full h-[300vh] bg-white border-t border-gray-100">
+            {/* The Sticky container locks to the screen */}
+            <div ref={stickyRef} className="sticky top-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center perspective-1000">
 
                 {/* Intro Text (Fades out) */}
                 <div className="absolute z-0 flex flex-col items-center justify-center text-center pointer-events-none top-1/2 -translate-y-1/2">
@@ -249,18 +199,18 @@ export default function ScrollGallery() {
                 {/* Arc Active Content (Fades in) */}
                 <motion.div
                     style={{ opacity: contentOpacity, y: contentY }}
-                    className="absolute top-[15%] z-10 flex flex-col items-center justify-center text-center pointer-events-none px-4"
+                    className="absolute top-[15%] md:top-[10%] z-10 flex flex-col items-center justify-center text-center pointer-events-none px-4"
                 >
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tighter mb-4">
                         The GTA Scrub Standard
                     </h2>
-                    <p className="text-base text-gray-500 max-w-lg leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-500 max-w-lg leading-relaxed">
                         Swipe through our premium commercial portfolio. Scroll your mouse to scrub through the timeline of our recent cleanouts.
                     </p>
                 </motion.div>
 
                 {/* Main Container */}
-                <div className="relative flex items-center justify-center w-full h-full mt-20">
+                <div className="relative flex items-center justify-center w-full h-full mt-10 md:mt-20">
                     {IMAGES.slice(0, TOTAL_IMAGES).map((src, i) => {
                         let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
 
@@ -333,5 +283,6 @@ export default function ScrollGallery() {
                 </div>
             </div>
         </section>
+        </>
     );
 }

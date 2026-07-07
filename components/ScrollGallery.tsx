@@ -106,7 +106,9 @@ export default function ScrollGallery() {
     }, []);
 
     const virtualScroll = useMotionValue(0);
-    const scrollRef = useRef(0); 
+    const scrollRef = useRef(0);
+    const touchStartY = useRef<number | null>(null);
+    const touchScrollBase = useRef(0);
 
     useEffect(() => {
         const container = containerRef.current;
@@ -116,7 +118,6 @@ export default function ScrollGallery() {
             const atTop = scrollRef.current === 0 && e.deltaY < 0;
             const atBottom = scrollRef.current === MAX_SCROLL && e.deltaY > 0;
 
-            // Only prevent default if scrolling WITHIN the animation bounds to avoid trapping the user forever
             if (!atTop && !atBottom) {
                 e.preventDefault();
                 const newScroll = Math.min(Math.max(scrollRef.current + e.deltaY, 0), MAX_SCROLL);
@@ -125,8 +126,38 @@ export default function ScrollGallery() {
             }
         };
 
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartY.current = e.touches[0].clientY;
+            touchScrollBase.current = scrollRef.current;
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            if (touchStartY.current === null) return;
+            const deltaY = (touchStartY.current - e.touches[0].clientY) * 1.5;
+            const newScroll = Math.min(Math.max(touchScrollBase.current + deltaY, 0), MAX_SCROLL);
+            const atTop = scrollRef.current === 0 && deltaY < 0;
+            const atBottom = scrollRef.current === MAX_SCROLL && deltaY > 0;
+            if (!atTop && !atBottom) {
+                e.preventDefault();
+                scrollRef.current = newScroll;
+                virtualScroll.set(newScroll);
+            }
+        };
+
+        const handleTouchEnd = () => {
+            touchStartY.current = null;
+        };
+
         container.addEventListener("wheel", handleWheel, { passive: false });
-        return () => container.removeEventListener("wheel", handleWheel);
+        container.addEventListener("touchstart", handleTouchStart, { passive: true });
+        container.addEventListener("touchmove", handleTouchMove, { passive: false });
+        container.addEventListener("touchend", handleTouchEnd, { passive: true });
+        return () => {
+            container.removeEventListener("wheel", handleWheel);
+            container.removeEventListener("touchstart", handleTouchStart);
+            container.removeEventListener("touchmove", handleTouchMove);
+            container.removeEventListener("touchend", handleTouchEnd);
+        };
     }, [virtualScroll]);
 
     const morphProgress = useTransform(virtualScroll, [0, 600], [0, 1]);
@@ -147,8 +178,18 @@ export default function ScrollGallery() {
             const normalizedX = (relativeX / rect.width) * 2 - 1;
             mouseX.set(normalizedX * 100);
         };
+        const handleTouchMoveParallax = (e: TouchEvent) => {
+            const rect = container.getBoundingClientRect();
+            const relativeX = e.touches[0].clientX - rect.left;
+            const normalizedX = (relativeX / rect.width) * 2 - 1;
+            mouseX.set(normalizedX * 100);
+        };
         container.addEventListener("mousemove", handleMouseMove);
-        return () => container.removeEventListener("mousemove", handleMouseMove);
+        container.addEventListener("touchmove", handleTouchMoveParallax, { passive: true });
+        return () => {
+            container.removeEventListener("mousemove", handleMouseMove);
+            container.removeEventListener("touchmove", handleTouchMoveParallax);
+        };
     }, [mouseX]);
 
     useEffect(() => {

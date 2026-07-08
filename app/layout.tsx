@@ -41,18 +41,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <GoogleAnalytics gaId="G-BGTZW5RE50" />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        {/* LocalBusiness Schema for SEO */}
+      <head>
+        {/* LocalBusiness JSON-LD Schema for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "CleaningService",
+              "@type": "LocalBusiness",
               "name": "GTA Scrub",
               "image": "https://gtascrub.com/images/hero-janitor.png",
               "description": "Premium commercial cleaning, janitorial, and post-construction cleaning services for businesses, clinics, and offices across Brampton and the GTA.",
@@ -74,6 +70,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             })
           }}
         />
+      </head>
+      <body>
+        <GoogleAnalytics gaId="G-BGTZW5RE50" />
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

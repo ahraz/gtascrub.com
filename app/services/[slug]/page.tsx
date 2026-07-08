@@ -56,6 +56,16 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             {svc.introParas.map((p, i) => (
               <p key={i} className="text-gray-600 leading-relaxed mb-4">{p}</p>
             ))}
+            {/* ── Internal Link: Post-Construction → Floor Care ── */}
+            {svc.slug === "post-construction-cleaning-gta" && (
+              <p className="text-gray-600 leading-relaxed mb-4">
+                For ongoing floor maintenance after construction, explore our{" "}
+                <Link href="/services/floor-care-stripping-gta" className="text-[#70cf36] font-semibold underline underline-offset-2 hover:text-brand-ink transition-colors">
+                  deep commercial floor scrubbing
+                </Link>{" "}
+                services to keep your floors in pristine condition.
+              </p>
+            )}
             <div className="mt-8 flex flex-wrap gap-2">
               {svc.whyChoose.slice(0, 4).map((item, i) => (
                 <span key={i} className="flex items-center gap-1.5 text-sm font-medium text-brand-ink bg-brand-pale px-3 py-1.5 rounded-full border border-brand/20">
